@@ -1,6 +1,6 @@
 {
-  "schema_version": "2026-03-11.buraidah-cafes-light-cleaning-pass-1",
-  "project_phase": "Cleaning / Light Normalization Pass 1",
+  "schema_version": "2026-03-11.buraidah-cafes-cleaning-pass-2",
+  "project_phase": "Cleaning / Branch Conflict Pass 2",
   "status_enum": [
     "discovered",
     "profiled",
@@ -164,11 +164,11 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "مفتوح حتى 4:30 ص",
-      "editorial_summary": "فرع طريق الأمير سلطان فقط؛ ما زال يحتاج حسمًا رسميًا أوضح للهوية والفرع.",
+      "editorial_summary": "سجل فرع مستقل على طريق الأمير سلطان، لكن ربطه الرسمي ببقية فروع كانتو في بريدة ما زال غير محسوم.",
       "confidence": "medium",
       "status": "branch_conflict",
       "last_verified_at": "2026-03-10",
-      "source_notes": "Google Maps direct URL; branch separated but no confirmed official account | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Google Maps direct URL; branch separated but no confirmed official account | Cleaning pass 2: retained as branch_conflict pending official branch map",
       "sector": "cafes",
       "canonical_name_ar": "كانتو للقهوة المختصة",
       "canonical_name_en": "Canto Specialty Coffee",
@@ -359,7 +359,7 @@
     },
     {
       "slug": "canto-abu-bakr",
-      "name": "CANTO",
+      "name": "كانتو",
       "alternate_name": "كانتو / CANTO",
       "city": "بريدة",
       "district": "غير متحقق",
@@ -379,13 +379,13 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "مفتوح على مدار الساعة",
-      "editorial_summary": "فرع قوي في التقييم والساعات، لكنه ما زال يحتاج حسم هوية العلامة الرسمية مقابل بقية الفروع.",
+      "editorial_summary": "فرع أبو بكر يبدو جزءًا من شبكة فروع كانتو داخل بريدة، لكن التعيين الرسمي النهائي ما زال غير محسوم.",
       "confidence": "medium",
       "status": "branch_conflict",
       "last_verified_at": "2026-03-10",
-      "source_notes": "Google Maps direct URL; branch separated but official mapping unresolved | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Google Maps direct URL; branch separated but official mapping unresolved | Cleaning pass 2: normalized branch naming and retained as branch_conflict",
       "sector": "cafes",
-      "canonical_name_ar": "CANTO",
+      "canonical_name_ar": "كانتو",
       "canonical_name_en": "CANTO",
       "short_address": "طريق أبو بكر الصديق",
       "branch_group": "canto-buraidah",
@@ -808,7 +808,7 @@
       "price_level": "1–20 ر.س.",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 1; possible additional CANTO branch from discovery queue | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 1 discovery queue | Cleaning pass 2: retained as branch_conflict pending official branch map",
       "last_updated_at": "2026-03-11",
       "work_friendly": "unknown",
       "group_friendly": "unknown",
@@ -824,7 +824,7 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "Coverage-first record added in Expansion Round 1; awaits enrichment later.",
+      "editorial_summary": "فرع علي بن أبي طالب محتفظ به كسجل مستقل مؤقتًا إلى أن يُحسم الربط الرسمي بين فروع كانتو داخل المدينة.",
       "place_personality": "",
       "best_visit_time": "",
       "why_choose_it": "",
@@ -2040,7 +2040,7 @@
       "price_level": "1?20 ?.?.",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 1 coverage from Google Maps multi-branch result; branch-level identity not yet cleaned | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 1 multi-branch Google Maps result | Cleaning pass 2: branch label retained pending direct branch confirmation",
       "last_updated_at": "2026-03-11",
       "work_friendly": "unknown",
       "group_friendly": "unknown",
@@ -2056,7 +2056,7 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "مفتوح وقت التحقق",
-      "editorial_summary": "Coverage-first branch record added before later cleaning.",
+      "editorial_summary": "أحد فرعي قصال في بريدة. السجل محتفظ به مستقلاً لأن صفحة البحث تشير إلى أكثر من فرع دون حسم أوضح.",
       "place_personality": "",
       "best_visit_time": "",
       "why_choose_it": "",
@@ -2084,7 +2084,7 @@
       "price_level": "unknown",
       "confidence": "low",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 1 coverage from Google Maps multi-branch result; branch-level identity not yet cleaned | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 1 multi-branch Google Maps result | Cleaning pass 2: branch label retained pending direct branch confirmation",
       "last_updated_at": "2026-03-11",
       "work_friendly": "unknown",
       "group_friendly": "unknown",
@@ -2100,7 +2100,7 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "مفتوح وقت التحقق",
-      "editorial_summary": "Coverage-first branch record added before later cleaning.",
+      "editorial_summary": "فرع قصال إضافي محتمل في بريدة، أبقيناه منفصلاً لتجنّب دمج غير آمن بين فروع متشابهة.",
       "place_personality": "",
       "best_visit_time": "",
       "why_choose_it": "",
@@ -2531,7 +2531,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "zonice-buraidah-1",
       "name": "زونيس",
       "alternate_name": "Zonice",
@@ -2547,7 +2547,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "Mo-Fr 09:00-24:00",
-      "editorial_summary": "???/???? ?????? ????? ??????? ??? intake ????."
+      "editorial_summary": "إحدى نقاط Zonice في بريدة؛ ما زال التفريق الرسمي بين النقاط الثلاث غير محسوم، لذلك بقيت branch_conflict."
     },
     {
       "sector": "cafes",
@@ -2575,7 +2575,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "zonice-buraidah-2",
       "name": "زونيس",
       "alternate_name": "Zonice",
@@ -2591,7 +2591,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "Mo-Su 09:00-24:00",
-      "editorial_summary": "??? ????? ????? ?? discovered ??? ????? ?????."
+      "editorial_summary": "سجل نقطة ثانية لزونيس داخل بريدة، محفوظة منفصلة مؤقتًا لتجنّب دمج فروع متقاربة بلا توثيق كافٍ."
     },
     {
       "sector": "cafes",
@@ -2619,7 +2619,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "zonice-buraidah-3",
       "name": "زونيس",
       "alternate_name": "Zonice",
@@ -2635,7 +2635,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "Mo-Sa 09:00-24:00",
-      "editorial_summary": "????? coverage ???? ????? ???? ????? ?????."
+      "editorial_summary": "نقطة ثالثة محتملة لزونيس؛ بقيت branch_conflict لأن شبكة الفروع ما زالت غير محسومة على نحو آمن."
     },
     {
       "sector": "cafes",
@@ -2795,7 +2795,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "half-million-buraidah",
       "name": "هاف مليون",
       "alternate_name": "Half Million",
@@ -2811,7 +2811,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
-      "editorial_summary": "????? ????? ????? ???? ????? ??? ?????? ???? ????."
+      "editorial_summary": "فرع هاف مليون محتمل داخل بريدة. بقي branch_conflict لأن لدينا أكثر من نقطة مرشحة للعلامة نفسها."
     },
     {
       "sector": "cafes",
@@ -2839,7 +2839,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as canonical branch_conflict anchor for identical/near-identical Dunkin pins",
       "slug": "dunkin-king-salman-buraidah",
       "name": "دانكن",
       "alternate_name": "Dunkin",
@@ -2855,7 +2855,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
-      "editorial_summary": "??? ????? ????? ???? ???? ??? ????? ??????? ?? ??? ???????."
+      "editorial_summary": "فرع دانكن على محور الملك سلمان يُستخدم كسجل مرجعي داخل مجموعة فروع دانكن في بريدة، لكنه ما زال تحت branch_conflict لاختلاط الفروع المرشحة."
     },
     {
       "sector": "cafes",
@@ -3193,7 +3193,7 @@
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 4 coverage-first intake from coordinate/pin candidate set | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Expansion Round 4 coordinate candidate | Cleaning pass 2: retained as low-confidence branch_conflict under canto-buraidah",
       "slug": "canto-cafe-south-buraidah",
       "name": "كانتو كافيه",
       "alternate_name": "Canto Cafe",
@@ -3207,7 +3207,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "????/??? ????? ?????? ????? ????? ???? ??? ?????? reconciliation."
+      "editorial_summary": "مرشح فرع/نقطة جنوبية مرتبطة بعلامة كانتو، لكنه أضعف من بقية الفروع من ناحية الدليل المرجعي لذلك بقي branch_conflict."
     },
     {
       "sector": "cafes",
@@ -3325,7 +3325,7 @@
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Continuation coverage intake from local candidate CSV | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Continuation coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "half-million-buraidah-2",
       "name": "هاف مليون",
       "alternate_name": "Half Million",
@@ -3339,7 +3339,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "??? ????? ????? ???? ??? coverage-first."
+      "editorial_summary": "نقطة إضافية محتملة لهاف مليون؛ لم تُدمج مع غيرها لغياب خريطة فروع موثوقة في هذه الجولة."
     },
     {
       "sector": "cafes",
@@ -3369,7 +3369,7 @@
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Continuation coverage intake from local candidate CSV | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Continuation coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "dunkin-buraidah-south-1",
       "name": "دانكن",
       "alternate_name": "Dunkin",
@@ -3383,7 +3383,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "??? ????? ????? ????? ?????."
+      "editorial_summary": "نقطة دانكن جنوبية مرشحة في بريدة؛ أبقيناها branch_conflict بدل دمجها أو حذفها لعدم كفاية الحسم الفرعي."
     },
     {
       "sector": "cafes",
@@ -3413,7 +3413,7 @@
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Continuation coverage intake from local candidate CSV | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Continuation coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "dunkin-buraidah-east-1",
       "name": "دانكن دونتس",
       "alternate_name": "Dunkin Donuts",
@@ -3427,7 +3427,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "????? coverage ???? ??? ??? ????? ?slug ?????."
+      "editorial_summary": "فرع دانكن/دانكن دونتس شرقي محتمل في بريدة؛ ما زال يحتاج حسمًا أوضح على مستوى الفرع والاسم التجاري."
     },
     {
       "sector": "cafes",
@@ -3457,7 +3457,7 @@
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Continuation coverage intake from local candidate CSV | Promoted to branch_conflict during light reconciliation | Reconciliation round 2: retained as unresolved branch-level conflict | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Continuation coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review",
       "slug": "dunkin-buraidah-northwest-1",
       "name": "دانكن",
       "alternate_name": "Dunkin",
@@ -3471,7 +3471,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "??? ????? ????? ??? ??????? ??? ?????? reconciliation."
+      "editorial_summary": "نقطة شمالية غربية محتملة لدانكن، محفوظة مؤقتًا بصفتها branch_conflict بدل إسقاطها دون تحقق فرعي أفضل."
     },
     {
       "sector": "cafes",
@@ -3501,11 +3501,11 @@
       "archive_reason": "Exact same pin/query as dunkin-king-salman-buraidah",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Light reconciliation round 2: exact same pin as canonical branch_conflict record | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Cleaning pass 2: exact duplicate of dunkin-king-salman-buraidah",
       "slug": "dunkin-buraidah-central-1",
-      "name": "?????",
+      "name": "دانكن",
       "alternate_name": "Dunkin",
-      "canonical_name_ar": "?????",
+      "canonical_name_ar": "دانكن",
       "canonical_name_en": "Dunkin",
       "short_address": "غير متحقق",
       "branch_group": "dunkin-buraidah",
@@ -3515,7 +3515,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "??????? ????? ???? ??????? ?? ?????."
+      "editorial_summary": "مكرر مطابق لنقطة الملك سلمان المرجعية."
     },
     {
       "sector": "cafes",
@@ -3545,7 +3545,7 @@
       "archive_reason": "Likely same Arabica Star point on King Fahd corridor",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Reconciled in light cleaning round as likely duplicate of arabica-star | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Cleaning pass 2: likely duplicate of arabica-star retained as duplicate",
       "slug": "arabica-star-king-fahd-2",
       "name": "أرابيكا ستار",
       "alternate_name": "Arabica Star",
@@ -3559,7 +3559,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "???? ????? ?????? coverage ????/???? ?????? ??????."
+      "editorial_summary": "سجل مكرر مرجّح لسجل Arabica Star الأساسي على محور الملك فهد."
     },
     {
       "sector": "cafes",
@@ -3589,7 +3589,7 @@
       "archive_reason": "Exact same pin/query as half-million-buraidah",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Light reconciliation round 2: exact same pin as branch-1 | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Cleaning pass 2: exact duplicate of half-million-buraidah",
       "slug": "half-million-buraidah-3",
       "name": "هاف مليون",
       "alternate_name": "Half Million",
@@ -3603,7 +3603,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "????? ??? ????? ?? ?????? ??????? ??? ???????."
+      "editorial_summary": "مكرر مطابق للنقطة الأولى داخل مجموعة هاف مليون."
     },
     {
       "sector": "cafes",
@@ -3633,7 +3633,7 @@
       "archive_reason": "Exact same pin/query as dunkin-buraidah-south-1",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Light reconciliation round 2: exact same pin as south-1 | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Cleaning pass 2: exact duplicate of dunkin-buraidah-south-1",
       "slug": "dunkin-buraidah-south-2",
       "name": "دانكن",
       "alternate_name": "Dunkin",
@@ -3647,7 +3647,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "????/??? ????? ????? ??? coverage-first."
+      "editorial_summary": "مكرر مطابق للنقطة الجنوبية الأولى داخل مجموعة دانكن."
     },
     {
       "sector": "cafes",
@@ -3677,7 +3677,7 @@
       "archive_reason": "Exact same pin/query as dunkin-buraidah-east-1",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Light reconciliation round 2: exact same pin as east-1 | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Cleaning pass 2: exact duplicate of dunkin-buraidah-east-1",
       "slug": "dunkin-buraidah-0865",
       "name": "دانكن دونتس",
       "alternate_name": "Dunkin Donuts",
@@ -3691,7 +3691,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "??? ????? ?? pin ???? ??? ?????? ????????."
+      "editorial_summary": "مكرر مطابق للنقطة الشرقية المرجعية داخل مجموعة دانكن."
     },
     {
       "sector": "cafes",
@@ -3721,7 +3721,7 @@
       "archive_reason": "Exact same pin/query as dunkin-king-salman-buraidah",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Light reconciliation round 2: exact same pin as canonical branch_conflict record | Cleaning pass: normalized garbled text where confidently recoverable",
+      "source_notes": "Cleaning pass 2: exact duplicate of dunkin-king-salman-buraidah",
       "slug": "dunkin-buraidah-3929",
       "name": "دانكن",
       "alternate_name": "Dunkin",
@@ -3735,7 +3735,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "??????? ???? ??????? ??? ???????? ??? reconciliation."
+      "editorial_summary": "مكرر مطابق لنقطة الملك سلمان المرجعية."
     },
     {
       "slug": "ble-cafe-buraidah",
