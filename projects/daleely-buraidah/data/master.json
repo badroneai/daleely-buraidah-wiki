@@ -1,6 +1,6 @@
 ﻿{
-    "schema_version":  "2026-03-11.buraidah-cafes-expansion-round-23-maps-cluster-harvest",
-    "project_phase":  "Coverage / Expansion Round 23 — Maps Cluster Harvest",
+    "schema_version":  "2026-03-11.buraidah-cafes-cleanup-round-1-duplicates-branch-conflicts",
+    "project_phase":  "Cleanup Round 1 — Duplicates + Branch Conflicts",
     "status_enum":  [
                         "discovered",
                         "profiled",
@@ -8053,13 +8053,13 @@
                         "slug":  "canto-alnahdah",
                         "sector":  "cafes",
                         "name":  "كانتو كافية",
-                        "alternate_name":  "Canto Cafe",
-                        "canonical_name_ar":  "كانتو كافية",
-                        "canonical_name_en":  "Canto Cafe",
+                        "alternate_name":  "Canto Specialty Coffee",
+                        "canonical_name_ar":  "كانتو للقهوة المختصة",
+                        "canonical_name_en":  "Canto Specialty Coffee",
                         "city":  "بريدة",
                         "district":  "حي النهضة",
                         "short_address":  "حي النهضة",
-                        "branch_group":  "canto",
+                        "branch_group":  "canto-buraidah",
                         "branch_label":  "alnahdah",
                         "reference_url":  "https://www.google.com/search?q=site%3Atiktok.com+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9+%D9%83%D8%A7%D9%81%D9%8A%D9%87+%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD",
                         "category":  "كافيه / مقهى",
@@ -8080,7 +8080,7 @@
                         "official_instagram":  "",
                         "phone":  "",
                         "hours_summary":  "",
-                        "editorial_summary":  "ظهر كافتتاح/فرع قريب لكانتو في حي النهضة ببريدة عبر فيديو قصير حديث، لكن الاسم الأساسي موجود مسبقًا بعدة صيغ وفروع لذا أُدخل كتعارض فروع لا كاسم جديد مستقل.",
+                        "editorial_summary":  "فرع محتمل ضمن شبكة كانتو في بريدة، مرتبط بحي النهضة ويُحفظ حاليًا كسجل فروع لا كسجل مستقل نهائي.",
                         "place_personality":  "غير متحقق",
                         "best_visit_time":  "",
                         "why_choose_it":  "مرشح فرع جديد محتمل داخل شبكة كانتو في بريدة.",
@@ -8091,7 +8091,7 @@
                         "archive_reason":  "",
                         "last_verified_at":  "",
                         "last_updated_at":  "2026-03-11",
-                        "source_notes":  "Expansion Round 19 Deep Search Push 5 from Google-\u003eTikTok snippet: \"قريباً.. كانتو كافية #بريدة حي النهضة\"; added as branch_conflict because Canto already exists in master with multiple branch variants"
+                        "source_notes":  "Cleanup Round 1: normalized under canto-buraidah branch group; retained as branch_conflict pending branch verification"
                     },
                     {
                         "slug":  "jomo-cafe-buraidah",
