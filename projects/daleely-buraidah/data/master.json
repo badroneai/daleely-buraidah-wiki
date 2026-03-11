@@ -1,6 +1,6 @@
 ﻿{
-    "schema_version":  "2026-03-11.buraidah-cafes-expansion-round-22-heavy-neighborhood-insert-2",
-    "project_phase":  "Coverage / Expansion Round 22 — Heavy Neighborhood Insert 2",
+    "schema_version":  "2026-03-11.buraidah-cafes-expansion-round-23-maps-cluster-harvest",
+    "project_phase":  "Coverage / Expansion Round 23 — Maps Cluster Harvest",
     "status_enum":  [
                         "discovered",
                         "profiled",
@@ -9060,10 +9060,54 @@
                         "last_verified_at":  "",
                         "last_updated_at":  "2026-03-11",
                         "source_notes":  "Expansion Round 22 heavy insert 2 from Google-\u003eTikTok snippet: \"تجربة القهوة في Kthp\" in Buraidah"
+                    },
+                    {
+                        "slug":  "manqiyah-specialty-coffee",
+                        "sector":  "cafes",
+                        "name":  "منقية للقهوة المختصة",
+                        "alternate_name":  "Manqiyah Specialty Coffee",
+                        "canonical_name_ar":  "منقية للقهوة المختصة",
+                        "canonical_name_en":  "Manqiyah Specialty Coffee",
+                        "city":  "بريدة",
+                        "district":  "غير متحقق",
+                        "short_address":  "7104 الأمير فيصل بن بندر بن عبدالعزيز",
+                        "branch_group":  "manqiyah-specialty-coffee",
+                        "branch_label":  "main",
+                        "reference_url":  "https://www.google.com/maps/search/%D9%82%D9%87%D9%88%D8%A9+%D9%85%D8%AE%D8%AA%D8%B5%D8%A9+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9",
+                        "category":  "كافيه / مقهى",
+                        "google_rating":  "4.3",
+                        "google_reviews_count":  "666",
+                        "price_level":  "1-20 SAR",
+                        "work_friendly":  "unknown",
+                        "group_friendly":  "unknown",
+                        "late_night":  "unknown",
+                        "family_friendly":  "unknown",
+                        "indoor_seating":  "unknown",
+                        "outdoor_seating":  "unknown",
+                        "parking":  "unknown",
+                        "quietness":  "unknown",
+                        "crowd_level":  "unknown",
+                        "specialty_coffee":  "yes",
+                        "desserts":  "unknown",
+                        "official_instagram":  "",
+                        "phone":  "",
+                        "hours_summary":  "مفتوح، يغلق يوم الخميس عند 4:30 ص",
+                        "editorial_summary":  "اسم جديد التُقط من مسار Google Maps الخاص بالقهوة المختصة في بريدة، مع مؤشرات قوية نسبيًا تشمل تقييمًا وعدد مراجعات وعنوانًا جزئيًا.",
+                        "place_personality":  "غير متحقق",
+                        "best_visit_time":  "",
+                        "why_choose_it":  "مرشح نظيف من الخرائط مع إشارات موثوقية أعلى من نتائج الفيديو النصية.",
+                        "not_for_whom":  "من يريد تحققًا كاملًا لكل تفاصيل الفرع الآن.",
+                        "confidence":  "medium",
+                        "status":  "discovered",
+                        "duplicate_of":  "",
+                        "archive_reason":  "",
+                        "last_verified_at":  "",
+                        "last_updated_at":  "2026-03-11",
+                        "source_notes":  "Expansion Round 23 Maps Cluster Harvest from Google Maps query \"قهوة مختصة بريدة\"; not found in master; rating 4.3/666 reviews and address clue 7104 الأمير فيصل بن بندر بن عبدالعزيز"
                     }
                 ],
     "stats":  {
-                  "discovered":  131,
+                  "discovered":  132,
                   "profiled":  28,
                   "partially_verified":  9,
                   "verified":  4,
@@ -9071,6 +9115,6 @@
                   "branch_conflict":  19,
                   "duplicate":  14,
                   "archived":  0,
-                  "total":  206
+                  "total":  207
               }
 }
