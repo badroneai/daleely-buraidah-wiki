@@ -1,6 +1,6 @@
 ﻿{
-  "schema_version": "2026-03-11.buraidah-cafes-master-cleanup-sprint-pass-1b-focused-structural-resolution",
-  "project_phase": "Master Cleanup Sprint — Pass 1B: Focused Structural Resolution",
+  "schema_version": "2026-03-11.buraidah-cafes-structural-mini-pass-final-conflict-resolution",
+  "project_phase": "Structural Mini-Pass — Final Conflict Resolution",
   "status_enum": [
     "discovered",
     "profiled",
@@ -2531,7 +2531,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review | Pass 1B: retained because Zonice still appears only as coordinate-level branch candidates without duplicate anchors or direct place pages.",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review | Structural pass 1: retained because Zonice still appears as three unresolved coordinate-level branch candidates. | Final mini-pass: retained because no candidate has duplicate support or a stronger direct branch signal than the others.",
       "slug": "zonice-buraidah-1",
       "name": "زونيس",
       "alternate_name": "Zonice",
@@ -2575,7 +2575,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review | Pass 1B: retained because Zonice still appears only as coordinate-level branch candidates without duplicate anchors or direct place pages.",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review | Structural pass 1: retained because Zonice still appears as three unresolved coordinate-level branch candidates. | Final mini-pass: retained because no candidate has duplicate support or a stronger direct branch signal than the others.",
       "slug": "zonice-buraidah-2",
       "name": "زونيس",
       "alternate_name": "Zonice",
@@ -2619,7 +2619,7 @@
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
       "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review | Pass 1B: retained because Zonice still appears only as coordinate-level branch candidates without duplicate anchors or direct place pages.",
+      "source_notes": "Expansion Round 3 coordinate intake | Cleaning pass 2: retained as branch_conflict after grouped review | Structural pass 1: retained because Zonice still appears as three unresolved coordinate-level branch candidates. | Final mini-pass: retained because no candidate has duplicate support or a stronger direct branch signal than the others.",
       "slug": "zonice-buraidah-3",
       "name": "زونيس",
       "alternate_name": "Zonice",
@@ -2794,8 +2794,8 @@
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
-      "status": "branch_conflict",
-      "source_notes": "Expansion Round 3 coordinate intake | Brand review Round 2A: retained as branch_conflict because this is only a coordinate candidate and Half Million still has multiple unresolved branch-level candidates in Buraidah | Pass 1B: retained because this candidate still lacks non-coordinate support.",
+      "status": "profiled",
+      "source_notes": "Expansion Round 3 coordinate intake | Brand review Round 2A: retained as branch_conflict because this is only a coordinate candidate and Half Million still has multiple unresolved branch-level candidates in Buraidah | Final mini-pass: promoted to independent branch-level profiled record because it has a confirmed exact duplicate anchor and is structurally distinct from the Rahab branch cluster.",
       "slug": "half-million-buraidah",
       "name": "هاف مليون",
       "alternate_name": "Half Million",
@@ -2804,14 +2804,14 @@
       "district": "غير متحقق",
       "short_address": "بريدة",
       "branch_group": "half-million",
-      "branch_label": "branch-1",
+      "branch_label": "northwest-anchor",
       "reference_url": "https://www.google.com/maps/search/?api=1&query=26.421905,43.9097288",
       "category": "كافيه",
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
-      "editorial_summary": "مرشح فرع لهاف مليون داخل بريدة، لكن مرجعه ما يزال إحداثيًا لا صفحة فرع مباشرة، لذلك بقي branch_conflict."
+      "editorial_summary": "فرع هاف مليون مستقل بنيويًا داخل بريدة بعد تثبيت المكرر المطابق له، مع بقاء الثقة متوسطة لا نهائية."
     },
     {
       "sector": "cafes",
@@ -3325,7 +3325,7 @@
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Continuation coordinate intake | Brand review Round 2A: retained as branch_conflict because this is only a coordinate candidate and no clear duplicate/independent branch decision is safe yet | Pass 1B: retained because this candidate still lacks non-coordinate support.",
+      "source_notes": "Continuation coordinate intake | Brand review Round 2A: retained as branch_conflict because this is only a coordinate candidate and no clear duplicate/independent branch decision is safe yet | Final mini-pass: retained because it still lacks duplicate support or non-coordinate confirmation.",
       "slug": "half-million-buraidah-2",
       "name": "هاف مليون",
       "alternate_name": "Half Million",
@@ -3339,7 +3339,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "نقطة إضافية محتملة لهاف مليون؛ بقيت branch_conflict لأن الدليل الحالي لا يسمح بحسمها كفرع مستقل أو duplicate."
+      "editorial_summary": "مرشح فرع إضافي لهاف مليون، لكنه بقي branch_conflict لأن الدليل ما زال إحداثيًا فقط دون دعم بنيوي إضافي."
     },
     {
       "sector": "cafes",
@@ -3586,10 +3586,10 @@
       "confidence": "medium",
       "status": "duplicate",
       "duplicate_of": "half-million-buraidah",
-      "archive_reason": "Exact same pin/query as half-million-buraidah",
+      "archive_reason": "Exact same pin/query as the now-separated Half Million branch anchor",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Cleaning pass 2: exact duplicate of half-million-buraidah | Brand review Round 2A: retained as duplicate because it reuses the same pin/query as the anchor candidate",
+      "source_notes": "Cleaning pass 2: exact duplicate of half-million-buraidah | Final mini-pass: retained as duplicate for the separated Half Million branch anchor",
       "slug": "half-million-buraidah-3",
       "name": "هاف مليون",
       "alternate_name": "Half Million",
@@ -3603,7 +3603,7 @@
       "google_rating": "",
       "google_reviews_count": "",
       "price_level": "unknown",
-      "editorial_summary": "تكرار مباشر لنقطة Half Million الأساسية داخل بريدة، وليس فرعًا مستقلاً."
+      "editorial_summary": "مكرر مطابق لفرع هاف مليون الأساسي داخل هذه المجموعة، وليس سجلًا مستقلاً."
     },
     {
       "sector": "cafes",
@@ -7630,7 +7630,7 @@
       "status": "branch_conflict",
       "duplicate_of": "",
       "archive_reason": "",
-      "source_notes": "Expansion Round 17 deep search push 3 from short-video result explicitly mentioning second Rashf branch in Buraidah; retained as branch_conflict pending exact branch map | Pass 1B: retained because a second branch is referenced, but branch identity/location is still underspecified relative to the existing Rahab/Qurtubah record.",
+      "source_notes": "Expansion Round 17 deep search push 3 from short-video result explicitly mentioning second Rashf branch in Buraidah; retained as branch_conflict pending exact branch map | Pass 1B: retained because a second branch is referenced, but branch identity/location is still underspecified relative to the existing Rahab/Qurtubah record. | Final mini-pass: retained because the existence of a second branch is clearer than its exact identity, so safe structural separation is still incomplete.",
       "last_updated_at": "2026-03-11",
       "work_friendly": "unknown",
       "group_friendly": "unknown",
@@ -9108,11 +9108,11 @@
   ],
   "stats": {
     "discovered": 133,
-    "profiled": 35,
+    "profiled": 36,
     "partially_verified": 12,
     "verified": 4,
     "needs_review": 1,
-    "branch_conflict": 8,
+    "branch_conflict": 7,
     "duplicate": 14,
     "archived": 0,
     "total": 207
