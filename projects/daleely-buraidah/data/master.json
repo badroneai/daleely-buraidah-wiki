@@ -1,6 +1,6 @@
 ﻿{
-  "schema_version": "2026-03-11.buraidah-cafes-structural-mini-pass-final-conflict-resolution",
-  "project_phase": "Structural Mini-Pass — Final Conflict Resolution",
+  "schema_version": "2026-03-11.buraidah-cafes-master-cleanup-sprint-pass-2-weak-records",
+  "project_phase": "Master Cleanup Sprint — Pass 2: Weak Records Cleanup",
   "status_enum": [
     "discovered",
     "profiled",
@@ -2398,8 +2398,8 @@
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
-      "status": "discovered",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Cleaning pass: normalized garbled text where confidently recoverable",
+      "status": "profiled",
+      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Pass 2 weak-record cleanup: promoted to profiled because it has a stable road-level short address and direct coordinate reference useful for coverage.",
       "slug": "rest-cafe-abu-bakr",
       "name": "ريست كافيه",
       "alternate_name": "Rest Cafe",
@@ -2415,7 +2415,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
-      "editorial_summary": "???? ???? ??? ???? ??? ??? ????? ?????? ??? ?????? ????? ????."
+      "editorial_summary": "سجل تغطية مفيد على محور أبو بكر الصديق؛ رُقي إلى profiled لأن عنده مرجع إحداثي وعنوانًا مختصرًا قابلًا للاستخدام."
     },
     {
       "sector": "cafes",
@@ -2442,8 +2442,8 @@
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
-      "status": "discovered",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Cleaning pass: normalized garbled text where confidently recoverable",
+      "status": "profiled",
+      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Pass 2 weak-record cleanup: promoted to profiled because it has a stable road-level short address and direct coordinate reference useful for coverage.",
       "slug": "nistro-cafe",
       "name": "نيسترو",
       "alternate_name": "Nistro",
@@ -2459,7 +2459,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
-      "editorial_summary": "??? coverage ???? ???? ???? ???? ????? ?? master."
+      "editorial_summary": "سجل تغطية مقبول على طريق الملك عبدالعزيز مع مرجع إحداثي مباشر، لذلك رُقي إلى profiled."
     },
     {
       "sector": "cafes",
@@ -2486,8 +2486,8 @@
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
-      "status": "discovered",
-      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Cleaning pass: normalized garbled text where confidently recoverable",
+      "status": "profiled",
+      "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Pass 2 weak-record cleanup: promoted to profiled because it has a distinct concept label and usable Abu Bakr axis reference.",
       "slug": "nai-women-cafe",
       "name": "ناي كافيه نسائي",
       "alternate_name": "Nai Women Cafe",
@@ -2503,7 +2503,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
-      "editorial_summary": "????? ???? ???? ?????? ??????? ???? ????? ???????."
+      "editorial_summary": "سجل نسائي مميز بمفهوم أوضح من المتوسط، ورُقي إلى profiled لوجود مرجع إحداثي ومحور واضح."
     },
     {
       "sector": "cafes",
@@ -2750,8 +2750,8 @@
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
       "confidence": "medium",
-      "status": "discovered",
-      "source_notes": "Light audit: canonicalized against Arabic alias record",
+      "status": "profiled",
+      "source_notes": "Light audit: canonicalized against Arabic alias record | Pass 2 weak-record cleanup: promoted to profiled because it now serves as the canonical Uthman-axis branch record for EIGHTY +.",
       "slug": "eighty-plus-uthman",
       "name": "EIGHTY +",
       "alternate_name": "EIGHTY +",
@@ -2767,7 +2767,7 @@
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
-      "editorial_summary": "سجل مرجعي لثمانين/80+ على محور عثمان بن عفان بعد ربط الصيغة العربية المكافئة به."
+      "editorial_summary": "السجل المرجعي لفرع EIGHTY + على محور عثمان؛ رُقي إلى profiled بعد استقرار بنيته داخل المجموعة."
     },
     {
       "sector": "cafes",
@@ -7816,18 +7816,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "ورد الاسم داخل قائمة مقتطفات بحث محلية لكوفيهات بريدة، لذلك أُضيف كإشارة تغطية أولية لا كتحقق نهائي.",
+      "editorial_summary": "سجل ضعيف جدًا من حيث الفائدة الحالية؛ يحتاج مراجعة قبل إبقائه كسجل تغطية نشط.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "اسم صغير منخفض الظهور من مسار البحث العميق.",
       "not_for_whom": "من يريد ثقة عالية فورية.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate"
+      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate | Pass 2 weak-record cleanup: downgraded to needs_review because evidence is only a weak generic search snippet with no usable locality or anchor."
     },
     {
       "slug": "al-ramlah-cafe",
@@ -7860,18 +7860,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "التقاط تغطية أولي لاسم ظهر في نتائج الويب المحلية المرتبطة بكوفيهات بريدة.",
+      "editorial_summary": "الاسم موجود لكن بدون مرجع مكاني أو إشارة كافية لخدمة التغطية الحالية، لذلك نُقل إلى needs_review.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "اسم غير متكرر في الماستر وظهر في مسار اكتشاف عميق.",
       "not_for_whom": "من يريد بيانات تشغيلية مكتملة الآن.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate"
+      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate | Pass 2 weak-record cleanup: downgraded to needs_review because evidence is only a weak generic search snippet with no usable locality or anchor."
     },
     {
       "slug": "hintah-cafe",
@@ -7904,18 +7904,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "اسم صغير ظهر في قائمة نتائج جديدة/محلية لبريدة، وأُبقي كسجل تغطية خفيف لحين التثبيت.",
+      "editorial_summary": "مرشح ضعيف يعتمد على نتيجة بحث عامة فقط، لذلك نُقل إلى needs_review.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "يساعد على التقاط الأطراف الأقل ظهورًا من السوق.",
       "not_for_whom": "من يريد سجلاً موثقًا بالكامل.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate"
+      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate | Pass 2 weak-record cleanup: downgraded to needs_review because evidence is only a weak generic search snippet with no usable locality or anchor."
     },
     {
       "slug": "fern-cafe",
@@ -7948,18 +7948,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "ورد ضمن قائمة أسماء محلية صغيرة في نتائج البحث العميق الخاصة بجديد بريدة.",
+      "editorial_summary": "سجل خفيف جدًا ولا يقدم حدًا أدنى جيدًا للتغطية أو التحليل، لذلك صار needs_review.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "مرشح جديد غير موجود سابقًا في الماستر.",
       "not_for_whom": "من يحتاج عنوانًا وحيًا مؤكدين الآن.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate"
+      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate | Pass 2 weak-record cleanup: downgraded to needs_review because evidence is only a weak generic search snippet with no usable locality or anchor."
     },
     {
       "slug": "athbah-cafe",
@@ -7992,18 +7992,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "سجل تغطية أولي لاسم ظهر في نتائج محلية سريعة تخص كوفيهات بريدة.",
+      "editorial_summary": "مرشح منخفض الفائدة الحالية لضعف المرجع وغياب الموقع المختصر القابل للاستخدام.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "يخدم توسعة الذيل الطويل للأسماء الصغيرة.",
       "not_for_whom": "من يريد تحققًا نهائيًا الآن.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate"
+      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate | Pass 2 weak-record cleanup: downgraded to needs_review because evidence is only a weak generic search snippet with no usable locality or anchor."
     },
     {
       "slug": "audi-cafe",
@@ -8036,18 +8036,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "اسم مرصود عبر لائحة مقتطفات الويب المحلية، وحُفظ كسجل اكتشاف أولي بانتظار مصدر أقوى.",
+      "editorial_summary": "تم خفضه إلى needs_review لأن الإشارة العامة لا تكفي ليبقى discovered مفيدًا.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "اسم جديد بالكامل ضمن مسار الاكتشاف العميق.",
       "not_for_whom": "من يريد سجلًا غنيًا أو موثقًا الآن.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate"
+      "source_notes": "Expansion Round 18 Deep Search Push 4 from Google SERP local snippet list; added as low-confidence coverage-first candidate | Pass 2 weak-record cleanup: downgraded to needs_review because evidence is only a weak generic search snippet with no usable locality or anchor."
     },
     {
       "slug": "canto-alnahdah",
@@ -8124,18 +8124,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "اسم ظهر داخل مقتطف فيديو قصير مرتبط بمسار كوفيهات بريدة، ويبدو كاسم مستقل غير موجود في الماستر حتى الآن.",
+      "editorial_summary": "أُرشف مؤقتًا لأن الإشارة الحالية أضعف من أن تخدم التغطية أو التحليل.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "اسم جديد مرصود في مسار Neighborhood Sweep الكثيف.",
       "not_for_whom": "من يريد تحقق عنوان نهائي الآن.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "archived",
       "duplicate_of": "",
-      "archive_reason": "",
+      "archive_reason": "Too weak for active coverage: generic TikTok-neighborhood snippet with no stable locality, anchor, or direct place signal",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 20 Deep Search Push 6 neighborhood sweep from Google->TikTok snippet around Buraidah neighborhoods; name surfaced alongside local cafe mentions, not found in master"
+      "source_notes": "Expansion Round 20 Deep Search Push 6 neighborhood sweep from Google-TikTok snippet around Buraidah neighborhoods; name surfaced alongside local cafe mentions, not found in master | Pass 2 weak-record cleanup: archived because the signal is too generic to support active coverage."
     },
     {
       "slug": "athar-cafe-sultanah",
@@ -8168,18 +8168,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "ظهر بصيغة واضحة في فيديو قصير: جديد بريدة، كوفي أثر في حي سلطانة.",
+      "editorial_summary": "سجل تغطية مفيد لأن الاسم مرتبط مباشرة بحي سلطانة، فتمت ترقيته إلى profiled رغم بقاء المصدر خفيفًا.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "مرشح قوي نسبيًا بسبب اقتران الاسم بالحي مباشرة.",
       "not_for_whom": "من يحتاج صفحات رسمية مؤكدة حاليًا.",
       "confidence": "medium",
-      "status": "discovered",
+      "status": "profiled",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 20 Deep Search Push 6 from Google->TikTok snippet: \"جديد بريدة: كوفي أثر في حي سلطانة\"; not found in master"
+      "source_notes": "Expansion Round 20 Deep Search Push 6 from Google-TikTok snippet tied directly to Sultanah, Buraidah; Pass 2 weak-record cleanup: promoted to profiled because the name is tied directly to a named neighborhood, which makes it useful for coverage despite weak sourcing."
     },
     {
       "slug": "nadr-cafe-sultanah",
@@ -8212,18 +8212,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "الاسم ظهر داخل مقتطف نصي مصاحب لنتيجة حي سلطانة، ويبدو كاسم صغير محلي غير موجود في الماستر.",
+      "editorial_summary": "ارتباط الحي موجود، لكن الإشارة ما زالت هشّة وملتبسة، لذلك صار needs_review.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "التقاط اسم long-tail صغير من مسار أحياء بريدة.",
       "not_for_whom": "من يريد تحققًا عاليًا الآن.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 20 Deep Search Push 6 from TikTok-associated snippet mentioning \"قهوة ندر\" with Sultanah/Buraidah context; not found in master"
+      "source_notes": "Expansion Round 20 Deep Search Push 6 from TikTok-associated snippet mentioning Nadr Cafe with Sultanah-Buraidah context | Pass 2 weak-record cleanup: downgraded to needs_review because the neighborhood tie exists but the source remains too weak and ambiguous."
     },
     {
       "slug": "mlt-cafe-buraidah",
@@ -8916,18 +8916,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "مرشح جديد من عنقود الريان لكن موقعه أقل وضوحًا من بقية الأسماء.",
+      "editorial_summary": "هناك تلميح حي مفيد، لكن السجل ما زال أضعف من أن يخدم التغطية بشكل مريح، لذا نُقل إلى needs_review.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "جدير بالتغطية مع وضع ثقة منخفضة بسبب غموض الموضع.",
       "not_for_whom": "من يريد وضوحًا جغرافيًا كاملًا.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "needs_review",
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 21 heavy insert from neighborhood sweep support: Treat Cafe surfaced in Al Rayan search cluster; location needs confirmation"
+      "source_notes": "Expansion Round 21 heavy insert from neighborhood sweep support: Treat Cafe surfaced in Al Rayan search cluster; location needs confirmation | Pass 2 weak-record cleanup: downgraded to needs_review because the neighborhood hint exists but the record remains too thin and unstable for active discovered coverage."
     },
     {
       "slug": "levanti-cafe-alrayan",
@@ -9048,18 +9048,18 @@
       "official_instagram": "",
       "phone": "",
       "hours_summary": "",
-      "editorial_summary": "اسم لاتيني قصير ظهر كمقهى ببريدة في نتائج فيديوهات محلية، وغير موجود حاليًا في الماستر.",
+      "editorial_summary": "أُرشف مؤقتًا لأن السجل شديد الهشاشة ولا يضيف قيمة تشغيلية كافية في وضعه الحالي.",
       "place_personality": "غير متحقق",
       "best_visit_time": "",
       "why_choose_it": "مرشح جديد واضح الاسم، حتى لو بقي التموضع الجغرافي غير مكتمل.",
       "not_for_whom": "من يريد عنوانًا نهائيًا الآن.",
       "confidence": "low",
-      "status": "discovered",
+      "status": "archived",
       "duplicate_of": "",
-      "archive_reason": "",
+      "archive_reason": "Too weak for active coverage: opaque snippet-only mention without stable locality or direct place signal",
       "last_verified_at": "",
       "last_updated_at": "2026-03-11",
-      "source_notes": "Expansion Round 22 heavy insert 2 from Google->TikTok snippet: \"تجربة القهوة في Kthp\" in Buraidah"
+      "source_notes": "Expansion Round 22 heavy insert 2 from Google-TikTok snippet mentioning KTHP in Buraidah | Pass 2 weak-record cleanup: archived because the signal is too opaque and weak for active coverage."
     },
     {
       "slug": "manqiyah-specialty-coffee",
@@ -9107,14 +9107,14 @@
     }
   ],
   "stats": {
-    "discovered": 133,
-    "profiled": 36,
+    "discovered": 118,
+    "profiled": 41,
     "partially_verified": 12,
     "verified": 4,
-    "needs_review": 1,
+    "needs_review": 9,
     "branch_conflict": 7,
     "duplicate": 14,
-    "archived": 0,
+    "archived": 2,
     "total": 207
   }
 }
