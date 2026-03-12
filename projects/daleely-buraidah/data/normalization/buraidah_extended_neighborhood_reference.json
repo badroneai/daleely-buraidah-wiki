@@ -1,0 +1,206 @@
+{
+  "summary": {
+    "count": 18,
+    "role": "Extended reference only; not admitted into Residential Core Draft."
+  },
+  "items": [
+    {
+      "canonical_name": "الجزيرة",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الحزم",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الخضر",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الخليج",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الربيع",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الرمال",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الشروق",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الصفاء",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الفاروق",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "القادسية",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "المروة",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "المنار",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "النخيل",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "النقع",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "النقل",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "النور",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "الورود",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    },
+    {
+      "canonical_name": "اليرموك",
+      "source_strength": "medium",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "medium",
+      "notes": "مرجع موسع مفيد، لكن لم يدخل Core Draft بسبب غياب قرينة سكنية أقوى أو ملف تفصيلي."
+    }
+  ]
+}

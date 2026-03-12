@@ -1,0 +1,595 @@
+{
+  "summary": {
+    "source_file": "external attachment: buraidah neighborhoods database.json",
+    "core_count": 47,
+    "extended_count": 18,
+    "noncore_or_unclear_count": 70,
+    "method": "Draft residential-core extraction using source counts, S2/S4 weighting, and detailed-neighborhood signals."
+  },
+  "items": [
+    {
+      "canonical_name": "الأخضر",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الأفق",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الجردة",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الربوة",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الرحاب",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "detailed_neighborhood_profile",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الرفيعة",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الريان",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "detailed_neighborhood_profile",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "السادة",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "السالمية",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الشماس",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الصفراء",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الضاحي",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "العجيبة",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الغدير",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "detailed_neighborhood_profile",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الفايزية",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "القاع البارد",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "المنتزه",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الموطأ / الموطاء",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "النهضة",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "detailed_neighborhood_profile",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الهلال",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الوسيطي / الوسيطاء",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الإسكان",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الحمر",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الخبيب",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الخزامى",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الرابية",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الروابي",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الروضة",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الزرقاء",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "السلام",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الشفق",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الشقة (السفلى)",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الصالحية",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "الصباخ",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "العريمضي",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "القصيعة / القضيعة",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "اللسيب",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "المرقب",
+      "source_strength": "high",
+      "source_list": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "المريدسية",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "النسيم",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "حويلان",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "خب البريدي",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "خب الثنيان",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "خضيراء / خضراء",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "رواق",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "واسط",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "evidence_type": "residential_guide_plus_map_match",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    },
+    {
+      "canonical_name": "البساتين",
+      "source_strength": "high",
+      "source_list": [
+        "S2",
+        "S3"
+      ],
+      "evidence_type": "detailed_neighborhood_profile",
+      "confidence": "high",
+      "notes": "مدعوم داخل الملف كمكوّن سكني مرجح بقوة في طبقة Residential Core Draft."
+    }
+  ]
+}
