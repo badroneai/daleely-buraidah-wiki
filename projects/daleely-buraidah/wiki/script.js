@@ -5,6 +5,11 @@ const DATA_URL = location.protocol === 'file:'
 const state = {
   raw: null,
   records: [],
+  normalization: {
+    core: null,
+    extended: null,
+    noncore: null,
+  },
   filters: {
     status: '',
     district: '',
@@ -81,6 +86,24 @@ async function loadData() {
   state.raw = await res.json();
   const records = Array.isArray(state.raw.records) ? state.raw.records : [];
   state.records = records.map(normalizeRecord);
+
+  const normalizationBase = location.hostname.includes('github.io')
+    ? '../data/normalization'
+    : '../data/normalization';
+
+  async function tryLoad(path) {
+    try {
+      const r = await fetch(path, { cache: 'no-store' });
+      if (!r.ok) return null;
+      return await r.json();
+    } catch {
+      return null;
+    }
+  }
+
+  state.normalization.core = await tryLoad(`${normalizationBase}/buraidah_residential_core_70_draft.json`);
+  state.normalization.extended = await tryLoad(`${normalizationBase}/buraidah_extended_neighborhood_reference.json`);
+  state.normalization.noncore = await tryLoad(`${normalizationBase}/buraidah_noncore_or_unclear_names.json`);
 }
 
 function setMeta(title, trail) {
@@ -653,6 +676,71 @@ function renderFiltersPage() {
   </div><div class="section">${entitiesTable(items)}</div>`;
 }
 
+function renderResidentialCorePage() {
+  const core = state.normalization.core;
+  const extended = state.normalization.extended;
+  const noncore = state.normalization.noncore;
+  if (!core || !extended || !noncore) {
+    return '<div class="empty">تعذر تحميل ملفات Residential Core من طبقة normalization.</div>';
+  }
+
+  const strongest = (core.items || []).filter(x => x.confidence === 'high').slice(0, 12);
+  const renderItem = (item, mode = 'core') => {
+    if (mode === 'noncore') {
+      return `<li><strong>${esc(item.canonical_name)}</strong><div class="note">${esc(item.reason)}</div><div class="note">${esc((item.source_list || []).join(', '))}</div></li>`;
+    }
+    return `<li><strong>${esc(item.canonical_name)}</strong><div class="note">${esc(item.evidence_type || '—')} — ${esc(item.confidence || '—')} — ${esc((item.source_list || []).join(', '))}</div></li>`;
+  };
+
+  return `
+    <div class="hero">
+      <h3>Residential Core 70 Draft v1</h3>
+      <p>هذه الصفحة تعكس طبقة residential core المرجعية مباشرة داخل الويكي نفسه، بدون تعديل master.json وبدون patch تشغيلي.</p>
+      <div class="chips">
+        ${chip('Core Draft', core.summary?.core_count || 0)}
+        ${chip('Extended Reference', extended.summary?.count || 0)}
+        ${chip('Non-core / Unclear', noncore.summary?.count || 0)}
+        ${chip('المصدر', 'External Reference Layer')}
+      </div>
+    </div>
+    <div class="grid cards-4 section">
+      <div class="card"><div class="metric">${core.summary?.core_count || 0}</div><div class="metric-sub">Core Draft</div></div>
+      <div class="card"><div class="metric">${extended.summary?.count || 0}</div><div class="metric-sub">Extended Reference</div></div>
+      <div class="card"><div class="metric">${noncore.summary?.count || 0}</div><div class="metric-sub">Non-core / Unclear</div></div>
+      <div class="card"><div class="metric">130</div><div class="metric-sub">إجمالي الأسماء في المرجع الخارجي</div></div>
+    </div>
+    <div class="grid cards-2 section">
+      <div class="card">
+        <h3>أقوى أسماء الـ Core</h3>
+        <ul class="list-clean">${strongest.map(x => renderItem(x, 'core')).join('')}</ul>
+      </div>
+      <div class="card">
+        <h3>قواعد الفصل</h3>
+        <ul class="list-clean">
+          <li>الأولوية لما لديه <code>has_detail</code> أو ورد ضمن <code>neighborhoods_with_details</code>.</li>
+          <li>وجود <strong>S2</strong> اعتُبر مرجحًا سكنيًا أقوى من مجرد الظهور في قائمة أسماء.</li>
+          <li>تعدد المصادر عنصر ترجيح لا حقيقة نهائية.</li>
+          <li>الأسماء ذات الطابع الخدمي أو العام أو المخططات أُبقيت خارج الـ core.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cards-2 section">
+      <div class="card">
+        <h3>كل أسماء الـ Core Draft</h3>
+        <ul class="list-clean">${(core.items || []).map(x => renderItem(x, 'core')).join('')}</ul>
+      </div>
+      <div class="card">
+        <h3>Extended Reference</h3>
+        <ul class="list-clean">${(extended.items || []).map(x => renderItem(x, 'extended')).join('')}</ul>
+      </div>
+    </div>
+    <div class="section card">
+      <h3>Non-core / Unclear</h3>
+      <ul class="list-clean">${(noncore.items || []).map(x => renderItem(x, 'noncore')).join('')}</ul>
+    </div>
+  `;
+}
+
 function renderDiscoveryPage() {
   const items = filterRecords(state.records.filter(r => ['discovered','profiled'].includes(r.status)));
   return `${renderFilterBar()}<div class="card"><h3>الاكتشاف</h3><p class="note">السجلات الأولية قبل النضج. في الحالة الحالية لا توجد سجلات discovered/profiled كثيرة لأن المشروع في مرحلة إعادة تنظيم.</p></div><div class="section">${items.length ? entitiesTable(items) : '<div class="empty">لا توجد سجلات اكتشاف أولي حاليًا.</div>'}</div>`;
@@ -794,6 +882,7 @@ function router() {
       else { setMeta('الكيانات', 'المعرفة / الكيانات'); html = renderEntitiesPage(); }
       break;
     case 'districts': setMeta('الأحياء', 'المعرفة / الأحياء'); html = renderDistrictsPage(); break;
+    case 'residential-core': setMeta('Residential Core', 'المعرفة / Residential Core'); html = renderResidentialCorePage(); break;
     case 'filters': setMeta('الفلاتر الأولية', 'المعرفة / الفلاتر'); html = renderFiltersPage(); break;
     case 'discovery': setMeta('الاكتشاف', 'التشغيل / الاكتشاف'); html = renderDiscoveryPage(); break;
     case 'review': setMeta('المراجعة', 'التشغيل / المراجعة'); html = renderReviewPage(); break;
