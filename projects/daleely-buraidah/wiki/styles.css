@@ -152,8 +152,19 @@ body {
 }
 .table th { color: var(--muted); font-size: 13px; }
 .table tr:hover td { background: rgba(255,255,255,.02); }
-.entity-row { cursor: pointer; }
-.entity-row .entity-link { position: relative; z-index: 1; }
+.entity-row { cursor: default; }
+.entity-name-link,
+.entity-cell-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.entity-name-link .entity-link {
+  display: inline-block;
+}
+.entity-cell-link:hover {
+  text-decoration: none;
+}
 .badge {
   display: inline-flex;
   align-items: center;

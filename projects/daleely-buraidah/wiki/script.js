@@ -150,6 +150,10 @@ function bindFilters() {
   });
 }
 
+function entityValueLink(slug, content, className = 'entity-cell-link') {
+  return `<a href="#/entities/${esc(slug)}" class="${esc(className)}">${content}</a>`;
+}
+
 function entitiesTable(records) {
   return `
     <div class="table-wrap">
@@ -161,16 +165,16 @@ function entitiesTable(records) {
         </thead>
         <tbody>
           ${records.map(r => `
-            <tr class="entity-row" data-href="#/entities/${esc(r.slug)}" onclick="location.hash='\/entities/${esc(r.slug)}'">
-              <td><a href="#/entities/${esc(r.slug)}" class="button entity-link">${esc(r.name)}</a><div class="note">${esc(r.alternate_name || '')}</div></td>
-              <td>${badge(r.status)}</td>
-              <td>${esc(r.district || 'غير متحقق')}</td>
-              <td>${esc(r.confidence || '—')}</td>
-              <td>${esc(r.google_rating)}</td>
-              <td>${esc(r.google_reviews_count)}</td>
-              <td>${esc(r._norm.work_friendly)}</td>
-              <td>${esc(r._norm.group_friendly)}</td>
-              <td>${esc(r._norm.late_night)}</td>
+            <tr class="entity-row">
+              <td>${entityValueLink(r.slug, `<span class="button entity-link">${esc(r.name)}</span><div class="note">${esc(r.alternate_name || '')}</div>`, 'entity-name-link')}</td>
+              <td>${entityValueLink(r.slug, badge(r.status))}</td>
+              <td>${entityValueLink(r.slug, esc(r.district || 'غير متحقق'))}</td>
+              <td>${entityValueLink(r.slug, esc(r.confidence || '—'))}</td>
+              <td>${entityValueLink(r.slug, esc(r.google_rating))}</td>
+              <td>${entityValueLink(r.slug, esc(r.google_reviews_count))}</td>
+              <td>${entityValueLink(r.slug, esc(r._norm.work_friendly))}</td>
+              <td>${entityValueLink(r.slug, esc(r._norm.group_friendly))}</td>
+              <td>${entityValueLink(r.slug, esc(r._norm.late_night))}</td>
             </tr>
           `).join('')}
         </tbody>
