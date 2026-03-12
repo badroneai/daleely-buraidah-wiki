@@ -20,7 +20,8 @@ const state = {
   currentSlug: null,
   draftMessage: '',
   importDraftText: '',
-  importRawText: ''
+  importRawText: '',
+  isNewCafe: false
 };
 
 const STATUS_AR = {
@@ -244,7 +245,7 @@ function renderSectorPage() {
 
 function renderEntitiesPage() {
   const items = filterRecords();
-  return `${renderFilterBar()}<div class="section">${entitiesTable(items)}</div>`;
+  return `${renderFilterBar()}<div class="section-header"><h3>سجل الكوفيهات</h3><div class="actions"><a href="#/entities/__new__" class="button primary">New Cafe</a></div></div><div class="section">${entitiesTable(items)}</div>`;
 }
 
 function kv(label, value) {
@@ -252,6 +253,38 @@ function kv(label, value) {
 }
 
 function getEntity(slug) { return state.records.find(r => r.slug === slug); }
+function emptyNewCafeRecord() {
+  return {
+    slug: 'new-cafe-draft',
+    name: '',
+    alternate_name: '',
+    canonical_name_ar: '',
+    canonical_name_en: '',
+    city: 'بريدة',
+    district: '',
+    short_address: '',
+    reference_url: '',
+    official_instagram: '',
+    phone: '',
+    hours_summary: '',
+    category: 'كافيه / مقهى',
+    google_rating: '',
+    google_reviews_count: '',
+    price_level: '',
+    status: 'discovered',
+    confidence: 'low',
+    place_personality: '',
+    best_visit_time: '',
+    why_choose_it: '',
+    not_for_whom: '',
+    editorial_summary: '',
+    source_notes: '',
+    branch_group: '',
+    branch_label: '',
+    duplicate_of: '',
+    archive_reason: ''
+  };
+}
 function draftKey(slug) { return `daleelyDraft:${slug}`; }
 function getDraft(slug) {
   try { return JSON.parse(localStorage.getItem(draftKey(slug)) || 'null'); }
@@ -387,10 +420,34 @@ function renderEditForm(e) {
 }
 
 function renderEntityPage(slug) {
-  const e = getEntity(slug);
+  const isNewCafe = slug === '__new__';
+  const e = isNewCafe ? emptyNewCafeRecord() : getEntity(slug);
   if (!e) return '<div class="empty">لم يتم العثور على السجل.</div>';
-  const draft = getDraft(slug);
+  const effectiveSlug = isNewCafe ? e.slug : slug;
+  const draft = getDraft(effectiveSlug);
   const draftBadge = draft ? `<span class="pill warning">يوجد Draft محلي</span>` : '';
+  const title = isNewCafe ? 'New Cafe' : e.name;
+  const summary = isNewCafe ? 'ابدأ سجلًا جديدًا، ثم استورد draft أولي وراجعه قبل الحفظ المحلي أو تصدير patch.' : e.editorial_summary;
+
+  if (isNewCafe) {
+    return `
+      <div class="hero">
+        <div class="chips">
+          ${badge(e.status)}
+          ${chip('الثقة', e.confidence)}
+          ${draftBadge}
+        </div>
+        <div class="section-header">
+          <div>
+            <h3>${esc(title)}</h3>
+            <p>${esc(summary)}</p>
+          </div>
+        </div>
+      </div>
+      ${renderEditForm(e)}
+    `;
+  }
+
   return `
     <div class="hero">
       <div class="chips">
@@ -402,15 +459,15 @@ function renderEntityPage(slug) {
       </div>
       <div class="section-header">
         <div>
-          <h3>${esc(e.name)}</h3>
-          <p>${esc(e.editorial_summary)}</p>
+          <h3>${esc(title)}</h3>
+          <p>${esc(summary)}</p>
         </div>
         <div class="actions">
-          <button class="button primary" data-action="toggle-edit" data-slug="${esc(e.slug)}">Edit</button>
+          <button class="button primary" data-action="toggle-edit" data-slug="${esc(effectiveSlug)}">Edit</button>
         </div>
       </div>
     </div>
-    ${state.editMode && state.currentSlug === slug ? renderEditForm(e) : ''}
+    ${state.editMode && state.currentSlug === effectiveSlug ? renderEditForm(e) : ''}
     <div class="grid cards-2">
       <div class="card">
         <h3>بيانات أساسية</h3>
@@ -569,10 +626,12 @@ function bindEditorActions() {
     const form = document.getElementById('editForm');
     const entity = getEntity(slug);
     const payload = collectFormData(form);
-    const patch = diffRecord(entity, payload);
+    const isNew = !entity && slug === 'new-cafe-draft';
+    const patch = isNew ? payload : diffRecord(entity, payload);
     downloadJson(`${slug}.patch.json`, {
       slug,
       exported_at: new Date().toISOString(),
+      mode: isNew ? 'create_draft' : 'update',
       patch
     });
     state.draftMessage = `تم تصدير patch للسجل ${slug}.`;
