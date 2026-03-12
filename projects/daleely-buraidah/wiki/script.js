@@ -161,7 +161,7 @@ function entitiesTable(records) {
         </thead>
         <tbody>
           ${records.map(r => `
-            <tr class="entity-row" data-href="#/entities/${esc(r.slug)}">
+            <tr class="entity-row" data-href="#/entities/${esc(r.slug)}" onclick="location.hash='\/entities/${esc(r.slug)}'">
               <td><a href="#/entities/${esc(r.slug)}" class="button entity-link">${esc(r.name)}</a><div class="note">${esc(r.alternate_name || '')}</div></td>
               <td>${badge(r.status)}</td>
               <td>${esc(r.district || 'غير متحقق')}</td>
@@ -454,15 +454,6 @@ function downloadJson(filename, payload) {
   a.click();
   URL.revokeObjectURL(url);
 }
-function bindEntityNavigation() {
-  document.querySelectorAll('.entity-row[data-href]').forEach(row => {
-    row.addEventListener('click', e => {
-      if (e.target.closest('a, button, input, textarea, select, label')) return;
-      location.hash = row.dataset.href;
-    });
-  });
-}
-
 function bindEditorActions() {
   document.querySelectorAll('[data-action="toggle-edit"]').forEach(btn => btn.addEventListener('click', () => {
     state.editMode = true;
@@ -523,7 +514,6 @@ function router() {
   }
   app.innerHTML = html;
   bindFilters();
-  bindEntityNavigation();
   bindEditorActions();
 }
 
