@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residential Core Preview — دليل بريدة</title>
+  <style>
+    :root {
+      --bg:#0b1220; --panel:#121a2b; --panel2:#182235; --line:#253450; --text:#edf2f7; --muted:#aab6cb;
+      --gold:#b8a76a; --green:#26a269; --yellow:#c88800; --red:#d94c4c; --blue:#3b82f6;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; background:linear-gradient(180deg,#08111e 0%,#0d1524 100%); color:var(--text); }
+    .wrap { max-width:1400px; margin:0 auto; padding:24px; }
+    .hero, .card { background:rgba(18,26,43,.92); border:1px solid var(--line); border-radius:20px; }
+    .hero { padding:24px; margin-bottom:20px; }
+    .hero h1 { margin:0 0 10px; font-size:32px; }
+    .hero p { margin:0; color:var(--muted); line-height:1.9; }
+    .grid { display:grid; gap:16px; }
+    .stats { grid-template-columns:repeat(4,1fr); margin-bottom:20px; }
+    .three { grid-template-columns:1.3fr 1fr 1fr; }
+    .card { padding:18px; }
+    .metric { font-size:34px; font-weight:800; }
+    .sub { color:var(--muted); font-size:13px; margin-top:6px; }
+    .pill { display:inline-block; padding:7px 12px; border:1px solid var(--line); border-radius:999px; margin:4px 6px 0 0; font-size:12px; }
+    .pill.high { color:#cbffe1; background:rgba(38,162,105,.15); border-color:#245c43; }
+    .pill.medium { color:#ffefb6; background:rgba(200,136,0,.14); border-color:#6f5110; }
+    .pill.low { color:#cfe3ff; background:rgba(59,130,246,.12); border-color:#274f8f; }
+    .section-title { margin:0 0 12px; font-size:22px; }
+    .note { color:var(--muted); line-height:1.8; }
+    .list { display:grid; gap:10px; }
+    .item { padding:12px 14px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.02); }
+    .item strong { font-size:16px; }
+    .meta { margin-top:6px; color:var(--muted); font-size:13px; }
+    .cols { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .loading { padding:40px; text-align:center; color:var(--muted); }
+    a { color:#9ac0ff; text-decoration:none; }
+    @media (max-width: 1100px) { .stats, .three, .cols { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Residential Core Preview</h1>
+      <p>
+        هذه صفحة معاينة مستقلة لطبقة <strong>Residential Core 70 Draft v1</strong>.
+        تعرض ما دخل في <strong>core draft</strong> وما بقي في <strong>extended reference</strong>
+        وما استُبعد كـ <strong>non-core / unclear</strong> — بدون أي تعديل على master.json.
+      </p>
+    </div>
+
+    <div id="app" class="loading">جاري تحميل بيانات المعاينة...</div>
+  </div>
+
+  <script>
+    async function loadJson(path) {
+      const res = await fetch(path, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      return await res.json();
+    }
+    function esc(v='') {
+      return String(v).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+    function pill(level) { return `<span class="pill ${esc(level)}">${esc(level)}</span>`; }
+    function itemCard(item, mode='core') {
+      if (mode === 'noncore') {
+        return `<div class="item"><strong>${esc(item.canonical_name)}</strong><div class="meta">${esc(item.reason)}</div><div class="meta">المصادر: ${esc((item.source_list || []).join(', ') || '—')}</div></div>`;
+      }
+      return `<div class="item"><strong>${esc(item.canonical_name)}</strong><div>${pill(item.confidence || 'low')} ${pill(item.source_strength || 'low')}</div><div class="meta">evidence_type: ${esc(item.evidence_type || '—')}</div><div class="meta">sources: ${esc((item.source_list || []).join(', ') || '—')}</div><div class="meta">${esc(item.notes || '')}</div></div>`;
+    }
+    async function main() {
+      const [core, extended, noncore] = await Promise.all([
+        loadJson('../data/normalization/buraidah_residential_core_70_draft.json'),
+        loadJson('../data/normalization/buraidah_extended_neighborhood_reference.json'),
+        loadJson('../data/normalization/buraidah_noncore_or_unclear_names.json')
+      ]);
+      const strongest = (core.items || []).filter(x => x.confidence === 'high').slice(0, 12);
+      const app = document.getElementById('app');
+      app.className = '';
+      app.innerHTML = `
+        <div class="grid stats">
+          <div class="card"><div class="metric">${esc(core.summary.core_count)}</div><div class="sub">Core Draft</div></div>
+          <div class="card"><div class="metric">${esc(extended.summary.count)}</div><div class="sub">Extended Reference</div></div>
+          <div class="card"><div class="metric">${esc(noncore.summary.count)}</div><div class="sub">Non-core / Unclear</div></div>
+          <div class="card"><div class="metric">130</div><div class="sub">Total Names in External File</div></div>
+        </div>
+        <div class="grid three">
+          <div class="card"><h2 class="section-title">أقوى أسماء الـ Core</h2><div class="list">${strongest.map(x => itemCard(x, 'core')).join('')}</div></div>
+          <div class="card"><h2 class="section-title">قواعد الإدخال</h2><div class="note"><ul><li>الأولوية للأسماء التي لها <strong>has_detail</strong> أو وردت ضمن <strong>neighborhoods_with_details</strong>.</li><li>وجود <strong>S2</strong> اعتُبر إشارة سكنية أقوى من مجرد الظهور في قوائم أسماء.</li><li>تعدد المصادر عامل ترجيح، لكنه ليس حقيقة نهائية.</li><li>الأسماء ذات الطابع الخدمي/المهني/العام/المخططات بقيت خارج الـ core.</li></ul></div></div>
+          <div class="card"><h2 class="section-title">روابط مباشرة</h2><div class="list"><div class="item"><a href="../data/normalization/buraidah_residential_core_70_draft.json" target="_blank">فتح ملف Core JSON</a></div><div class="item"><a href="../data/normalization/buraidah_extended_neighborhood_reference.json" target="_blank">فتح ملف Extended JSON</a></div><div class="item"><a href="../data/normalization/buraidah_noncore_or_unclear_names.json" target="_blank">فتح ملف Non-core JSON</a></div><div class="item"><a href="../docs/normalization/residential_core_70_draft_v1.md" target="_blank">فتح التقرير النصي</a></div></div></div>
+        </div>
+        <div class="grid cols" style="margin-top:20px;">
+          <div class="card"><h2 class="section-title">كل أسماء الـ Core Draft (${esc(core.summary.core_count)})</h2><div class="list">${(core.items || []).map(x => itemCard(x, 'core')).join('')}</div></div>
+          <div class="card"><h2 class="section-title">Extended Reference (${esc(extended.summary.count)})</h2><div class="list">${(extended.items || []).map(x => itemCard(x, 'extended')).join('')}</div></div>
+        </div>
+        <div class="card" style="margin-top:20px;"><h2 class="section-title">Non-core / Unclear (${esc(noncore.summary.count)})</h2><div class="list">${(noncore.items || []).map(x => itemCard(x, 'noncore')).join('')}</div></div>
+      `;
+    }
+    main().catch(err => {
+      const app = document.getElementById('app');
+      app.className = 'card';
+      app.innerHTML = `<h2 class="section-title">فشل تحميل المعاينة</h2><div class="note">${esc(err.message)}</div>`;
+    });
+  </script>
+</body>
+</html>
