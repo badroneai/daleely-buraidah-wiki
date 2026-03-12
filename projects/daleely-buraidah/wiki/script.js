@@ -366,28 +366,30 @@ function applyImportedDraftToForm(form, imported) {
 function renderEditForm(e) {
   const draft = getDraft(e.slug) || {};
   const current = { ...e, ...draft };
+  const isNewCafe = e.slug === 'new-cafe-draft';
   return `
     <div class="section">
       <div class="card">
         <div class="section-header">
-          <h3>تحرير السجل</h3>
+          <h3>${isNewCafe ? 'إضافة كوفي جديد' : 'تحرير السجل'}</h3>
           <div class="actions">
-            <button class="button" data-action="cancel-edit" data-slug="${esc(e.slug)}">إلغاء</button>
-            <button class="button gold" data-action="save-draft" data-slug="${esc(e.slug)}">Save Draft</button>
+            ${isNewCafe ? '' : `<button class="button" data-action="cancel-edit" data-slug="${esc(e.slug)}">إلغاء</button>`}
+            <button class="button gold" data-action="save-draft" data-slug="${esc(e.slug)}">${isNewCafe ? 'Create Draft' : 'Save Draft'}</button>
             <button class="button primary" data-action="export-patch" data-slug="${esc(e.slug)}">Export Patch</button>
           </div>
         </div>
-        <div class="import-box import-box-wide">
+        <div class="import-box import-box-wide ${isNewCafe ? 'new-cafe-import-box' : ''}">
           <label class="edit-field import-field">
-            <span>رابط Google Maps</span>
+            <span>Google Maps URL</span>
             <input id="googleMapsImport" class="field" type="url" value="${esc(state.importDraftText || '')}" placeholder="ألصق رابط Google Maps هنا" />
           </label>
           <label class="edit-field import-field import-raw-field">
-            <span>Paste Raw Text</span>
+            <span>Paste Raw Text (اختياري)</span>
             <textarea id="googleMapsRawText" class="field" placeholder="ألصق أي نص خام من Google Maps أو وصف المكان هنا">${esc(state.importRawText || '')}</textarea>
           </label>
-          <button class="button" data-action="import-draft" data-slug="${esc(e.slug)}">Import Draft</button>
+          <button class="button primary" data-action="import-draft" data-slug="${esc(e.slug)}">${isNewCafe ? 'Fetch Basic Data' : 'Import Draft'}</button>
         </div>
+        ${isNewCafe ? '<div class="note">ألصق الرابط ثم اضغط Fetch Basic Data لتعبئة الحقول الأساسية أوليًا، ثم راجعها واحفظها كـ draft أو صدّر patch.</div>' : ''}
         <form id="editForm" class="edit-grid" data-slug="${esc(e.slug)}">
           ${editableField('الاسم المعتمد', 'name', current.name)}
           ${editableField('التقييم', 'google_rating', current.google_rating)}
@@ -610,7 +612,7 @@ function bindEditorActions() {
     const imported = extractGoogleMapsDraft(state.importDraftText, state.importRawText);
     applyImportedDraftToForm(form, imported);
     state.draftMessage = Object.keys(imported).length
-      ? 'تم تعبئة draft أولي من الرابط والنص الخام داخل النموذج.'
+      ? (btn.dataset.slug === 'new-cafe-draft' ? 'تم جلب البيانات الأساسية الأولية داخل النموذج.' : 'تم تعبئة draft أولي من الرابط والنص الخام داخل النموذج.')
       : 'لم أستخرج حقولًا كافية من المدخلات الحالية.';
   }));
   document.querySelectorAll('[data-action="save-draft"]').forEach(btn => btn.addEventListener('click', () => {

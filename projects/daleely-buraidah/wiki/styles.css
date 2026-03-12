@@ -262,6 +262,9 @@ body {
 .import-box-wide {
   grid-template-columns: 1fr 1fr auto;
 }
+.new-cafe-import-box .button {
+  min-height: 48px;
+}
 .import-field {
   margin: 0;
 }
