@@ -1,0 +1,73 @@
+{
+  "source_type": "city_reference_layer",
+  "model_scope": "opportunity_zones",
+  "priority_opportunity_areas": [
+    {
+      "name_ar": "محور الملك عبدالعزيز",
+      "type": "development_corridor",
+      "why_it_matters": [
+        "العمود الفقري لتطوير ونمو المدينة من الشمال إلى الجنوب",
+        "مقترح عليه خط ترام",
+        "يستوعب مؤسسات حكومية وأنشطة اقتصادية وتجارية"
+      ],
+      "suggested_uses_in_project": [
+        "future coverage prioritization",
+        "opportunity clustering",
+        "sector expansion scouting"
+      ]
+    },
+    {
+      "name_ar": "محور الملك فهد",
+      "type": "east_west_connector",
+      "why_it_matters": [
+        "يربط المطار ومحطة القطار بمركز المدينة",
+        "مقترح عليه BRT شرقي-غربي"
+      ],
+      "suggested_uses_in_project": [
+        "service density analysis",
+        "future logistics-oriented sector mapping"
+      ]
+    },
+    {
+      "name_ar": "المركز التاريخي",
+      "type": "commercial_core",
+      "why_it_matters": [
+        "مركز تجاري رئيسي تاريخي",
+        "مرجع مناسب لتحليل النشاط الحضري التقليدي"
+      ],
+      "suggested_uses_in_project": [
+        "heritage and tourism layer",
+        "commercial density heuristics"
+      ]
+    },
+    {
+      "name_ar": "المركز الشمالي / الصفراء",
+      "type": "secondary_commercial_core",
+      "why_it_matters": [
+        "مركز تجاري ثانوي مذكور رسميًا",
+        "مرتبط مباشرة بحي مسمى في التقرير"
+      ],
+      "suggested_uses_in_project": [
+        "district priority review",
+        "north-side coverage focus"
+      ]
+    },
+    {
+      "name_ar": "المنطقة الشمالية الغربية",
+      "type": "education_airport_zone",
+      "why_it_matters": [
+        "تجمع الجامعة والمطار",
+        "قد تدعم لاحقًا قطاعات خدماتية مختلفة"
+      ],
+      "suggested_uses_in_project": [
+        "future non-cafe sector exploration",
+        "mobility and service demand reasoning"
+      ]
+    }
+  ],
+  "guardrails": {
+    "not_entity_truth": true,
+    "not_exact_boundaries": true,
+    "not_safe_for_direct_master_updates": true
+  }
+}

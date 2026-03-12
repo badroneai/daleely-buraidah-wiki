@@ -1,0 +1,108 @@
+{
+  "source_type": "city_reference_layer",
+  "source_name": "الرؤية العمرانية الشاملة لمدينة بريدة",
+  "source_year": 2019,
+  "source_program": "برنامج مستقبل المدن السعودية / Future Saudi Cities Program",
+  "source_partners": [
+    "وزارة الشؤون البلدية والقروية",
+    "برنامج الأمم المتحدة للمستوطنات البشرية (UN-Habitat)"
+  ],
+  "city": {
+    "name_ar": "بريدة",
+    "name_en_variants": ["Buraidah", "Buraydah"],
+    "region_ar": "منطقة القصيم",
+    "region_en": "Al-Qassim Region"
+  },
+  "core_facts": {
+    "founded_note": {
+      "value": "القرن التاسع الهجري",
+      "certainty": "approximate"
+    },
+    "elevation_meters": {
+      "value": "600-650",
+      "certainty": "approximate_range"
+    },
+    "built_area_hectares_2018": {
+      "value": 27469,
+      "certainty": "reported"
+    },
+    "urban_growth_boundary_km2_1450": {
+      "value": 870,
+      "certainty": "reported"
+    },
+    "development_protection_boundary_km2": {
+      "value": 1956,
+      "certainty": "reported"
+    },
+    "municipal_structure": {
+      "sub_municipalities": 3,
+      "sub_districts": 68,
+      "certainty": "reported"
+    },
+    "approved_land_subdivisions": {
+      "value": 388,
+      "certainty": "reported"
+    },
+    "population_2018": {
+      "value": 621212,
+      "certainty": "reported_preferred",
+      "alternate_reported_value": "~620,000"
+    },
+    "population_2010_census": {
+      "value": 536396,
+      "certainty": "reported"
+    },
+    "population_projected_2030": {
+      "value": "780,000+",
+      "certainty": "projected"
+    },
+    "population_under_30_percent": {
+      "value": 51,
+      "certainty": "reported"
+    },
+    "population_over_65_percent": {
+      "value": 3,
+      "certainty": "reported"
+    },
+    "saudi_vs_non_saudi_breakdown": {
+      "saudi_percent": 79,
+      "non_saudi_percent": 21,
+      "certainty": "reported"
+    },
+    "population_density_persons_per_hectare_2018": {
+      "value": 22.5,
+      "certainty": "reported"
+    },
+    "un_habitat_recommended_density": {
+      "value": 150,
+      "certainty": "reference_standard"
+    },
+    "annual_rainfall": {
+      "reported_values": ["~146 ملم/سنة", "134.4 ملم/سنة"],
+      "certainty": "mixed_reported_values"
+    },
+    "climate_note": {
+      "value": "شبه جاف إلى شديد الجفاف، صيف حار وشتاء بارد",
+      "certainty": "descriptive_reported"
+    }
+  },
+  "known_limits": {
+    "precise_coordinates_available": false,
+    "district_list_complete": false,
+    "entity_level_use_allowed": false
+  },
+  "usage_policy": {
+    "allowed_uses": [
+      "city context",
+      "urban understanding",
+      "district reasoning support",
+      "coverage planning",
+      "sector expansion context"
+    ],
+    "disallowed_uses": [
+      "direct edits to master entity records without independent evidence",
+      "inventing neighborhoods",
+      "using approximate figures as exact operational truth"
+    ]
+  }
+}

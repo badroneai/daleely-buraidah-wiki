@@ -1,0 +1,90 @@
+{
+  "source_type": "city_reference_layer",
+  "model_scope": "spatial_reference",
+  "named_neighborhoods_from_report": [
+    {
+      "name_ar": "الرحاب",
+      "type": "named_neighborhood",
+      "evidence": "مذكور كموقع المحطة الشمالية المقترحة للترام",
+      "certainty": "reported_named"
+    },
+    {
+      "name_ar": "الصفراء",
+      "type": "named_neighborhood",
+      "evidence": "مذكور كمركز شمالي تجاري",
+      "certainty": "reported_named"
+    },
+    {
+      "name_ar": "الديرة",
+      "type": "named_local_area",
+      "evidence": "مذكور ضمن الأسماء الواردة في التقرير",
+      "certainty": "reported_named"
+    },
+    {
+      "name_ar": "البصر",
+      "type": "named_local_area",
+      "evidence": "مذكور ضمن الأسماء الواردة في التقرير",
+      "certainty": "reported_named"
+    }
+  ],
+  "city_centers": [
+    {
+      "name_ar": "وسط المدينة القديم",
+      "type": "historic_center",
+      "certainty": "reported"
+    },
+    {
+      "name_ar": "المركز الشمالي",
+      "district_hint": "الصفراء",
+      "type": "secondary_commercial_center",
+      "certainty": "reported"
+    }
+  ],
+  "directional_areas": [
+    {
+      "name_ar": "شمال غرب المدينة",
+      "type": "directional_zone",
+      "maps_to_urban_zone": "NW",
+      "certainty": "approximate"
+    },
+    {
+      "name_ar": "جنوب المدينة",
+      "type": "directional_zone",
+      "maps_to_urban_zone": "S",
+      "certainty": "approximate"
+    },
+    {
+      "name_ar": "جنوب غرب المدينة",
+      "type": "directional_zone",
+      "maps_to_urban_zone": "SW",
+      "certainty": "approximate"
+    },
+    {
+      "name_ar": "غرب المدينة",
+      "type": "directional_zone",
+      "maps_to_urban_zone": "W",
+      "certainty": "approximate"
+    },
+    {
+      "name_ar": "شمال شرق المدينة",
+      "type": "directional_zone",
+      "maps_to_urban_zone": "NE",
+      "certainty": "approximate"
+    }
+  ],
+  "district_normalization_hints": {
+    "safe_positive_hints": [
+      "الرحاب",
+      "الصفراء",
+      "وسط المدينة القديم"
+    ],
+    "do_not_treat_as_districts": [
+      "شمال غرب المدينة",
+      "جنوب المدينة",
+      "جنوب غرب المدينة",
+      "غرب المدينة",
+      "شمال شرق المدينة"
+    ],
+    "notes": "هذه الطبقة تساعد في التمييز بين الحي الحقيقي والمنطقة الاتجاهية، لكنها لا تكفي وحدها لتعديل district في master دون قرينة عنوانية إضافية."
+  }
+}

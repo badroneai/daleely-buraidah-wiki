@@ -1,0 +1,116 @@
+{
+  "source_type": "city_reference_layer",
+  "model_scope": "urban_structure_and_strategy",
+  "urban_zones": [
+    {
+      "zone_id": "NW",
+      "name_ar": "المنطقة الشمالية الغربية",
+      "primary_function": "تعليمي / نقل جوي",
+      "characteristics": ["جامعة القصيم", "المطار الإقليمي"],
+      "location_certainty": "approximate"
+    },
+    {
+      "zone_id": "S",
+      "name_ar": "المنطقة الجنوبية",
+      "primary_function": "خدمات إقليمية",
+      "characteristics": ["خدمات المنطقة"],
+      "location_certainty": "approximate"
+    },
+    {
+      "zone_id": "SW",
+      "name_ar": "المنطقة الجنوبية الغربية",
+      "primary_function": "صناعي / لوجستي",
+      "characteristics": ["المنطقة الصناعية", "الميناء الجاف"],
+      "location_certainty": "approximate"
+    },
+    {
+      "zone_id": "W",
+      "name_ar": "المنطقة الغربية",
+      "primary_function": "زراعي",
+      "characteristics": ["مزارع النخيل", "الأراضي الزراعية"],
+      "location_certainty": "approximate"
+    },
+    {
+      "zone_id": "NE",
+      "name_ar": "المنطقة الشمالية الشرقية",
+      "primary_function": "نقل / لوجستي",
+      "characteristics": ["محطة السكة الحديدية"],
+      "location_certainty": "approximate"
+    }
+  ],
+  "development_axes": [
+    {
+      "name_ar": "محور الرياض - بريدة",
+      "direction": "جنوب",
+      "role": "محور تنمية وطني رئيسي",
+      "certainty": "reported"
+    },
+    {
+      "name_ar": "محور بريدة - المدينة المنورة",
+      "direction": "غرب",
+      "role": "يربط العاصمة بالمدينة المقدسة",
+      "certainty": "reported"
+    },
+    {
+      "name_ar": "محور بريدة - حفر الباطن",
+      "direction": "شرق",
+      "role": "ممر تنموي إقليمي مهم",
+      "certainty": "reported"
+    }
+  ],
+  "commercial_centers": [
+    {
+      "name_ar": "المركز التاريخي",
+      "location_note": "وسط المدينة القديمة",
+      "type": "مركز تجاري رئيسي تاريخي",
+      "certainty": "reported"
+    },
+    {
+      "name_ar": "المركز الشمالي",
+      "district_hint": "حي الصفراء",
+      "type": "مركز تجاري ثانوي",
+      "certainty": "reported"
+    }
+  ],
+  "strategic_issues": [
+    {
+      "id": "SI-1",
+      "title_ar": "أنماط التنمية والنمو غير المتوازن",
+      "severity": "حرجة"
+    },
+    {
+      "id": "SI-2",
+      "title_ar": "عدم الترابط وتقسيمات الأراضي في هيكل المدينة",
+      "severity": "عالية"
+    },
+    {
+      "id": "SI-3",
+      "title_ar": "التنمية أحادية الاستعمال والمستقطبة",
+      "severity": "عالية"
+    },
+    {
+      "id": "SI-4",
+      "title_ar": "عدم التوازن الاجتماعي والبيئي والاقتصادي",
+      "severity": "حرجة"
+    }
+  ],
+  "strategic_directions": [
+    "المدينة المدمجة",
+    "المدينة المتصلة والمترابطة",
+    "المدينة الشاملة",
+    "المدينة المرنة"
+  ],
+  "usage_guidance": {
+    "good_for": [
+      "understanding growth model",
+      "planning future sector coverage",
+      "explaining city context in wiki",
+      "reasoning about opportunity corridors"
+    ],
+    "not_for": [
+      "exact geocoding",
+      "district assignment without supporting address evidence",
+      "entity verification"
+    ]
+  }
+}
