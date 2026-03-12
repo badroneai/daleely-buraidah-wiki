@@ -655,14 +655,79 @@ function renderStatusPage() {
 }
 
 function renderDistrictsPage() {
-  const groups = uniq(state.records.map(r => r.district)).sort((a,b)=>a.localeCompare(b,'ar'));
+  const groups = uniq(state.records.map(r => r.district).filter(Boolean)).sort((a,b)=>a.localeCompare(b,'ar'));
+  const core = state.normalization.core;
+  const extended = state.normalization.extended;
+  const noncore = state.normalization.noncore;
+  const strongestCore = core?.items ? core.items.slice(0, 12) : [];
+
   return `
-    <div class="table-wrap"><table class="table"><thead><tr><th>الحي</th><th>عدد السجلات</th><th>متوسط التقييم</th><th>معتمد</th><th>تعارض فروع</th></tr></thead><tbody>
-      ${groups.map(g => {
-        const items = state.records.filter(r => r.district === g);
-        return `<tr><td>${esc(g)}</td><td>${items.length}</td><td>${avgRating(items)}</td><td>${items.filter(r=>r.status==='verified').length}</td><td>${items.filter(r=>r.status==='branch_conflict').length}</td></tr>`;
-      }).join('')}
-    </tbody></table></div>
+    <div class="hero">
+      <h3>الأحياء</h3>
+      <p>فهرس الأحياء الموحّدة داخل البيانات الحالية، مع إضافة طبقة مرجعية مستقلة لعرض <strong>Residential Core Draft</strong> داخل نفس الصفحة.</p>
+      <div class="chips">
+        ${core ? chip('Residential Core Draft', core.summary?.core_count || 0) : ''}
+        ${extended ? chip('Extended Reference', extended.summary?.count || 0) : ''}
+        ${noncore ? chip('Non-core / Unclear', noncore.summary?.count || 0) : ''}
+      </div>
+    </div>
+
+    ${core ? `
+      <div class="grid cards-4 section">
+        <div class="card"><div class="metric">${core.summary?.core_count || 0}</div><div class="metric-sub">Residential Core Draft</div></div>
+        <div class="card"><div class="metric">${extended?.summary?.count || 0}</div><div class="metric-sub">Extended Reference</div></div>
+        <div class="card"><div class="metric">${noncore?.summary?.count || 0}</div><div class="metric-sub">Non-core / Unclear</div></div>
+        <div class="card"><div class="metric">130</div><div class="metric-sub">أسماء المرجع الخارجي</div></div>
+      </div>
+
+      <div class="section card">
+        <h3>Residential Core Draft — الأسماء المرجحة بقوة</h3>
+        <div class="note">هذه طبقة مرجعية مستقلة ولا تغيّر بيانات التشغيل الحالية في <code>master.json</code>.</div>
+        <div class="table-wrap" style="margin-top:12px;">
+          <table class="table">
+            <thead><tr><th>الاسم</th><th>الثقة</th><th>قوة المصدر</th><th>نوع الدليل</th><th>المصادر</th></tr></thead>
+            <tbody>
+              ${(core.items || []).map(item => `
+                <tr>
+                  <td>${esc(item.canonical_name)}</td>
+                  <td>${esc(item.confidence || '—')}</td>
+                  <td>${esc(item.source_strength || '—')}</td>
+                  <td>${esc(item.evidence_type || '—')}</td>
+                  <td>${esc((item.source_list || []).join(', '))}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ` : ''}
+
+    <div class="section card">
+      <h3>الأحياء الحالية داخل بيانات التشغيل</h3>
+      <div class="table-wrap"><table class="table"><thead><tr><th>الحي</th><th>عدد السجلات</th><th>متوسط التقييم</th><th>معتمد</th><th>يحتاج مراجعة</th></tr></thead><tbody>
+        ${groups.map(g => {
+          const items = state.records.filter(r => r.district === g);
+          return `<tr><td>${esc(g)}</td><td>${items.length}</td><td>${avgRating(items)}</td><td>${items.filter(r=>r.status==='verified').length}</td><td>${items.filter(r=>r.status==='needs_review').length}</td></tr>`;
+        }).join('')}
+      </tbody></table></div>
+    </div>
+
+    ${core ? `
+      <div class="grid cards-2 section">
+        <div class="card">
+          <h3>أقوى أسماء الـ Core</h3>
+          <ul class="list-clean">${strongestCore.map(item => `<li><strong>${esc(item.canonical_name)}</strong><div class="note">${esc(item.evidence_type || '—')} — ${esc(item.confidence || '—')}</div></li>`).join('')}</ul>
+        </div>
+        <div class="card">
+          <h3>ملاحظات العرض</h3>
+          <ul class="list-clean">
+            <li>القسم العلوي يعرض <strong>Residential Core Draft</strong> المرجعي.</li>
+            <li>القسم السفلي يعرض الأحياء الحالية داخل <code>master.json</code>.</li>
+            <li>اختلاف العدد بين القسمين طبيعي لأن المرجع لا يساوي بيانات التشغيل الحالية.</li>
+          </ul>
+        </div>
+      </div>
+    ` : ''}
   `;
 }
 
