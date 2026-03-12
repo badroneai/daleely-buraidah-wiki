@@ -1,0 +1,737 @@
+{
+  "summary": {
+    "generated_at": "2026-03-12",
+    "source_files": {
+      "master_json": "data/master.json",
+      "city_reference": "data/city/buraydah_spatial_reference.json"
+    },
+    "totals": {
+      "record_count": 207,
+      "unique_raw_district_values": 20,
+      "candidate_rows": 11,
+      "unresolved_rows": 10
+    }
+  },
+  "items": [
+    {
+      "raw_value": "غير متحقق",
+      "count": 79,
+      "initial_classification": "unknown_placeholder",
+      "self_evidence": {
+        "short_address_mentions_raw": 14,
+        "short_address_mentions_as_district": 0,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "abdulaziz-bin-musaed-bin-jalawi",
+          "abdulaziz-fahd-al-rashoudi",
+          "al-jaziri",
+          "branch-1",
+          "branch-2",
+          "branch-2-candidate"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "vekt-cafe",
+          "name": "فكت كافيه",
+          "short_address": "طريق الملك سلمان",
+          "branch_label": "king-salman",
+          "reference_url": "https://www.google.com/maps/place/%D9%81%D9%83%D8%AA+%D9%83%D8%A7%D9%81%D9%8A%D9%87+%7C+Vekt+cafe%E2%80%AD/data=!4m7!3m6!1s0x157f5707b50a435d:0xba4730e52cdb336e!8m2!3d26.3960652!4d43.9365427!16s%2Fg%2F11vyf9zcv9!19sChIJXUMKtQdXfxURbjPbLOUwR7o?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "adham-specialty-coffee",
+          "name": "أدهم",
+          "short_address": "طريق الملك خالد",
+          "branch_label": "king-khalid",
+          "reference_url": "https://www.google.com/maps/place/%D8%A3%D8%AF%D9%87%D9%85+%7C+%D9%82%D9%87%D9%88%D8%A9+%D9%85%D8%AE%D8%AA%D8%B5%D8%A9%E2%80%AD/data=!4m7!3m6!1s0x157f59503dc7d065:0xdfca6033b7d0b4f3!8m2!3d26.364522!4d43.9668487!16s%2Fg%2F11pzrmfjld!19sChIJZdDHPVBZfxUR87TQtzNgyt8?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "sum-cafe",
+          "name": "sum cafe",
+          "short_address": "غير متحقق",
+          "branch_label": "main",
+          "reference_url": "https://www.google.com/maps/place/sum+cafe/data=!4m7!3m6!1s0x157f57cf8fed9e99:0xa538023df66a969f!8m2!3d26.4066347!4d43.9000909!16s%2Fg%2F11mt6tvz4f!19sChIJmZ7tj89XfxURn5Zq9j0COKU?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "ratel-cafe",
+          "name": "رتل كافيه",
+          "short_address": "طريق الملك خالد",
+          "branch_label": "king-khalid",
+          "reference_url": "https://www.google.com/maps/place/%D8%B1%D8%AA%D9%84+%D9%83%D8%A7%D9%81%D9%8A%D9%87%E2%80%AD/data=!4m7!3m6!1s0x157f592b4cc393cf:0x580b2068b9aeb14!8m2!3d26.3653686!4d43.9664805!16s%2Fg%2F11h6dj8lv6!19sChIJz5PDTCtZfxURFOuaiwaygAU?authuser=0&hl=ar&rclk=1"
+        }
+      ],
+      "notes": "قيمة تشغيلية placeholder وليست اسم حي؛ لا يجوز حسمها إلى حي تلقائيًا."
+    },
+    {
+      "raw_value": "النهضة",
+      "count": 52,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 20,
+        "short_address_mentions_as_district": 20,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "abu-bakr",
+          "al-jedai-mall",
+          "al-jedai-mall-opened",
+          "ali-bin-abi-talib",
+          "alnahdah",
+          "hookah-lounge"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "samraa-cafe",
+          "name": "سمراء كافيه",
+          "short_address": "طريق أبو بكر الصديق",
+          "branch_label": "main",
+          "reference_url": ""
+        },
+        {
+          "slug": "booq-roastery-cafe",
+          "name": "مقهى ومحمصة بوق",
+          "short_address": "طريق أبو بكر الصديق، حي النهضة، بريدة 52389",
+          "branch_label": "nahdah",
+          "reference_url": "https://www.google.com/maps/place/%D9%85%D9%82%D9%87%D9%89+%D9%88%D9%85%D8%AD%D9%85%D8%B5%D8%A9+%D8%A8%D9%88%D9%82%E2%80%AD/data=!4m7!3m6!1s0x157f5754be80d53b:0xc984f4dc49a84e17!8m2!3d26.4010867!4d43.9377844!16s%2Fg%2F11txrt_8vb!19sChIJO9WAvlRXfxURF06oSdz0hMk?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "ramadi-lounge",
+          "name": "رمادي لاونج",
+          "short_address": "طريق عثمان بن عفان، حي النهضة",
+          "branch_label": "nahdah",
+          "reference_url": "https://www.google.com/maps/place/%D8%B1%D9%85%D9%80%D9%80%D9%80%D9%80%D8%A7%D8%AF%D9%8A+%D9%84%D8%A7%D9%88%D9%86%D8%AC%E2%80%AD/data=!4m7!3m6!1s0x157f57bf8197e215:0x1b38f49f4cd93ede!8m2!3d26.4078605!4d43.9272243!16s%2Fg%2F11rjl5rxfs!19sChIJFeKXgb9XfxUR3j7ZTJ_0OBs?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "canto-abu-bakr",
+          "name": "كانتو",
+          "short_address": "طريق أبو بكر الصديق",
+          "branch_label": "abu-bakr",
+          "reference_url": "https://www.google.com/maps/place/CANTO/data=!4m7!3m6!1s0x157f579d6a8e8eed:0x8faca81075449a3a!8m2!3d26.4022144!4d43.937257!16s%2Fg%2F11lk9t2jxn!19sChIJ7Y6Oap1XfxUROppEdRCorI8?authuser=0&hl=ar&rclk=1"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (20 مطابقة عنوانية، 20 بصيغة حي)."
+    },
+    {
+      "raw_value": "الريان",
+      "count": 21,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 10,
+        "short_address_mentions_as_district": 10,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "al-salam",
+          "alrayan",
+          "alrayan-cluster",
+          "bukhari",
+          "imam-muslim",
+          "prince-sultan"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "canto-specialty-coffee-prince-sultan",
+          "name": "كانتو للقهوة المختصة",
+          "short_address": "طريق الأمير سلطان بن عبدالعزيز",
+          "branch_label": "prince-sultan",
+          "reference_url": "https://www.google.com/maps/place/%D9%83%D8%A7%D9%86%D8%AA%D9%88+%D9%84%D9%84%D9%82%D9%87%D9%88%D8%A9+%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%B5%D8%A9%E2%80%AD/data=!4m7!3m6!1s0x157f59584c800d95:0x719e208882c6da8f!8m2!3d26.3702207!4d43.9800096!16s%2Fg%2F11m_cyp5g9!19sChIJlQ2ATFhZfxURj9rGgoggnnE?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "nord-cafe",
+          "name": "نورد كافية",
+          "short_address": "حي الريان، بريدة",
+          "branch_label": "rayan",
+          "reference_url": "https://www.google.com/maps/place/%D9%86%D9%88%D8%B1%D8%AF+%D9%83%D8%A7%D9%81%D9%8A%D8%A9%E2%80%AD/data=!4m7!3m6!1s0x157f5714b7e7efbd:0xc8d6ba2494220d93!8m2!3d26.396662!4d43.9240054!16s%2Fg%2F11gd1wq_xy!19sChIJve_ntxRXfxURkw0ilCS61sg?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "ripple-cafe",
+          "name": "ريبل كافية",
+          "short_address": "طريق السلام",
+          "branch_label": "al-salam",
+          "reference_url": "https://www.google.com/maps/place/%D8%B1%D9%8A%D8%A8%D9%84+%D9%83%D8%A7%D9%81%D9%8A%D8%A9%E2%80%AD/data=!4m7!3m6!1s0x157f57a914186c61:0x35d0cc6f6b439711!8m2!3d26.3485353!4d43.9317691!16s%2Fg%2F11sk0z1nrp!19sChIJYWwYFKlXfxUREZdDa2_M0DU?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "person-cafe",
+          "name": "بيرسون",
+          "short_address": "شارع الإمام مسلم",
+          "branch_label": "imam-muslim",
+          "reference_url": "https://www.google.com/maps/place/%D8%A8%D9%8A%D8%B1%D8%B3%D9%88%D9%86+%7C+PERSON%E2%80%AD/data=!4m7!3m6!1s0x157f59ba55555555:0xdd977824287546d7!8m2!3d26.3765849!4d43.9706104!16s%2Fg%2F11kvplxhhd!19sChIJVVVVVbpZfxUR10Z1KCR4l90?authuser=0&hl=ar&rclk=1"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (10 مطابقة عنوانية، 10 بصيغة حي)."
+    },
+    {
+      "raw_value": "البساتين",
+      "count": 12,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 10,
+        "short_address_mentions_as_district": 9,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "albasatin",
+          "bastatin",
+          "bastatin-east",
+          "mazar-al-bustan"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "ayl-cafe",
+          "name": "أيل كافيه",
+          "short_address": "الطريق الدائري الداخلي - الضلع الشرقي، حي البساتين",
+          "branch_label": "bastatin",
+          "reference_url": "https://www.google.com/maps/place/%D8%A3%D9%8A%D9%84+%D9%83%D8%A7%D9%81%D9%8A%D9%87%E2%80%AD/data=!4m7!3m6!1s0x157f59a3f8c51ccf:0x21bddc5bd6dd0be7!8m2!3d26.3288377!4d44.0108055!16s%2Fg%2F11p_34399h!19sChIJzxzF-KNZfxUR5wvd1lvcvSE?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "estknan-coffee-buraidah",
+          "name": "استكنان كافيه",
+          "short_address": "حي البساتين، طريق عمر بن عبدالعزيز",
+          "branch_label": "bastatin",
+          "reference_url": "https://www.instagram.com/estknan_coffee/"
+        },
+        {
+          "slug": "labioma-cafe-buraidah",
+          "name": "لابيوما كافيه",
+          "short_address": "حي البساتين شرق بريدة",
+          "branch_label": "bastatin-east",
+          "reference_url": "https://www.instagram.com/reel/DTdiOPoDAk2/"
+        },
+        {
+          "slug": "thekra-cafe-buraidah",
+          "name": "ذكرى كافيه",
+          "short_address": "مزار البستان، بريدة",
+          "branch_label": "mazar-al-bustan",
+          "reference_url": "https://www.instagram.com/reel/DU5G?placeholder"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (10 مطابقة عنوانية، 9 بصيغة حي)."
+    },
+    {
+      "raw_value": "الرحاب",
+      "count": 8,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 6,
+        "short_address_mentions_as_district": 5,
+        "city_reference_support": true,
+        "sample_branch_labels": [
+          "omar-bin-al-khattab",
+          "omar-bin-khattab",
+          "qurtubah",
+          "qurtubah-st",
+          "rahab-north",
+          "rahab-omar-bin-al-khattab"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "hanim-cafe",
+          "name": "هانم",
+          "short_address": "طريق عمر بن الخطاب",
+          "branch_label": "omar-bin-khattab",
+          "reference_url": "https://www.google.com/maps/place/%D9%87%D8%A7%D9%86%D9%85+%7C+HANIM%E2%80%AD/data=!4m7!3m6!1s0x157f574386d15d1f:0xa588ed1360522aba!8m2!3d26.4108543!4d43.9165666!16s%2Fg%2F11xdl2rq2h!19sChIJH13RhkNXfxURuipSYBPtiKU?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "rahbah-cafe",
+          "name": "رحبة",
+          "short_address": "شارع قرطبة",
+          "branch_label": "qurtubah",
+          "reference_url": "https://www.google.com/maps/place/%D8%B1%D8%AD%D8%A8%D8%A9%E2%80%AD/data=!4m7!3m6!1s0x157f57ef77ea4633:0x724c35f576a12368!8m2!3d26.4083465!4d43.9013262!16s%2Fg%2F11x08mw61h!19sChIJM0bqd-9XfxURaCOhdvU1THI?authuser=0&hl=ar&rclk=1"
+        },
+        {
+          "slug": "rashf-cafe-rahab-qurtubah",
+          "name": "رشف كافيه",
+          "short_address": "حي الرحاب، شارع قرطبة",
+          "branch_label": "qurtubah-st",
+          "reference_url": "https://www.instagram.com/p/rashf-qurtubah/"
+        },
+        {
+          "slug": "kefi-an-buraidah-rahab",
+          "name": "كفي آن",
+          "short_address": "شارع قرطبة، حي الرحاب",
+          "branch_label": "rahab-qurtubah",
+          "reference_url": "https://www.instagram.com/reel/kefi-ann-rahab/"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (6 مطابقة عنوانية، 5 بصيغة حي)."
+    },
+    {
+      "raw_value": "الصفراء",
+      "count": 6,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 6,
+        "short_address_mentions_as_district": 5,
+        "city_reference_support": true,
+        "sample_branch_labels": [
+          "safra",
+          "safra-2"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "nahrawan-cafe",
+          "name": "نهروان كافيه",
+          "short_address": "طريق الأمير نايف بن عبدالعزيز، حي الصفراء",
+          "branch_label": "safra",
+          "reference_url": "https://www.google.com/maps/search/%D9%83%D8%A7%D9%81%D9%8A%D9%87+%D9%86%D9%87%D8%B1%D9%88%D8%A7%D9%86+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9"
+        },
+        {
+          "slug": "al-montasaf-cafe",
+          "name": "المنتصف",
+          "short_address": "حي الصفراء",
+          "branch_label": "safra",
+          "reference_url": "https://www.google.com/maps/search/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%B5%D9%81+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9"
+        },
+        {
+          "slug": "corner-coffee-safra",
+          "name": "كورنر كوفي",
+          "short_address": "حي الصفراء، بريدة",
+          "branch_label": "safra",
+          "reference_url": "https://www.google.com/maps/search/%D9%83%D9%88%D8%B1%D9%86%D8%B1+%D9%83%D9%88%D9%81%D9%8A+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9"
+        },
+        {
+          "slug": "sigma-caffe-safra",
+          "name": "سيجما كافيه",
+          "short_address": "الصفراء",
+          "branch_label": "safra",
+          "reference_url": "https://www.google.com/maps/search/%D8%B3%D8%AC%D9%85%D8%A7+%D9%83%D8%A7%D9%81%D9%8A%D9%87+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (6 مطابقة عنوانية، 5 بصيغة حي)."
+    },
+    {
+      "raw_value": "الأفق",
+      "count": 4,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 4,
+        "short_address_mentions_as_district": 4,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "al-ufuq",
+          "ufuq"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "alia-caffee-buraidah",
+          "name": "علياء كافيه",
+          "short_address": "حي الأفق",
+          "branch_label": "ufuq",
+          "reference_url": "https://www.instagram.com/alia_caffee/"
+        },
+        {
+          "slug": "dar-keif-buraidah-ufuq",
+          "name": "دار كيف",
+          "short_address": "حي الأفق، بريدة",
+          "branch_label": "ufuq",
+          "reference_url": "https://www.instagram.com/reel/dar-keif-ufuq/"
+        },
+        {
+          "slug": "way-cafe-buraidah-ufuq",
+          "name": "وي كافيه",
+          "short_address": "حي الأفق، بريدة",
+          "branch_label": "ufuq",
+          "reference_url": "https://www.instagram.com/spoon_rs/"
+        },
+        {
+          "slug": "eighty-plus-ufuq-buraidah",
+          "name": "EIGHTY +",
+          "short_address": "حي الأفق، بريدة",
+          "branch_label": "al-ufuq",
+          "reference_url": "https://www.instagram.com/p/CdhAC5IIgg8/"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (4 مطابقة عنوانية، 4 بصيغة حي)."
+    },
+    {
+      "raw_value": "جنوب بريدة",
+      "count": 4,
+      "initial_classification": "directional_or_general_area",
+      "self_evidence": {
+        "short_address_mentions_raw": 4,
+        "short_address_mentions_as_district": 0,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "riwaq-south",
+          "south-buraidah",
+          "south-buraidah-dup"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "canto-cafe-south-buraidah",
+          "name": "كانتو كافيه",
+          "short_address": "جنوب بريدة",
+          "branch_label": "south-buraidah",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.0912822,43.9367032"
+        },
+        {
+          "slug": "dunkin-buraidah-south-1",
+          "name": "دانكن",
+          "short_address": "جنوب بريدة",
+          "branch_label": "south-buraidah",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.0912499,43.9368849"
+        },
+        {
+          "slug": "dunkin-buraidah-south-2",
+          "name": "دانكن",
+          "short_address": "جنوب بريدة",
+          "branch_label": "south-buraidah-dup",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.0912499,43.9368849"
+        },
+        {
+          "slug": "nakhla-cafe-buraidah",
+          "name": "نخلا",
+          "short_address": "حي رواق، جنوب بريدة",
+          "branch_label": "riwaq-south",
+          "reference_url": "https://www.instagram.com/reel/DRNwyl8CMWb/"
+        }
+      ],
+      "notes": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي."
+    },
+    {
+      "raw_value": "سلطانة",
+      "count": 4,
+      "initial_classification": "review_candidate_close_to_named_district",
+      "self_evidence": {
+        "short_address_mentions_raw": 4,
+        "short_address_mentions_as_district": 3,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "sultanah"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "artal-cafe-buraidah",
+          "name": "قهوة أرتال",
+          "short_address": "حي السلطانة",
+          "branch_label": "sultanah",
+          "reference_url": "https://www.instagram.com/p/CE9j7NxpO_e/"
+        },
+        {
+          "slug": "nawa-cafe-sultanah-buraidah",
+          "name": "نوى",
+          "short_address": "حي سلطانة، بريدة",
+          "branch_label": "sultanah",
+          "reference_url": "https://www.instagram.com/reel/DVFZ0nsitND/"
+        },
+        {
+          "slug": "athar-cafe-sultanah",
+          "name": "كوفي أثر",
+          "short_address": "حي سلطانة",
+          "branch_label": "sultanah",
+          "reference_url": "https://www.google.com/search?q=site%3Atiktok.com+%22%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9%22+%22%D8%AD%D9%8A%22+%22%D9%83%D8%A7%D9%81%D9%8A%D9%87%22"
+        },
+        {
+          "slug": "nadr-cafe-sultanah",
+          "name": "قهوة ندر",
+          "short_address": "حي سلطانة، بريدة",
+          "branch_label": "sultanah",
+          "reference_url": "https://www.google.com/search?q=site%3Atiktok.com+%22%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9%22+%22%D8%AD%D9%8A%22+%22%D9%83%D8%A7%D9%81%D9%8A%D9%87%22"
+        }
+      ],
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "قرطبة",
+      "count": 4,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 4,
+        "short_address_mentions_as_district": 2,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "qurtubah"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "round-cafe-qurtubah-buraidah",
+          "name": "راوند كافيه",
+          "short_address": "حي قرطبة",
+          "branch_label": "qurtubah",
+          "reference_url": "https://www.instagram.com/reel/DP9odjJiCRi/"
+        },
+        {
+          "slug": "berrt-cafe-qurtubah-buraidah",
+          "name": "برت",
+          "short_address": "شمال بريدة، قرطبة",
+          "branch_label": "qurtubah",
+          "reference_url": "https://www.instagram.com/reel/berrt-qurtubah/"
+        },
+        {
+          "slug": "sum-cafe-qurtubah-buraidah-2",
+          "name": "SUM Cafe",
+          "short_address": "حي القرطبة، بريدة",
+          "branch_label": "qurtubah",
+          "reference_url": "https://www.instagram.com/p/DTeDU-YCCQu/"
+        },
+        {
+          "slug": "heaven-cafe-qurtubah",
+          "name": "هڤن كافية",
+          "short_address": "حي قرطبة",
+          "branch_label": "qurtubah",
+          "reference_url": "https://www.google.com/search?q=%D9%87%DA%A4%D9%86+%D9%83%D8%A7%D9%81%D9%8A%D8%A9+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (4 مطابقة عنوانية، 2 بصيغة حي)."
+    },
+    {
+      "raw_value": "شمال غرب بريدة",
+      "count": 3,
+      "initial_classification": "directional_or_general_area",
+      "self_evidence": {
+        "short_address_mentions_raw": 3,
+        "short_address_mentions_as_district": 0,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "northwest-buraidah",
+          "northwest-buraidah-dup"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "half-million-buraidah",
+          "name": "هاف مليون",
+          "short_address": "شمال غرب بريدة",
+          "branch_label": "northwest-buraidah",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.421905,43.9097288"
+        },
+        {
+          "slug": "dunkin-buraidah-northwest-1",
+          "name": "دانكن",
+          "short_address": "شمال غرب بريدة",
+          "branch_label": "northwest-buraidah",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.4216612,43.9102845"
+        },
+        {
+          "slug": "half-million-buraidah-3",
+          "name": "هاف مليون",
+          "short_address": "شمال غرب بريدة",
+          "branch_label": "northwest-buraidah-dup",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.421905,43.9097288"
+        }
+      ],
+      "notes": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي."
+    },
+    {
+      "raw_value": "شرق بريدة",
+      "count": 2,
+      "initial_classification": "directional_or_general_area",
+      "self_evidence": {
+        "short_address_mentions_raw": 2,
+        "short_address_mentions_as_district": 0,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "east-buraidah",
+          "east-buraidah-dup"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "dunkin-buraidah-east-1",
+          "name": "دانكن",
+          "short_address": "شرق بريدة",
+          "branch_label": "east-buraidah",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.086505,43.9667477"
+        },
+        {
+          "slug": "dunkin-buraidah-0865",
+          "name": "دانكن",
+          "short_address": "شرق بريدة",
+          "branch_label": "east-buraidah-dup",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.086505,43.9667477"
+        }
+      ],
+      "notes": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي."
+    },
+    {
+      "raw_value": "الإسكان",
+      "count": 1,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "iskan"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "khawr-cafe-buraidah",
+          "name": "خور كافيه",
+          "short_address": "حي الإسكان، طريق أبو بكر الصديق",
+          "branch_label": "iskan",
+          "reference_url": "https://www.instagram.com/p/DUs_k5CjFaG/"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي)."
+    },
+    {
+      "raw_value": "البصيرية",
+      "count": 1,
+      "initial_classification": "review_candidate_weak_support",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "albasiriyah"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "sora-cafe-albasiriyah",
+          "name": "كافي سورا",
+          "short_address": "حي البصيرية",
+          "branch_label": "albasiriyah",
+          "reference_url": "https://www.google.com/search?q=site%3Atiktok.com+%22%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9%22+%22%D8%AD%D9%8A+%D8%A7%D9%84%D8%A8%D8%B5%D9%8A%D8%B1%D9%8A%D8%A9%22+%22%D9%83%D8%A7%D9%81%D9%8A%D9%87%22"
+        }
+      ],
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "التغيرة",
+      "count": 1,
+      "initial_classification": "review_candidate_weak_support",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 0,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "taghirah"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "khallah-cafe",
+          "name": "خلّة كافيه",
+          "short_address": "التغيرة",
+          "branch_label": "taghirah",
+          "reference_url": "https://www.google.com/maps/place/%D8%AE%D9%84%D9%91%D8%A9+%D9%83%D8%A7%D9%81%D9%8A%D9%87%E2%80%AD/data=!4m7!3m6!1s0x1581e3e624e7f447:0xc544ecd93c306af!8m2!3d26.3274555!4d43.9541296!16s%2Fg%2F11t4pp5sm_!19sChIJR_TnJObjgRURrwbDk81OVAw?authuser=0&hl=ar&rclk=1"
+        }
+      ],
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "الحزم",
+      "count": 1,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "hazm"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "brain-cafe",
+          "name": "برين",
+          "short_address": "طريق النهضة، حي الحزم، بريدة 52261",
+          "branch_label": "hazm",
+          "reference_url": "https://www.google.com/maps/search/%D8%A8%D8%B1%D9%8A%D9%86+%D8%A8%D8%B1%D9%8A%D8%AF%D8%A9"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي)."
+    },
+    {
+      "raw_value": "السالمية",
+      "count": 1,
+      "initial_classification": "review_candidate_weak_support",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "main"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "khudair-cafe",
+          "name": "خضير",
+          "short_address": "حي السالمية",
+          "branch_label": "main",
+          "reference_url": "https://www.google.com/maps/search/?api=1&query=26.3753102,43.982523"
+        }
+      ],
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "المونسية",
+      "count": 1,
+      "initial_classification": "actual_district_likely",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "munisiyah"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "another-side-cafe-buraidah",
+          "name": "ANOTHERSIDE CAFE",
+          "short_address": "حي المونسية",
+          "branch_label": "munisiyah",
+          "reference_url": "https://www.instagram.com/reel/DMDk0dita-U/"
+        }
+      ],
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي)."
+    },
+    {
+      "raw_value": "شمال بريدة",
+      "count": 1,
+      "initial_classification": "directional_or_general_area",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 0,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "north"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "naba-cafe-buraidah",
+          "name": "نبا كافيه",
+          "short_address": "شمال بريدة",
+          "branch_label": "north",
+          "reference_url": "https://www.instagram.com/reel/naba-cafe-buraidah/"
+        }
+      ],
+      "notes": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي."
+    },
+    {
+      "raw_value": "غرب بريدة",
+      "count": 1,
+      "initial_classification": "directional_or_general_area",
+      "self_evidence": {
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 0,
+        "city_reference_support": false,
+        "sample_branch_labels": [
+          "west"
+        ]
+      },
+      "example_records": [
+        {
+          "slug": "burner-cafe-west-buraidah",
+          "name": "بيرنر",
+          "short_address": "غرب بريدة",
+          "branch_label": "west",
+          "reference_url": "https://www.instagram.com/reel/DGMMCbUIxxs/"
+        }
+      ],
+      "notes": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي."
+    }
+  ]
+}

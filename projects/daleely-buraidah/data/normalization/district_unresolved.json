@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "generated_at": "2026-03-12",
+    "source_files": {
+      "master_json": "data/master.json",
+      "city_reference": "data/city/buraydah_spatial_reference.json"
+    },
+    "totals": {
+      "record_count": 207,
+      "unique_raw_district_values": 20,
+      "candidate_rows": 11,
+      "unresolved_rows": 10
+    }
+  },
+  "items": [
+    {
+      "raw_value": "غير متحقق",
+      "count": 79,
+      "why_unresolved": "قيمة تشغيلية placeholder وليست اسم حي؛ لا يجوز حسمها إلى حي تلقائيًا.",
+      "review_priority": "medium",
+      "suggested_next_action": "جمع قرينة عنوانية إضافية من السجل نفسه أو المصدر المباشر قبل التطبيع."
+    },
+    {
+      "raw_value": "جنوب بريدة",
+      "count": 4,
+      "why_unresolved": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "review_priority": "high",
+      "suggested_next_action": "إبقاء القيمة خارج canonical district مؤقتًا واستخراج district_hint/geo_area عند الحاجة."
+    },
+    {
+      "raw_value": "سلطانة",
+      "count": 4,
+      "why_unresolved": "يوجد مرشح قوي للتطبيع إلى السلطانة لكن الحسم النهائي يحتاج مراجعة بشرية قبل إنشاء canonical registry.",
+      "review_priority": "high",
+      "suggested_next_action": "مراجعة السجلات الأربع والتأكد من الصيغة العربية المعتمدة من المصدر/العنوان."
+    },
+    {
+      "raw_value": "شمال غرب بريدة",
+      "count": 3,
+      "why_unresolved": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "review_priority": "high",
+      "suggested_next_action": "إبقاء القيمة خارج canonical district مؤقتًا واستخراج district_hint/geo_area عند الحاجة."
+    },
+    {
+      "raw_value": "شرق بريدة",
+      "count": 2,
+      "why_unresolved": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "review_priority": "high",
+      "suggested_next_action": "إبقاء القيمة خارج canonical district مؤقتًا واستخراج district_hint/geo_area عند الحاجة."
+    },
+    {
+      "raw_value": "البصيرية",
+      "count": 1,
+      "why_unresolved": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ.",
+      "review_priority": "medium",
+      "suggested_next_action": "جمع قرينة عنوانية إضافية من السجل نفسه أو المصدر المباشر قبل التطبيع."
+    },
+    {
+      "raw_value": "التغيرة",
+      "count": 1,
+      "why_unresolved": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ.",
+      "review_priority": "medium",
+      "suggested_next_action": "جمع قرينة عنوانية إضافية من السجل نفسه أو المصدر المباشر قبل التطبيع."
+    },
+    {
+      "raw_value": "السالمية",
+      "count": 1,
+      "why_unresolved": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ.",
+      "review_priority": "medium",
+      "suggested_next_action": "جمع قرينة عنوانية إضافية من السجل نفسه أو المصدر المباشر قبل التطبيع."
+    },
+    {
+      "raw_value": "شمال بريدة",
+      "count": 1,
+      "why_unresolved": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "review_priority": "high",
+      "suggested_next_action": "إبقاء القيمة خارج canonical district مؤقتًا واستخراج district_hint/geo_area عند الحاجة."
+    },
+    {
+      "raw_value": "غرب بريدة",
+      "count": 1,
+      "why_unresolved": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "review_priority": "high",
+      "suggested_next_action": "إبقاء القيمة خارج canonical district مؤقتًا واستخراج district_hint/geo_area عند الحاجة."
+    }
+  ]
+}

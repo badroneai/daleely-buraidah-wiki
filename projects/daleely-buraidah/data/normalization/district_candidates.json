@@ -1,0 +1,149 @@
+{
+  "summary": {
+    "generated_at": "2026-03-12",
+    "source_files": {
+      "master_json": "data/master.json",
+      "city_reference": "data/city/buraydah_spatial_reference.json"
+    },
+    "totals": {
+      "record_count": 207,
+      "unique_raw_district_values": 20,
+      "candidate_rows": 11,
+      "unresolved_rows": 10
+    }
+  },
+  "items": [
+    {
+      "raw_value": "النهضة",
+      "candidate_canonical": "النهضة",
+      "confidence": "high",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (20 مطابقة عنوانية، 20 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 52,
+        "short_address_mentions_raw": 20,
+        "short_address_mentions_as_district": 20,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "الريان",
+      "candidate_canonical": "الريان",
+      "confidence": "high",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (10 مطابقة عنوانية، 10 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 21,
+        "short_address_mentions_raw": 10,
+        "short_address_mentions_as_district": 10,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "البساتين",
+      "candidate_canonical": "البساتين",
+      "confidence": "high",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (10 مطابقة عنوانية، 9 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 12,
+        "short_address_mentions_raw": 10,
+        "short_address_mentions_as_district": 9,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "الرحاب",
+      "candidate_canonical": "الرحاب",
+      "confidence": "high",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (6 مطابقة عنوانية، 5 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 8,
+        "short_address_mentions_raw": 6,
+        "short_address_mentions_as_district": 5,
+        "city_reference_support": true
+      }
+    },
+    {
+      "raw_value": "الصفراء",
+      "candidate_canonical": "الصفراء",
+      "confidence": "high",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (6 مطابقة عنوانية، 5 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 6,
+        "short_address_mentions_raw": 6,
+        "short_address_mentions_as_district": 5,
+        "city_reference_support": true
+      }
+    },
+    {
+      "raw_value": "الأفق",
+      "candidate_canonical": "الأفق",
+      "confidence": "high",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (4 مطابقة عنوانية، 4 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 4,
+        "short_address_mentions_raw": 4,
+        "short_address_mentions_as_district": 4,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "سلطانة",
+      "candidate_canonical": "السلطانة",
+      "confidence": "medium",
+      "reason": "يبدو أنها نفس الحي بصيغة تعريفية/غير تعريفية؛ معظم الشواهد النصية تشير إلى حي السلطانة/حي سلطانة لكن العدد ما زال محدودًا، لذلك تبقى كمقترح مراجعة لا patch نهائي.",
+      "evidence_summary": {
+        "record_count": 4,
+        "short_address_mentions_raw": 4,
+        "short_address_mentions_as_district": 3,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "قرطبة",
+      "candidate_canonical": "قرطبة",
+      "confidence": "high",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (4 مطابقة عنوانية، 2 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 4,
+        "short_address_mentions_raw": 4,
+        "short_address_mentions_as_district": 2,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "الإسكان",
+      "candidate_canonical": "الإسكان",
+      "confidence": "medium",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 1,
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "الحزم",
+      "candidate_canonical": "الحزم",
+      "confidence": "medium",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 1,
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false
+      }
+    },
+    {
+      "raw_value": "المونسية",
+      "candidate_canonical": "المونسية",
+      "confidence": "medium",
+      "reason": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي).",
+      "evidence_summary": {
+        "record_count": 1,
+        "short_address_mentions_raw": 1,
+        "short_address_mentions_as_district": 1,
+        "city_reference_support": false
+      }
+    }
+  ]
+}
