@@ -18,7 +18,8 @@ const state = {
   issues: [],
   editMode: false,
   currentSlug: null,
-  draftMessage: ''
+  draftMessage: '',
+  importDraftText: ''
 };
 
 const STATUS_AR = {
@@ -271,6 +272,46 @@ function editableField(label, name, value, type = 'text') {
   }
   return `<label class="edit-field"><span>${esc(label)}</span><input class="field" type="${esc(type)}" name="${esc(name)}" value="${esc(value || '')}" /></label>`;
 }
+function cleanGoogleMapsName(text = '') {
+  return decodeURIComponent(String(text || ''))
+    .replace(/^.*\/place\//, '')
+    .replace(/\/.*$/, '')
+    .replace(/\+/g, ' ')
+    .replace(/\s*\|\s*/g, ' | ')
+    .trim();
+}
+function extractGoogleMapsDraft(input) {
+  const raw = String(input || '').trim();
+  if (!raw) return {};
+  const draft = {};
+  draft.reference_url = raw;
+
+  const nameMatch = raw.match(/\/place\/([^/?#]+)/i);
+  if (nameMatch) {
+    const parsedName = cleanGoogleMapsName(nameMatch[1]);
+    if (parsedName) draft.name = parsedName;
+  }
+
+  const ratingMatch = raw.match(/(?:^|[^\d])(\d\.\d)(?:[^\d]|$)/);
+  if (ratingMatch) draft.google_rating = ratingMatch[1];
+
+  const reviewsMatch = raw.match(/(\d{2,6})\s*(?:review|reviews|مراجعة|تقييم)/i);
+  if (reviewsMatch) draft.google_reviews_count = reviewsMatch[1];
+
+  const priceMatch = raw.match(/(\$|\$\$|\$\$\$|\$\$\$\$|رخيص|متوسط|مرتفع)/i);
+  if (priceMatch) draft.price_level = priceMatch[1];
+
+  const plusCodeMatch = raw.match(/([23456789CFGHJMPQRVWX]{4,8}\+[23456789CFGHJMPQRVWX]{2,4})/i);
+  if (plusCodeMatch) draft.short_address = plusCodeMatch[1];
+
+  return draft;
+}
+function applyImportedDraftToForm(form, imported) {
+  Object.entries(imported).forEach(([key, value]) => {
+    const field = form.elements.namedItem(key);
+    if (field && value) field.value = value;
+  });
+}
 function renderEditForm(e) {
   const draft = getDraft(e.slug) || {};
   const current = { ...e, ...draft };
@@ -285,8 +326,18 @@ function renderEditForm(e) {
             <button class="button primary" data-action="export-patch" data-slug="${esc(e.slug)}">Export Patch</button>
           </div>
         </div>
+        <div class="import-box">
+          <label class="edit-field import-field">
+            <span>رابط Google Maps</span>
+            <input id="googleMapsImport" class="field" type="url" value="${esc(state.importDraftText || '')}" placeholder="ألصق رابط Google Maps هنا" />
+          </label>
+          <button class="button" data-action="import-draft" data-slug="${esc(e.slug)}">Import Draft</button>
+        </div>
         <form id="editForm" class="edit-grid" data-slug="${esc(e.slug)}">
           ${editableField('الاسم المعتمد', 'name', current.name)}
+          ${editableField('التقييم', 'google_rating', current.google_rating)}
+          ${editableField('عدد المراجعات', 'google_reviews_count', current.google_reviews_count)}
+          ${editableField('مستوى السعر', 'price_level', current.price_level)}
           ${editableField('الاسم البديل', 'alternate_name', current.alternate_name)}
           ${editableField('الاسم العربي المعياري', 'canonical_name_ar', current.canonical_name_ar)}
           ${editableField('الاسم الإنجليزي المعياري', 'canonical_name_en', current.canonical_name_en)}
@@ -470,6 +521,16 @@ function bindEditorActions() {
     state.currentSlug = null;
     state.draftMessage = '';
     router();
+  }));
+  document.querySelectorAll('[data-action="import-draft"]').forEach(btn => btn.addEventListener('click', () => {
+    const form = document.getElementById('editForm');
+    const input = document.getElementById('googleMapsImport');
+    state.importDraftText = input?.value || '';
+    const imported = extractGoogleMapsDraft(state.importDraftText);
+    applyImportedDraftToForm(form, imported);
+    state.draftMessage = Object.keys(imported).length
+      ? 'تم تعبئة draft أولي من رابط Google Maps داخل النموذج.'
+      : 'لم أستخرج حقولًا كافية من الرابط الحالي.';
   }));
   document.querySelectorAll('[data-action="save-draft"]').forEach(btn => btn.addEventListener('click', () => {
     const slug = btn.dataset.slug;
