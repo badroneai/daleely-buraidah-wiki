@@ -1,4 +1,6 @@
-const DATA_URL = '../data/master.json';
+const DATA_URL = location.protocol === 'file:'
+  ? '../data/master.json'
+  : (location.hostname.includes('github.io') ? './master.json' : '../data/master.json');
 
 const state = {
   raw: null,
