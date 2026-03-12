@@ -1,0 +1,12 @@
+{
+  "total_records_scanned": 207,
+  "proposed_patch_count": 0,
+  "skipped_count": 207,
+  "skipped_by_reason": {
+    "already canonical": 110,
+    "directional value": 11,
+    "hold value": 7,
+    "placeholder": 79
+  },
+  "touched_canonicals": {}
+}

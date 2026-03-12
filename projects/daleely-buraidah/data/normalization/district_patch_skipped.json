@@ -1,0 +1,1051 @@
+{
+  "summary": {
+    "total_records_scanned": 207,
+    "proposed_patch_count": 0,
+    "skipped_count": 207,
+    "skipped_by_reason": {
+      "already canonical": 110,
+      "directional value": 11,
+      "hold value": 7,
+      "placeholder": 79
+    },
+    "touched_canonicals": {}
+  },
+  "items": [
+    {
+      "record_id": "samraa-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "booq-roastery-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ramadi-lounge",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "canto-specialty-coffee-prince-sultan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ayl-cafe",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "nord-cafe",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "vekt-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "adham-specialty-coffee",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "canto-abu-bakr",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "yol-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "glo-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "oryx-coffee",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "sum-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "ratel-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "coffee-title",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "hanim-cafe",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "pantry-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "creed-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "canto-ali-bin-abi-talib",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "a-plus-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "md-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ripple-cafe",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ramadi-hookah-lounge",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "lipper-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "khallah-cafe",
+      "current_district": "التغيرة",
+      "reason": "hold value"
+    },
+    {
+      "record_id": "kanan-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "leon-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "nora-coffee",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "person-cafe",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "rahbah-cafe",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "bait-alsultanah-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "coffee-way",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "rmd-coffee",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "footing-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "lah-coffee",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "yazeen-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "bridge-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "tora-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "tlo-cafe-roastery",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "brain-cafe",
+      "current_district": "الحزم",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "olga-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "pard-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "diniz-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "bid-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "rtm-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "tarbeeat-baloot-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "qisal-cafe-abdulaziz-fahd-al-rashoudi",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "qisal-cafe-abdulaziz-bin-musaed-bin-jalawi",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "nahrawan-cafe",
+      "current_district": "الصفراء",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "al-montasaf-cafe",
+      "current_district": "الصفراء",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "corner-coffee-safra",
+      "current_district": "الصفراء",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "sigma-caffe-safra",
+      "current_district": "الصفراء",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "arabica-star",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "khudair-cafe",
+      "current_district": "السالمية",
+      "reason": "hold value"
+    },
+    {
+      "record_id": "rest-cafe-abu-bakr",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "nistro-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "nai-women-cafe",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "zonice-buraidah-1",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "zonice-buraidah-2",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "zonice-buraidah-3",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "qahwat-bash-specialty",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "cafe-van-houtte-buraidah",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "eighty-plus-uthman",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "half-million-buraidah",
+      "current_district": "شمال غرب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "dunkin-king-salman-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "bordga-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "fan-jan-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "mazar-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "kob-alqahwa-1",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "kob-alqahwa-2",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "maqha-alwan",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "fan-jan-kaif-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "canto-cafe-south-buraidah",
+      "current_district": "جنوب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "mahames-aljarbou",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "guest-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "half-million-buraidah-2",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "dunkin-buraidah-south-1",
+      "current_district": "جنوب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "dunkin-buraidah-east-1",
+      "current_district": "شرق بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "dunkin-buraidah-northwest-1",
+      "current_district": "شمال غرب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "dunkin-buraidah-central-1",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "arabica-star-king-fahd-2",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "half-million-buraidah-3",
+      "current_district": "شمال غرب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "dunkin-buraidah-south-2",
+      "current_district": "جنوب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "dunkin-buraidah-0865",
+      "current_district": "شرق بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "dunkin-buraidah-3929",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "ble-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "slm-coffee-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "dose-cafe-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "estknan-coffee-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "qadh-coffee-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "avar-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "alia-caffee-buraidah",
+      "current_district": "الأفق",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "bentte-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "khawr-cafe-buraidah",
+      "current_district": "الإسكان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "another-side-cafe-buraidah",
+      "current_district": "المونسية",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "eleven-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "vellucci-cafe-buraidah",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "luzz-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "view-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "artal-cafe-buraidah",
+      "current_district": "سلطانة",
+      "reason": "hold value"
+    },
+    {
+      "record_id": "round-cafe-qurtubah-buraidah",
+      "current_district": "قرطبة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "copper-cup-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "tropicano-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "find-ann-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "hiwar-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "luster-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "brio-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "labioma-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "thekra-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "liberta-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "tatli-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "simpri-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "berrt-cafe-qurtubah-buraidah",
+      "current_district": "قرطبة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "rashf-cafe-rahab-qurtubah",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "coffee-bean-tea-leaf-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "black-penguin-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "mudawwar-cafeteria-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "appy-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "apres-cafe-buraidah-nahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ode-caffe-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "fayd-cafe-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "tawat-zaman-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "krtah-rayyan-buraidah",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "koffiqa-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ranci-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "jewar-cafe-buraidah-rayyan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "kefi-an-buraidah-rahab",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "match-cafe-buraidah-rahab",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "half-million-rahab-omar-buraidah",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "pard-rahab-buraidah",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "lion-coffee-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "corner-coffee-safra-2",
+      "current_district": "الصفراء",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "sigma-caffe-safra-2",
+      "current_district": "الصفراء",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "burner-cafe-west-buraidah",
+      "current_district": "غرب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "fuzt-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "elct-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ebarah-coffee-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "nadr-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "namq-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "khla-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "aso-coffee-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "dar-keif-buraidah-ufuq",
+      "current_district": "الأفق",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "eighty-cafe-uthman-buraidah-2",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "woods-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "way-cafe-buraidah-ufuq",
+      "current_district": "الأفق",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "naba-cafe-buraidah",
+      "current_district": "شمال بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "ems-cafe-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "veloce-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "coffee-bean-tea-leaf-jedai-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "xoxo-cafe-roastery-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "ttwin-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "new-city-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "nawa-cafe-sultanah-buraidah",
+      "current_district": "سلطانة",
+      "reason": "hold value"
+    },
+    {
+      "record_id": "salire-roastery-buraidah",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "murabba-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "bonak-coffee-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "mrsul-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "barbuca-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "bid-cafe-opening-buraidah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "sum-cafe-qurtubah-buraidah-2",
+      "current_district": "قرطبة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "namq-cafe-buraidah-2",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "lets-bake-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "attractive-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "half-million-rahab-2022-link",
+      "current_district": "الرحاب",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "eighty-plus-ufuq-buraidah",
+      "current_district": "الأفق",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "barhah-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "pause-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "thulah-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "eficto-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "silka-coffee-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "nakhla-cafe-buraidah",
+      "current_district": "جنوب بريدة",
+      "reason": "directional value"
+    },
+    {
+      "record_id": "brosel-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "bakeroll-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "rashf-cafe-second-branch-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "akmi-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "luxury-picks-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "heaven-cafe-qurtubah",
+      "current_district": "قرطبة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ajai-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "al-ramlah-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "hintah-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "fern-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "athbah-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "audi-cafe",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "canto-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "jomo-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "athar-cafe-sultanah",
+      "current_district": "سلطانة",
+      "reason": "hold value"
+    },
+    {
+      "record_id": "nadr-cafe-sultanah",
+      "current_district": "سلطانة",
+      "reason": "hold value"
+    },
+    {
+      "record_id": "mlt-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "m-dee-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "ims-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "olow-cafe-buraidah",
+      "current_district": "البساتين",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "sahb-cafe-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "the-field-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "tamawuj-alqahwah-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "abyat-specialty-coffee-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "g-glass-cafe-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "oush-coffee-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "shadow-cafe-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "genova-cafe-alnahdah",
+      "current_district": "النهضة",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "vol10-cafe-alrayan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "algharib-cafe-alrayan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "fairouz-dessert-cafe-alrayan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "treat-cafe-alrayan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "levanti-cafe-alrayan",
+      "current_district": "الريان",
+      "reason": "already canonical"
+    },
+    {
+      "record_id": "sora-cafe-albasiriyah",
+      "current_district": "البصيرية",
+      "reason": "hold value"
+    },
+    {
+      "record_id": "kthp-cafe-buraidah",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    },
+    {
+      "record_id": "manqiyah-specialty-coffee",
+      "current_district": "غير متحقق",
+      "reason": "placeholder"
+    }
+  ]
+}
