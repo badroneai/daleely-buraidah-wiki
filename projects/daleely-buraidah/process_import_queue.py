@@ -60,18 +60,43 @@ def is_latin_text(text=''):
     return bool(re.search(r'[A-Za-z]', str(text or '')))
 
 
+def arabic_name_score(text=''):
+    text = normalize_name(text)
+    score = len(text)
+    bonus_terms = ['مقهى', 'كافيه', 'كوفي', 'قهوة', 'مختصة', 'محمصة', 'كافي', 'لاونج']
+    for term in bonus_terms:
+        if term in text:
+            score += 8
+    if ' ' in text:
+        score += 4
+    return score
+
+
+def pick_best_arabic_name(candidates):
+    arabic_candidates = [normalize_name(c) for c in candidates if c and is_arabic_text(c)]
+    if not arabic_candidates:
+        return ''
+    arabic_candidates = list(dict.fromkeys(arabic_candidates))
+    return max(arabic_candidates, key=arabic_name_score)
+
+
+def pick_best_english_name(candidates):
+    english_candidates = [normalize_name(c) for c in candidates if c and is_latin_text(c)]
+    if not english_candidates:
+        return ''
+    english_candidates = list(dict.fromkeys(english_candidates))
+    return max(english_candidates, key=lambda c: (len(c), c))
+
+
 def normalize_name_fields(extracted):
-    name = normalize_name(extracted.get('name', ''))
-    raw_text_name = normalize_name(extracted.get('_raw_name_candidate', ''))
+    candidates = [
+        extracted.get('name', ''),
+        extracted.get('_raw_name_candidate', ''),
+        *extracted.get('_raw_name_candidates', [])
+    ]
 
-    arabic_candidate = ''
-    english_candidate = ''
-
-    for candidate in [name, raw_text_name]:
-        if candidate and is_arabic_text(candidate) and not arabic_candidate:
-            arabic_candidate = candidate
-        if candidate and is_latin_text(candidate) and not english_candidate:
-            english_candidate = candidate
+    arabic_candidate = pick_best_arabic_name(candidates)
+    english_candidate = pick_best_english_name(candidates)
 
     if english_candidate:
         extracted['canonical_name_en'] = english_candidate
@@ -91,6 +116,7 @@ def normalize_name_fields(extracted):
         extracted['slug'] = slugify(final_name if is_latin_text(final_name) else (english_candidate or final_name))
 
     extracted.pop('_raw_name_candidate', None)
+    extracted.pop('_raw_name_candidates', None)
     return extracted
 
 
@@ -137,9 +163,10 @@ def extract_fields(request):
             extracted['name'] = name
 
     raw_lines = [normalize_spaces(line) for line in raw_text.splitlines() if normalize_spaces(line)]
-    first_useful = next((line for line in raw_lines if len(line) > 2 and not re.search(r'(review|reviews|مراجعة|مراجعات|تقييم|تقييمات|open|يغلق|يفتح|الاتجاهات)', line, re.I)), '')
-    if first_useful:
-        extracted['_raw_name_candidate'] = normalize_name(first_useful)
+    useful_lines = [line for line in raw_lines if len(line) > 2 and not re.search(r'(review|reviews|مراجعة|مراجعات|تقييم|تقييمات|open|يغلق|يفتح|الاتجاهات|\$)', line, re.I)]
+    if useful_lines:
+        extracted['_raw_name_candidates'] = [normalize_name(line) for line in useful_lines]
+        extracted['_raw_name_candidate'] = extracted['_raw_name_candidates'][0]
         if not extracted.get('name'):
             extracted['name'] = extracted['_raw_name_candidate']
 

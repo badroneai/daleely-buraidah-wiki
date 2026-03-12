@@ -1,6 +1,6 @@
 ﻿{
   "request_id": "import-e2e-001",
-  "processed_at": "2026-03-12T02:35:51Z",
+  "processed_at": "2026-03-12T02:39:58Z",
   "status": "processed",
   "extracted_fields": {
     "reference_url": "https://www.google.com/maps/place/Booq+Roastery+%26+Cafe",
@@ -9,9 +9,9 @@
     "city": "بريدة",
     "sector": "cafes",
     "category": "كافيه / مقهى",
-    "name": "بوق",
+    "name": "مقهى ومحمصة بوق",
     "canonical_name_en": "Booq Roastery & Cafe",
-    "canonical_name_ar": "بوق",
+    "canonical_name_ar": "مقهى ومحمصة بوق",
     "alternate_name": "Booq Roastery & Cafe",
     "slug": "booq-roastery-cafe",
     "google_rating": "4.3",
