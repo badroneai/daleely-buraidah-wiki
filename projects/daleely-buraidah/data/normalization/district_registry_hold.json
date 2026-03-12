@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "generated_at": "2026-03-12",
+    "source_inputs": [
+      "data/normalization/district_inventory.json",
+      "data/normalization/district_candidates.json",
+      "data/normalization/district_unresolved.json",
+      "docs/normalization/district_bridge_pass_v1.md"
+    ],
+    "totals": {
+      "canonical_districts": 10,
+      "directional_values": 5,
+      "hold_values": 5
+    },
+    "rules": [
+      "No change to master.json",
+      "No patch generated",
+      "Directional values excluded from canonical district",
+      "Weak or ambiguous values kept in hold",
+      "City Layer used only as supporting weight, not as standalone truth"
+    ]
+  },
+  "items": [
+    {
+      "raw_value": "سلطانة",
+      "count": 4,
+      "hold_type": "human_review_required",
+      "reason": "يوجد مرشح قوي للتطبيع إلى السلطانة لكن الحسم النهائي يحتاج مراجعة بشرية قبل إنشاء canonical registry.",
+      "review_priority": "high",
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "البصيرية",
+      "count": 1,
+      "hold_type": "human_review_required",
+      "reason": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ.",
+      "review_priority": "medium",
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "التغيرة",
+      "count": 1,
+      "hold_type": "human_review_required",
+      "reason": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ.",
+      "review_priority": "medium",
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "السالمية",
+      "count": 1,
+      "hold_type": "human_review_required",
+      "reason": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ.",
+      "review_priority": "medium",
+      "notes": "تبدو كحي محتمل أو صيغة قريبة كتابيًا، لكن الدعم الحالي غير كافٍ للحسم الآلي المحافظ."
+    },
+    {
+      "raw_value": "غير متحقق",
+      "count": 79,
+      "hold_type": "placeholder_non_district",
+      "reason": "قيمة تشغيلية placeholder وليست اسم حي؛ لا يجوز حسمها إلى حي تلقائيًا.",
+      "review_priority": "medium",
+      "notes": "قيمة تشغيلية placeholder وليست اسم حي؛ لا يجوز حسمها إلى حي تلقائيًا."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "generated_at": "2026-03-12",
+    "source_inputs": [
+      "data/normalization/district_inventory.json",
+      "data/normalization/district_candidates.json",
+      "data/normalization/district_unresolved.json",
+      "docs/normalization/district_bridge_pass_v1.md"
+    ],
+    "totals": {
+      "canonical_districts": 10,
+      "directional_values": 5,
+      "hold_values": 5
+    },
+    "rules": [
+      "No change to master.json",
+      "No patch generated",
+      "Directional values excluded from canonical district",
+      "Weak or ambiguous values kept in hold",
+      "City Layer used only as supporting weight, not as standalone truth"
+    ]
+  },
+  "items": [
+    {
+      "raw_value": "جنوب بريدة",
+      "type": "directional_only",
+      "count": 4,
+      "exclusion_reason": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "notes": "تُحفظ خارج canonical district registry ولا تُعامل كحي فعلي في هذه المرحلة."
+    },
+    {
+      "raw_value": "شمال غرب بريدة",
+      "type": "directional_only",
+      "count": 3,
+      "exclusion_reason": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "notes": "تُحفظ خارج canonical district registry ولا تُعامل كحي فعلي في هذه المرحلة."
+    },
+    {
+      "raw_value": "شرق بريدة",
+      "type": "directional_only",
+      "count": 2,
+      "exclusion_reason": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "notes": "تُحفظ خارج canonical district registry ولا تُعامل كحي فعلي في هذه المرحلة."
+    },
+    {
+      "raw_value": "غرب بريدة",
+      "type": "directional_only",
+      "count": 1,
+      "exclusion_reason": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "notes": "تُحفظ خارج canonical district registry ولا تُعامل كحي فعلي في هذه المرحلة."
+    },
+    {
+      "raw_value": "شمال بريدة",
+      "type": "directional_only",
+      "count": 1,
+      "exclusion_reason": "قيمة اتجاهية/منطقة عامة، والمرجع الحضري ينص على عدم التعامل معها كحي فعلي.",
+      "notes": "تُحفظ خارج canonical district registry ولا تُعامل كحي فعلي في هذه المرحلة."
+    }
+  ]
+}

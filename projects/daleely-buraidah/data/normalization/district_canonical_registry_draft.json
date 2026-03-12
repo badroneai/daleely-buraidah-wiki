@@ -1,0 +1,125 @@
+{
+  "summary": {
+    "generated_at": "2026-03-12",
+    "source_inputs": [
+      "data/normalization/district_inventory.json",
+      "data/normalization/district_candidates.json",
+      "data/normalization/district_unresolved.json",
+      "docs/normalization/district_bridge_pass_v1.md"
+    ],
+    "totals": {
+      "canonical_districts": 10,
+      "directional_values": 5,
+      "hold_values": 5
+    },
+    "rules": [
+      "No change to master.json",
+      "No patch generated",
+      "Directional values excluded from canonical district",
+      "Weak or ambiguous values kept in hold",
+      "City Layer used only as supporting weight, not as standalone truth"
+    ]
+  },
+  "items": [
+    {
+      "canonical_name": "النهضة",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "النهضة"
+      ],
+      "support_count": 52,
+      "confidence": "high",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (20 مطابقة عنوانية، 20 بصيغة حي)."
+    },
+    {
+      "canonical_name": "الريان",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "الريان"
+      ],
+      "support_count": 21,
+      "confidence": "high",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (10 مطابقة عنوانية، 10 بصيغة حي)."
+    },
+    {
+      "canonical_name": "البساتين",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "البساتين"
+      ],
+      "support_count": 12,
+      "confidence": "high",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (10 مطابقة عنوانية، 9 بصيغة حي)."
+    },
+    {
+      "canonical_name": "الرحاب",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "الرحاب"
+      ],
+      "support_count": 8,
+      "confidence": "high",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (6 مطابقة عنوانية، 5 بصيغة حي)."
+    },
+    {
+      "canonical_name": "الصفراء",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "الصفراء"
+      ],
+      "support_count": 6,
+      "confidence": "high",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (6 مطابقة عنوانية، 5 بصيغة حي)."
+    },
+    {
+      "canonical_name": "الأفق",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "الأفق"
+      ],
+      "support_count": 4,
+      "confidence": "high",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (4 مطابقة عنوانية، 4 بصيغة حي)."
+    },
+    {
+      "canonical_name": "قرطبة",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "قرطبة"
+      ],
+      "support_count": 4,
+      "confidence": "high",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (4 مطابقة عنوانية، 2 بصيغة حي)."
+    },
+    {
+      "canonical_name": "الإسكان",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "الإسكان"
+      ],
+      "support_count": 1,
+      "confidence": "medium",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي). عدد السجلات ما زال منخفضًا، لذلك يبقى هذا canonical draft محافظًا وقابلًا للمراجعة لاحقًا."
+    },
+    {
+      "canonical_name": "الحزم",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "الحزم"
+      ],
+      "support_count": 1,
+      "confidence": "medium",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي). عدد السجلات ما زال منخفضًا، لذلك يبقى هذا canonical draft محافظًا وقابلًا للمراجعة لاحقًا."
+    },
+    {
+      "canonical_name": "المونسية",
+      "accepted_aliases": [],
+      "supporting_raw_values": [
+        "المونسية"
+      ],
+      "support_count": 1,
+      "confidence": "medium",
+      "notes": "مدعومة من السجلات نفسها عبر تكرار الاسم داخل العنوان/الوصف (1 مطابقة عنوانية، 1 بصيغة حي). عدد السجلات ما زال منخفضًا، لذلك يبقى هذا canonical draft محافظًا وقابلًا للمراجعة لاحقًا."
+    }
+  ]
+}
