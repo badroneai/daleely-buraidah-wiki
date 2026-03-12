@@ -2,6 +2,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import unquote
 
 BASE_DIR = Path(__file__).resolve().parent
 QUEUE_DIR = BASE_DIR / 'agent_queue'
@@ -31,15 +32,47 @@ def slugify(value: str):
 
 
 def clean_google_maps_name(text=''):
-    text = str(text or '').strip()
+    text = unquote(str(text or '').strip())
     text = re.sub(r'^.*?/place/', '', text)
     text = re.sub(r'/.*$', '', text)
     text = text.replace('+', ' ')
-    return text.strip()
+    text = text.replace('&amp;', '&')
+    text = normalize_spaces(text)
+    return text.strip(' -|')
 
 
 def normalize_spaces(text=''):
     return re.sub(r'\s+', ' ', str(text or '')).strip()
+
+
+def normalize_name(text=''):
+    text = normalize_spaces(unquote(str(text or '')))
+    text = text.replace('&amp;', '&')
+    text = re.sub(r'\s*\|\s*.*$', '', text)
+    return text.strip(' -|')
+
+
+def extract_reviews_count(combined='', raw_lines=None):
+    raw_lines = raw_lines or []
+
+    patterns = [
+        r'(?:reviews?|مراجعات|تقييمات?)\s*[:\-]?\s*([\d,]+)',
+        r'([\d,]+)\s*(?:reviews?|مراجعات|تقييمات?)',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, combined, re.I)
+        if match:
+            return match.group(1).replace(',', '')
+
+    for line in raw_lines:
+        if re.search(r'(reviews?|مراجعات|تقييمات?)', line, re.I):
+            nums = re.findall(r'[\d,]+', line)
+            nums = [n.replace(',', '') for n in nums if n.replace(',', '').isdigit()]
+            if nums:
+                best = max(nums, key=lambda n: (len(n), int(n)))
+                if best:
+                    return best
+    return ''
 
 
 def extract_fields(request):
@@ -62,12 +95,13 @@ def extract_fields(request):
             extracted['name'] = name
 
     raw_lines = [normalize_spaces(line) for line in raw_text.splitlines() if normalize_spaces(line)]
-    if not extracted.get('name') and raw_lines:
-        first_useful = next((line for line in raw_lines if len(line) > 2 and not re.search(r'(review|reviews|مراجعة|تقييم|open|يغلق|يفتح|الاتجاهات)', line, re.I)), '')
+    if raw_lines and not extracted.get('name'):
+        first_useful = next((line for line in raw_lines if len(line) > 2 and not re.search(r'(review|reviews|مراجعة|مراجعات|تقييم|تقييمات|open|يغلق|يفتح|الاتجاهات)', line, re.I)), '')
         if first_useful:
-            extracted['name'] = first_useful
+            extracted['name'] = normalize_name(first_useful)
 
     if extracted.get('name'):
+        extracted['name'] = normalize_name(extracted['name'])
         extracted['slug'] = slugify(extracted['name'])
         extracted['canonical_name_ar'] = extracted['name']
 
@@ -75,9 +109,9 @@ def extract_fields(request):
     if rating_match:
         extracted['google_rating'] = rating_match.group(1)
 
-    reviews_match = re.search(r'([\d,]{1,6})\s*(?:review|reviews|مراجعة|مراجعات|تقييم|تقييمات)', combined, re.I)
-    if reviews_match:
-        extracted['google_reviews_count'] = reviews_match.group(1).replace(',', '')
+    reviews_count = extract_reviews_count(combined, raw_lines)
+    if reviews_count:
+        extracted['google_reviews_count'] = reviews_count
 
     price_match = re.search(r'(\$\$\$\$|\$\$\$|\$\$|\$|رخيص|متوسط السعر|مرتفع|باهظ)', combined, re.I)
     if price_match:

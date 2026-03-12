@@ -1,6 +1,20 @@
 ﻿{
   "queue_name": "daleely-buraidah-agent-import-queue",
   "schema_version": "2026-03-12.queue-v1",
-  "updated_at": "2026-03-12T02:27:14Z",
-  "requests": []
+  "updated_at": "2026-03-12T02:32:50Z",
+  "requests": [
+    {
+      "id": "import-e2e-001",
+      "created_at": "2026-03-12T02:29:00Z",
+      "status": "processed",
+      "maps_url": "https://www.google.com/maps/place/Booq+Roastery+%26+Cafe",
+      "raw_text": "Booq Roastery & Cafe\n4.3 reviews 2,239\nالنهضة، بريدة\n$$",
+      "requested_action": "import_new_cafe_from_maps",
+      "notes": "Single E2E test request",
+      "processed_at": "2026-03-12T02:32:50Z",
+      "result_path": "agent_queue/import_results/import-e2e-001.result.json",
+      "proposed_patch_path": "agent_queue/import_results/patches/import-e2e-001.proposed.patch.json",
+      "processing_notes": "Extracted fields and generated proposed patch."
+    }
+  ]
 }
