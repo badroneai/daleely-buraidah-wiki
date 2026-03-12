@@ -19,4 +19,8 @@
 ## الحالة الحالية
 - الويكي لا يكتب إلى `master.json` مباشرة
 - الزر `Queue for Agent Import` ينشئ طلب queue مستقل
-- OpenClaw يمكنه لاحقًا قراءة `import_queue.json` ومعالجة الطلبات ثم حفظ النتائج في `import_results/`
+- المعالج الأدنى الحالي: `process_import_queue.py`
+- المعالج يقرأ الطلبات ذات الحالة `queued` ثم يولّد:
+  - result منظم داخل `import_results/`
+  - proposed patch داخل `import_results/patches/` عند الإمكان
+  - تحديث حالة الطلب داخل `import_queue.json`
