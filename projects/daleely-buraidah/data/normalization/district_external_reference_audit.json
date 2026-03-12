@@ -1,0 +1,234 @@
+{
+  "items": [
+    {
+      "raw_value": "غير متحقق",
+      "matched_external_name": "",
+      "external_source_count": 0,
+      "external_sources": [],
+      "external_support_level": "no_external_support",
+      "classification": "not_suitable_as_canonical_neighborhood",
+      "notes": "placeholder تشغيلي وليس اسم حي."
+    },
+    {
+      "raw_value": "النهضة",
+      "matched_external_name": "النهضة",
+      "external_source_count": 4,
+      "external_sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "external_support_level": "strong_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "الريان",
+      "matched_external_name": "الريان",
+      "external_source_count": 4,
+      "external_sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "external_support_level": "strong_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "البساتين",
+      "matched_external_name": "البساتين",
+      "external_source_count": 2,
+      "external_sources": [
+        "S2",
+        "S3"
+      ],
+      "external_support_level": "weak_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "الرحاب",
+      "matched_external_name": "الرحاب",
+      "external_source_count": 4,
+      "external_sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "external_support_level": "strong_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "الصفراء",
+      "matched_external_name": "الصفراء",
+      "external_source_count": 4,
+      "external_sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "external_support_level": "strong_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "الأفق",
+      "matched_external_name": "الأفق",
+      "external_source_count": 4,
+      "external_sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "external_support_level": "strong_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "جنوب بريدة",
+      "matched_external_name": "",
+      "external_source_count": 0,
+      "external_sources": [],
+      "external_support_level": "no_external_support",
+      "classification": "not_suitable_as_canonical_neighborhood",
+      "notes": "القيمة الحالية اتجاهية داخل المشروع، حتى لو وُجد اسم خارجي قريب فلا تُعامل كحي canonical في هذه الجولة."
+    },
+    {
+      "raw_value": "سلطانة",
+      "matched_external_name": "سلطانة",
+      "external_source_count": 2,
+      "external_sources": [
+        "S1",
+        "S5"
+      ],
+      "external_support_level": "weak_external_support",
+      "classification": "hold_value_with_external_neighborhood_support",
+      "notes": "الدعم الخارجي مفيد للمراجعة اللاحقة، لكنه غير كافٍ وحده للحسم."
+    },
+    {
+      "raw_value": "قرطبة",
+      "matched_external_name": "قرطبة",
+      "external_source_count": 1,
+      "external_sources": [
+        "S1"
+      ],
+      "external_support_level": "weak_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "شمال غرب بريدة",
+      "matched_external_name": "",
+      "external_source_count": 0,
+      "external_sources": [],
+      "external_support_level": "no_external_support",
+      "classification": "not_suitable_as_canonical_neighborhood",
+      "notes": "القيمة الحالية اتجاهية داخل المشروع، حتى لو وُجد اسم خارجي قريب فلا تُعامل كحي canonical في هذه الجولة."
+    },
+    {
+      "raw_value": "شرق بريدة",
+      "matched_external_name": "",
+      "external_source_count": 0,
+      "external_sources": [],
+      "external_support_level": "no_external_support",
+      "classification": "not_suitable_as_canonical_neighborhood",
+      "notes": "القيمة الحالية اتجاهية داخل المشروع، حتى لو وُجد اسم خارجي قريب فلا تُعامل كحي canonical في هذه الجولة."
+    },
+    {
+      "raw_value": "الإسكان",
+      "matched_external_name": "الإسكان",
+      "external_source_count": 3,
+      "external_sources": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "external_support_level": "medium_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "البصيرية",
+      "matched_external_name": "البصيرية",
+      "external_source_count": 1,
+      "external_sources": [
+        "S1"
+      ],
+      "external_support_level": "weak_external_support",
+      "classification": "hold_value_with_external_neighborhood_support",
+      "notes": "الدعم الخارجي مفيد للمراجعة اللاحقة، لكنه غير كافٍ وحده للحسم."
+    },
+    {
+      "raw_value": "التغيرة",
+      "matched_external_name": "التغيرة",
+      "external_source_count": 2,
+      "external_sources": [
+        "S1",
+        "S5"
+      ],
+      "external_support_level": "weak_external_support",
+      "classification": "hold_value_with_external_neighborhood_support",
+      "notes": "الدعم الخارجي مفيد للمراجعة اللاحقة، لكنه غير كافٍ وحده للحسم."
+    },
+    {
+      "raw_value": "الحزم",
+      "matched_external_name": "الحزم",
+      "external_source_count": 2,
+      "external_sources": [
+        "S2",
+        "S3"
+      ],
+      "external_support_level": "weak_external_support",
+      "classification": "likely_residential_neighborhood_supported_externally",
+      "notes": "يدعم canonical draft الحالي خارجيًا لكنه لا يغيّره وحده."
+    },
+    {
+      "raw_value": "السالمية",
+      "matched_external_name": "السالمية",
+      "external_source_count": 4,
+      "external_sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "external_support_level": "strong_external_support",
+      "classification": "hold_value_with_external_neighborhood_support",
+      "notes": "الدعم الخارجي مفيد للمراجعة اللاحقة، لكنه غير كافٍ وحده للحسم."
+    },
+    {
+      "raw_value": "المونسية",
+      "matched_external_name": "",
+      "external_source_count": 0,
+      "external_sources": [],
+      "external_support_level": "no_external_support",
+      "classification": "no_useful_external_match",
+      "notes": "لم يظهر تطابق خارجي مفيد بالاسم الحالي."
+    },
+    {
+      "raw_value": "شمال بريدة",
+      "matched_external_name": "",
+      "external_source_count": 0,
+      "external_sources": [],
+      "external_support_level": "no_external_support",
+      "classification": "not_suitable_as_canonical_neighborhood",
+      "notes": "القيمة الحالية اتجاهية داخل المشروع، حتى لو وُجد اسم خارجي قريب فلا تُعامل كحي canonical في هذه الجولة."
+    },
+    {
+      "raw_value": "غرب بريدة",
+      "matched_external_name": "",
+      "external_source_count": 0,
+      "external_sources": [],
+      "external_support_level": "no_external_support",
+      "classification": "not_suitable_as_canonical_neighborhood",
+      "notes": "القيمة الحالية اتجاهية داخل المشروع، حتى لو وُجد اسم خارجي قريب فلا تُعامل كحي canonical في هذه الجولة."
+    }
+  ]
+}

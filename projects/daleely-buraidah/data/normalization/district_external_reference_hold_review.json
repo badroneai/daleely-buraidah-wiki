@@ -1,0 +1,89 @@
+{
+  "items": [
+    {
+      "raw_value": "سلطانة",
+      "external_match_candidates": [
+        {
+          "matched_external_name": "سلطانة",
+          "external_source_count": 2,
+          "external_sources": [
+            "S1",
+            "S5"
+          ],
+          "support_level": "weak_external_support"
+        },
+        {
+          "matched_external_name": "سلطانة",
+          "external_source_count": 2,
+          "external_sources": [
+            "S1",
+            "S5"
+          ],
+          "support_level": "weak_external_support"
+        }
+      ],
+      "source_strength": "weak",
+      "can_help_later_yes_no": "yes",
+      "why_not_final_yet": "الملف الخارجي يدعم اسم سلطانة كاسم متداول، لكنه لا يحسم وحده هل يجب دمجه إلى صيغة معرفّة مثل السلطانة داخل المشروع."
+    },
+    {
+      "raw_value": "السالمية",
+      "external_match_candidates": [
+        {
+          "matched_external_name": "السالمية",
+          "external_source_count": 4,
+          "external_sources": [
+            "S1",
+            "S2",
+            "S3",
+            "S5"
+          ],
+          "support_level": "strong_external_support"
+        }
+      ],
+      "source_strength": "strong",
+      "can_help_later_yes_no": "yes",
+      "why_not_final_yet": "يوجد دعم خارجي بالاسم، لكنه وحده لا يكفي لترقية قيمة hold إلى canonical أو alias نهائي دون دعم إضافي من السجلات/المراجعة."
+    },
+    {
+      "raw_value": "البصيرية",
+      "external_match_candidates": [
+        {
+          "matched_external_name": "البصيرية",
+          "external_source_count": 1,
+          "external_sources": [
+            "S1"
+          ],
+          "support_level": "weak_external_support"
+        }
+      ],
+      "source_strength": "weak",
+      "can_help_later_yes_no": "yes",
+      "why_not_final_yet": "يوجد دعم خارجي بالاسم، لكنه وحده لا يكفي لترقية قيمة hold إلى canonical أو alias نهائي دون دعم إضافي من السجلات/المراجعة."
+    },
+    {
+      "raw_value": "التغيرة",
+      "external_match_candidates": [
+        {
+          "matched_external_name": "التغيرة",
+          "external_source_count": 2,
+          "external_sources": [
+            "S1",
+            "S5"
+          ],
+          "support_level": "weak_external_support"
+        }
+      ],
+      "source_strength": "weak",
+      "can_help_later_yes_no": "yes",
+      "why_not_final_yet": "يوجد دعم خارجي بالاسم، لكنه وحده لا يكفي لترقية قيمة hold إلى canonical أو alias نهائي دون دعم إضافي من السجلات/المراجعة."
+    },
+    {
+      "raw_value": "غير متحقق",
+      "external_match_candidates": [],
+      "source_strength": "none",
+      "can_help_later_yes_no": "no",
+      "why_not_final_yet": "ليست قيمة اسم حي أصلًا، والمرجع الخارجي لا يربط placeholder باسم محدد."
+    }
+  ]
+}
