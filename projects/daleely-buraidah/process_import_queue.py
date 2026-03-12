@@ -52,6 +52,48 @@ def normalize_name(text=''):
     return text.strip(' -|')
 
 
+def is_arabic_text(text=''):
+    return bool(re.search(r'[\u0600-\u06FF]', str(text or '')))
+
+
+def is_latin_text(text=''):
+    return bool(re.search(r'[A-Za-z]', str(text or '')))
+
+
+def normalize_name_fields(extracted):
+    name = normalize_name(extracted.get('name', ''))
+    raw_text_name = normalize_name(extracted.get('_raw_name_candidate', ''))
+
+    arabic_candidate = ''
+    english_candidate = ''
+
+    for candidate in [name, raw_text_name]:
+        if candidate and is_arabic_text(candidate) and not arabic_candidate:
+            arabic_candidate = candidate
+        if candidate and is_latin_text(candidate) and not english_candidate:
+            english_candidate = candidate
+
+    if english_candidate:
+        extracted['canonical_name_en'] = english_candidate
+    if arabic_candidate:
+        extracted['canonical_name_ar'] = arabic_candidate
+
+    if arabic_candidate:
+        extracted['name'] = arabic_candidate
+        if english_candidate:
+            extracted['alternate_name'] = english_candidate
+    elif english_candidate:
+        extracted['name'] = english_candidate
+        extracted['canonical_name_en'] = english_candidate
+
+    final_name = extracted.get('name', '')
+    if final_name:
+        extracted['slug'] = slugify(final_name if is_latin_text(final_name) else (english_candidate or final_name))
+
+    extracted.pop('_raw_name_candidate', None)
+    return extracted
+
+
 def extract_reviews_count(combined='', raw_lines=None):
     raw_lines = raw_lines or []
 
@@ -95,15 +137,13 @@ def extract_fields(request):
             extracted['name'] = name
 
     raw_lines = [normalize_spaces(line) for line in raw_text.splitlines() if normalize_spaces(line)]
-    if raw_lines and not extracted.get('name'):
-        first_useful = next((line for line in raw_lines if len(line) > 2 and not re.search(r'(review|reviews|مراجعة|مراجعات|تقييم|تقييمات|open|يغلق|يفتح|الاتجاهات)', line, re.I)), '')
-        if first_useful:
-            extracted['name'] = normalize_name(first_useful)
+    first_useful = next((line for line in raw_lines if len(line) > 2 and not re.search(r'(review|reviews|مراجعة|مراجعات|تقييم|تقييمات|open|يغلق|يفتح|الاتجاهات)', line, re.I)), '')
+    if first_useful:
+        extracted['_raw_name_candidate'] = normalize_name(first_useful)
+        if not extracted.get('name'):
+            extracted['name'] = extracted['_raw_name_candidate']
 
-    if extracted.get('name'):
-        extracted['name'] = normalize_name(extracted['name'])
-        extracted['slug'] = slugify(extracted['name'])
-        extracted['canonical_name_ar'] = extracted['name']
+    extracted = normalize_name_fields(extracted)
 
     rating_match = re.search(r'(?:^|[^\d])(\d\.\d)(?:[^\d]|$)', combined)
     if rating_match:
