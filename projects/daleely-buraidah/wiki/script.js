@@ -153,7 +153,7 @@ function bindFilters() {
 function entitiesTable(records) {
   return `
     <div class="table-wrap">
-      <table class="table">
+      <table class="table table-entities">
         <thead>
           <tr>
             <th>الاسم</th><th>الحالة</th><th>الحي</th><th>الثقة</th><th>التقييم</th><th>المراجعات</th><th>العمل</th><th>الجلسات</th><th>السهر</th>
@@ -161,8 +161,8 @@ function entitiesTable(records) {
         </thead>
         <tbody>
           ${records.map(r => `
-            <tr>
-              <td><a href="#/entities/${esc(r.slug)}" class="button">${esc(r.name)}</a><div class="note">${esc(r.alternate_name || '')}</div></td>
+            <tr class="entity-row" data-href="#/entities/${esc(r.slug)}">
+              <td><a href="#/entities/${esc(r.slug)}" class="button entity-link">${esc(r.name)}</a><div class="note">${esc(r.alternate_name || '')}</div></td>
               <td>${badge(r.status)}</td>
               <td>${esc(r.district || 'غير متحقق')}</td>
               <td>${esc(r.confidence || '—')}</td>
@@ -454,6 +454,15 @@ function downloadJson(filename, payload) {
   a.click();
   URL.revokeObjectURL(url);
 }
+function bindEntityNavigation() {
+  document.querySelectorAll('.entity-row[data-href]').forEach(row => {
+    row.addEventListener('click', e => {
+      if (e.target.closest('a, button, input, textarea, select, label')) return;
+      location.hash = row.dataset.href;
+    });
+  });
+}
+
 function bindEditorActions() {
   document.querySelectorAll('[data-action="toggle-edit"]').forEach(btn => btn.addEventListener('click', () => {
     state.editMode = true;
@@ -514,6 +523,7 @@ function router() {
   }
   app.innerHTML = html;
   bindFilters();
+  bindEntityNavigation();
   bindEditorActions();
 }
 
