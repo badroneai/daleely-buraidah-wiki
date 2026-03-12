@@ -19,7 +19,8 @@ const state = {
   editMode: false,
   currentSlug: null,
   draftMessage: '',
-  importDraftText: ''
+  importDraftText: '',
+  importRawText: ''
 };
 
 const STATUS_AR = {
@@ -280,29 +281,46 @@ function cleanGoogleMapsName(text = '') {
     .replace(/\s*\|\s*/g, ' | ')
     .trim();
 }
-function extractGoogleMapsDraft(input) {
-  const raw = String(input || '').trim();
-  if (!raw) return {};
-  const draft = {};
-  draft.reference_url = raw;
+function normalizeSpaces(text = '') {
+  return String(text || '').replace(/\s+/g, ' ').trim();
+}
+function extractGoogleMapsDraft(urlInput, rawTextInput = '') {
+  const url = String(urlInput || '').trim();
+  const rawText = String(rawTextInput || '').trim();
+  const combined = `${url}\n${rawText}`.trim();
+  if (!combined) return {};
 
-  const nameMatch = raw.match(/\/place\/([^/?#]+)/i);
+  const draft = {};
+  if (url) draft.reference_url = url;
+
+  const nameMatch = url.match(/\/place\/([^/?#]+)/i);
   if (nameMatch) {
     const parsedName = cleanGoogleMapsName(nameMatch[1]);
     if (parsedName) draft.name = parsedName;
   }
 
-  const ratingMatch = raw.match(/(?:^|[^\d])(\d\.\d)(?:[^\d]|$)/);
+  const rawLines = rawText.split(/\r?\n/).map(normalizeSpaces).filter(Boolean);
+  if (!draft.name && rawLines.length) {
+    const firstUsefulLine = rawLines.find(line => line.length > 2 && !/(review|reviews|مراجعة|تقييم|open|يغلق|يفتح|الاتجاهات)/i.test(line));
+    if (firstUsefulLine) draft.name = firstUsefulLine;
+  }
+
+  const ratingMatch = combined.match(/(?:^|[^\d])(\d\.\d)(?:[^\d]|$)/);
   if (ratingMatch) draft.google_rating = ratingMatch[1];
 
-  const reviewsMatch = raw.match(/(\d{2,6})\s*(?:review|reviews|مراجعة|تقييم)/i);
-  if (reviewsMatch) draft.google_reviews_count = reviewsMatch[1];
+  const reviewsMatch = combined.match(/([\d,]{1,6})\s*(?:review|reviews|مراجعة|مراجعات|تقييم|تقييمات)/i);
+  if (reviewsMatch) draft.google_reviews_count = reviewsMatch[1].replace(/,/g, '');
 
-  const priceMatch = raw.match(/(\$|\$\$|\$\$\$|\$\$\$\$|رخيص|متوسط|مرتفع)/i);
+  const priceMatch = combined.match(/(\$\$\$\$|\$\$\$|\$\$|\$|رخيص|متوسط السعر|مرتفع|باهظ)/i);
   if (priceMatch) draft.price_level = priceMatch[1];
 
-  const plusCodeMatch = raw.match(/([23456789CFGHJMPQRVWX]{4,8}\+[23456789CFGHJMPQRVWX]{2,4})/i);
-  if (plusCodeMatch) draft.short_address = plusCodeMatch[1];
+  const plusCodeMatch = combined.match(/([23456789CFGHJMPQRVWX]{4,8}\+[23456789CFGHJMPQRVWX]{2,4})/i);
+  if (plusCodeMatch) {
+    draft.short_address = plusCodeMatch[1];
+  } else if (rawLines.length > 1) {
+    const addressLine = rawLines.find(line => /(طريق|شارع|حي|بريدة|النهضة|الريان|البساتين|الصفراء|سلطانة|قرطبة)/.test(line));
+    if (addressLine) draft.short_address = addressLine;
+  }
 
   return draft;
 }
@@ -326,10 +344,14 @@ function renderEditForm(e) {
             <button class="button primary" data-action="export-patch" data-slug="${esc(e.slug)}">Export Patch</button>
           </div>
         </div>
-        <div class="import-box">
+        <div class="import-box import-box-wide">
           <label class="edit-field import-field">
             <span>رابط Google Maps</span>
             <input id="googleMapsImport" class="field" type="url" value="${esc(state.importDraftText || '')}" placeholder="ألصق رابط Google Maps هنا" />
+          </label>
+          <label class="edit-field import-field import-raw-field">
+            <span>Paste Raw Text</span>
+            <textarea id="googleMapsRawText" class="field" placeholder="ألصق أي نص خام من Google Maps أو وصف المكان هنا">${esc(state.importRawText || '')}</textarea>
           </label>
           <button class="button" data-action="import-draft" data-slug="${esc(e.slug)}">Import Draft</button>
         </div>
@@ -525,12 +547,14 @@ function bindEditorActions() {
   document.querySelectorAll('[data-action="import-draft"]').forEach(btn => btn.addEventListener('click', () => {
     const form = document.getElementById('editForm');
     const input = document.getElementById('googleMapsImport');
+    const rawInput = document.getElementById('googleMapsRawText');
     state.importDraftText = input?.value || '';
-    const imported = extractGoogleMapsDraft(state.importDraftText);
+    state.importRawText = rawInput?.value || '';
+    const imported = extractGoogleMapsDraft(state.importDraftText, state.importRawText);
     applyImportedDraftToForm(form, imported);
     state.draftMessage = Object.keys(imported).length
-      ? 'تم تعبئة draft أولي من رابط Google Maps داخل النموذج.'
-      : 'لم أستخرج حقولًا كافية من الرابط الحالي.';
+      ? 'تم تعبئة draft أولي من الرابط والنص الخام داخل النموذج.'
+      : 'لم أستخرج حقولًا كافية من المدخلات الحالية.';
   }));
   document.querySelectorAll('[data-action="save-draft"]').forEach(btn => btn.addEventListener('click', () => {
     const slug = btn.dataset.slug;
