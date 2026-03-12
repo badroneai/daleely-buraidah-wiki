@@ -21,7 +21,8 @@ const state = {
   draftMessage: '',
   importDraftText: '',
   importRawText: '',
-  isNewCafe: false
+  isNewCafe: false,
+  queueMessage: ''
 };
 
 const STATUS_AR = {
@@ -375,6 +376,7 @@ function renderEditForm(e) {
           <div class="actions">
             ${isNewCafe ? '' : `<button class="button" data-action="cancel-edit" data-slug="${esc(e.slug)}">إلغاء</button>`}
             <button class="button gold" data-action="save-draft" data-slug="${esc(e.slug)}">${isNewCafe ? 'Create Draft' : 'Save Draft'}</button>
+            ${isNewCafe ? `<button class="button queue" data-action="queue-import" data-slug="${esc(e.slug)}">Queue for Agent Import</button>` : ''}
             <button class="button primary" data-action="export-patch" data-slug="${esc(e.slug)}">Export Patch</button>
           </div>
         </div>
@@ -389,7 +391,7 @@ function renderEditForm(e) {
           </label>
           <button class="button primary" data-action="import-draft" data-slug="${esc(e.slug)}">${isNewCafe ? 'Fetch Basic Data' : 'Import Draft'}</button>
         </div>
-        ${isNewCafe ? '<div class="note">ألصق الرابط ثم اضغط Fetch Basic Data لتعبئة الحقول الأساسية أوليًا، ثم راجعها واحفظها كـ draft أو صدّر patch.</div>' : ''}
+        ${isNewCafe ? '<div class="note">ألصق الرابط ثم اضغط Fetch Basic Data لتعبئة الحقول الأساسية أوليًا، أو استخدم Queue for Agent Import لإنشاء طلب import مستقل داخل agent_queue بدون الكتابة إلى master.</div>' : ''}
         <form id="editForm" class="edit-grid" data-slug="${esc(e.slug)}">
           ${editableField('الاسم المعتمد', 'name', current.name)}
           ${editableField('التقييم', 'google_rating', current.google_rating)}
@@ -416,6 +418,7 @@ function renderEditForm(e) {
         </form>
         <div class="note">الحفظ هنا محلي داخل المتصفح فقط. استخدم Export Patch لتوليد ملف تغييرات يمكن تطبيقه على البيانات الأصلية.</div>
         ${state.draftMessage ? `<div class="draft-message">${esc(state.draftMessage)}</div>` : ''}
+        ${state.queueMessage ? `<div class="queue-message">${esc(state.queueMessage)}</div>` : ''}
       </div>
     </div>
   `;
@@ -590,6 +593,38 @@ function downloadJson(filename, payload) {
   a.click();
   URL.revokeObjectURL(url);
 }
+function queueFileRelativePath() {
+  return '../agent_queue/import_queue.json';
+}
+function makeQueueRequest(payload = {}) {
+  return {
+    id: `import-${Date.now()}`,
+    created_at: new Date().toISOString(),
+    status: 'queued',
+    maps_url: String(payload.maps_url || '').trim(),
+    raw_text: String(payload.raw_text || '').trim(),
+    requested_action: 'import_new_cafe_from_maps',
+    notes: String(payload.notes || 'Created from New Cafe in wiki').trim()
+  };
+}
+async function appendQueueRequestToProject(request) {
+  if (!window.showOpenFilePicker) throw new Error('file-system-access-unavailable');
+  const [fileHandle] = await window.showOpenFilePicker({
+    multiple: false,
+    excludeAcceptAllOption: false,
+    suggestedName: 'import_queue.json',
+    types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+  });
+  const file = await fileHandle.getFile();
+  const text = await file.text();
+  const queue = JSON.parse(text || '{}');
+  if (!Array.isArray(queue.requests)) queue.requests = [];
+  queue.updated_at = new Date().toISOString();
+  queue.requests.push(request);
+  const writable = await fileHandle.createWritable();
+  await writable.write(JSON.stringify(queue, null, 2));
+  await writable.close();
+}
 function bindEditorActions() {
   document.querySelectorAll('[data-action="toggle-edit"]').forEach(btn => btn.addEventListener('click', () => {
     state.editMode = true;
@@ -614,6 +649,22 @@ function bindEditorActions() {
     state.draftMessage = Object.keys(imported).length
       ? (btn.dataset.slug === 'new-cafe-draft' ? 'تم جلب البيانات الأساسية الأولية داخل النموذج.' : 'تم تعبئة draft أولي من الرابط والنص الخام داخل النموذج.')
       : 'لم أستخرج حقولًا كافية من المدخلات الحالية.';
+  }));
+  document.querySelectorAll('[data-action="queue-import"]').forEach(btn => btn.addEventListener('click', async () => {
+    const form = document.getElementById('editForm');
+    const payload = collectFormData(form);
+    const request = makeQueueRequest({
+      maps_url: document.getElementById('googleMapsImport')?.value || payload.reference_url || '',
+      raw_text: document.getElementById('googleMapsRawText')?.value || '',
+      notes: `New Cafe draft: ${payload.name || 'unnamed'}`
+    });
+    try {
+      await appendQueueRequestToProject(request);
+      state.queueMessage = `Queued successfully: ${request.id} -> agent_queue/import_queue.json`;
+    } catch (err) {
+      downloadJson(`${request.id}.queue-request.json`, request);
+      state.queueMessage = `Direct write unavailable. Downloaded JSON request; add it later to ${queueFileRelativePath()}`;
+    }
   }));
   document.querySelectorAll('[data-action="save-draft"]').forEach(btn => btn.addEventListener('click', () => {
     const slug = btn.dataset.slug;

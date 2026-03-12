@@ -213,6 +213,7 @@ body {
 }
 .button.primary { background: linear-gradient(135deg, #17325a, #10233f); border-color: #29476f; }
 .button.gold { background: linear-gradient(135deg, #7f6c37, #5f4f25); border-color: #9c8549; }
+.button.queue { background: linear-gradient(135deg, #184f3d, #123629); border-color: #2a7a60; }
 .filters {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -296,6 +297,14 @@ body {
   background: rgba(59,130,246,.12);
   border: 1px solid #274f8f;
   color: #cfe3ff;
+}
+.queue-message {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(38,162,105,.12);
+  border: 1px solid #245c43;
+  color: #cbffe1;
 }
 
 @media (max-width: 1100px) {
