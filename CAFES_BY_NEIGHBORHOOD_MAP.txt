@@ -1,0 +1,266 @@
+================================================================================
+خريطة المقاهي المكتشفة حسب الأحياء - Discovered Cafes Neighborhood Map
+================================================================================
+
+بريدة / Buraydah, Qassim Province, Saudi Arabia
+Date: March 14, 2026
+Total Discovered: 26 Establishments
+
+================================================================================
+1. حي الريان | AL-RAYAN DISTRICT
+================================================================================
+
+   Location: Eastern/Northeastern Buraydah
+   Number of Cafes: 2
+   
+   ├─ كوفي أوجن (Ojn/Augen Coffee) ★★★
+   │  └─ Location: Wakai bin Al-Jarah Street (شارع واقي بن الجاراح)
+   │     Type: Specialty Coffee Cafe
+   │     Features: Modern atmosphere, specialized coffee
+   │     Status: REQUESTED CAFE - FOUND ✓
+   │
+   └─ سليل (Salil Cafe)
+      └─ Location: Al-Rayan neighborhood
+         Type: Modern Cafe
+         Features: Contemporary seating
+
+================================================================================
+2. حي الصفراء | AL-SAFRA DISTRICT
+================================================================================
+
+   Location: Western/Southwestern Buraydah
+   Number of Cafes: 4
+   
+   ├─ قونيش (Qunish Cafe) ★★★
+   │  └─ Location: King Abdul Aziz Street (شارع الملك عبدالعزيز)
+   │     Type: Specialty Cafe
+   │     Features: Famous, well-established
+   │     Rating: High confidence
+   │
+   ├─ جينوفيت (Ginovetti Cafe) ★★★
+   │  └─ Location: Al-Safra neighborhood
+   │     Type: Pastry/Coffee Cafe
+   │     Features: European pastries, high quality
+   │     Rating: High confidence
+   │
+   ├─ كوفا (Kufa Restaurant)
+   │  └─ Location: Al-Safra neighborhood
+   │     Type: Restaurant with Coffee Service
+   │     Features: Full menu + coffee
+   │
+   └─ سلة الزهور (Basket Flowers)
+      └─ Location: Al-Safra neighborhood
+         Type: Cafe
+         Features: Floral-themed
+
+================================================================================
+3. حي النهضة | AL-NAHDA DISTRICT
+================================================================================
+
+   Location: Northern Buraydah
+   Number of Cafes: 2
+   
+   ├─ كاثا (Katha Cafe)
+   │  └─ Location: Al-Nahda neighborhood
+   │     Type: Cafe
+   │
+   └─ بيد (Bid Cafe)
+      └─ Location: Al-Nahda neighborhood
+         Type: Cafe
+
+================================================================================
+4. حي قرطبة | QURTUBA DISTRICT
+================================================================================
+
+   Location: Central/Southern Buraydah
+   Number of Cafes: 3
+   
+   ├─ كوفي آن (An Coffee)
+   │  └─ Location: Qurtuba neighborhood
+   │     Type: Cafe with Multiple Branches
+   │     Features: Known throughout Buraydah
+   │
+   ├─ هڤن (Haven Cafe)
+   │  └─ Location: Qurtuba neighborhood
+   │     Type: Modern Cafe
+   │     Features: Contemporary design
+   │
+   └─ حزة كافيه (Hazza Cafe)
+      └─ Location: Qurtuba neighborhood
+         Type: Cafe with Multiple Branches
+         Features: Well-established chain
+
+================================================================================
+5. حي السلطانة | AL-SULTANA DISTRICT
+================================================================================
+
+   Location: Southern Buraydah
+   Number of Cafes: 3
+   
+   ├─ راوند (Raund Coffee)
+   │  └─ Location: Al-Sultana neighborhood
+   │     Type: Cafe
+   │
+   ├─ جوي (Jowy Cafe)
+   │  └─ Location: Al-Sultana neighborhood
+   │     Type: Cafe
+   │
+   └─ فناة (Fanaa Cafe)
+      └─ Location: Al-Sultana neighborhood
+         Type: Cafe
+
+================================================================================
+6. حي البساتين | AL-BASATIN DISTRICT
+================================================================================
+
+   Location: Western Buraydah
+   Number of Cafes: 4
+   
+   ├─ تاتلي (Tatly Cafe) ★★
+   │  └─ Location: Al-Basatin neighborhood
+   │     Type: Modern Cafe with Pastries
+   │     Features: Contemporary seating, fresh pastries
+   │
+   ├─ ليبرتي (Liberty Cafe)
+   │  └─ Location: Al-Basatin neighborhood
+   │     Type: Cafe
+   │
+   ├─ تاتل (Tattle Cafe)
+   │  └─ Location: Al-Basatin neighborhood
+   │     Type: Cafe
+   │
+   └─ سدرة (Sidra Cafe)
+      └─ Location: Al-Basatin neighborhood
+         Type: Cafe
+
+================================================================================
+7. حي البصيرية | AL-BASIRAH DISTRICT
+================================================================================
+
+   Location: Southern/Southeastern Buraydah
+   Number of Cafes: 1
+   
+   └─ خلة بريدة (Khalla Buraydah Coffee)
+      └─ Location: Al-Basirah neighborhood
+         Type: Specialty Coffee
+         Features: Local specialty name
+
+================================================================================
+8. حي الآفاق | AL-AFAQ DISTRICT
+================================================================================
+
+   Location: Northern/Northeastern Buraydah
+   Number of Cafes: 1
+   
+   └─ بلسم الافق (Balsam Al-Afaq) [NEW]
+      └─ Location: Al-Afaq neighborhood
+         Type: Modern Cafe
+         Features: Recently opened (2025-2026)
+
+================================================================================
+9. المركز / شارع البخاري | DOWNTOWN / AL-BUKHARI STREET
+================================================================================
+
+   Location: Central/Business District
+   Number of Cafes: 7 + 2 Commercial Complexes
+   
+   ├─ صن رايز (Sunrise Coffee) ★★★ [REQUESTED CAFE - FOUND ✓]
+   │  └─ Location: Abu Bakr Al-Siddiq Street (شارع أبو بكر الصديق)
+   │     Type: Early Morning Specialty Cafe
+   │     Hours: 5:00 AM - 1:00 PM & 4:30 PM - 12:00 AM
+   │     Features: Earliest opening hours in Buraydah
+   │     Status: HIGH PRIORITY LOCATION
+   │
+   ├─ نورد (Nord Cafe) ★★★★★
+   │  └─ Location: Downtown area
+   │     Type: Specialty Coffee Cafe
+   │     Rating: 5/5 on TripAdvisor
+   │     Features: Premium quality, highly recommended
+   │
+   ├─ لبر (Lipper Cafe)
+   │  └─ Location: Othman bin Affan Street (شارع عثمان بن عفان)
+   │     Type: Cafe
+   │
+   ├─ كِفه (Kifa Cafe)
+   │  └─ Location: Al-Bukhari Street (شارع البخاري)
+   │     Type: Cafe
+   │
+   ├─ بريستل (Prestel)
+   │  └─ Location: Al-Bukhari Street (شارع البخاري)
+   │     Type: Cafe
+   │
+   ├─ دكتور كافيه (Dr. CAFE COFFEE) ★★★★
+   │  └─ Location: Multiple branches throughout Buraydah
+   │     Type: National Coffee Chain
+   │     Rating: 4/5 on Google Maps
+   │     Features: Known quality, multiple locations in Saudi Arabia
+   │
+   ├─ كيان أفنيوز (Kayan Avenues) [COMMERCIAL COMPLEX]
+   │  └─ Location: Al-Bukhari Street (شارع البخاري)
+   │     Type: Shopping Complex with Multiple Cafes
+   │     Features: Modern commercial hub housing several establishments
+   │
+   └─ روڤان (Rovan Complex) [COMMERCIAL COMPLEX]
+      └─ Location: Central commercial area
+         Type: Commercial Complex with Multiple Cafes
+         Features: Houses several cafe establishments
+
+================================================================================
+SUMMARY STATISTICS | الإحصائيات الملخصة
+================================================================================
+
+Total Neighborhoods: 9
+Total Cafes/Establishments: 26
+
+Distribution by Neighborhood:
+- المركز / Downtown: 7 cafes + 2 complexes
+- البساتين / Al-Basatin: 4 cafes
+- الصفراء / Al-Safra: 4 cafes
+- السلطانة / Al-Sultana: 3 cafes
+- قرطبة / Qurtuba: 3 cafes
+- الريان / Al-Rayan: 2 cafes
+- النهضة / Al-Nahda: 2 cafes
+- البصيرية / Al-Basirah: 1 cafe
+- الآفاق / Al-Afaq: 1 cafe
+
+High Confidence (Highly Rated): 4
+- نورد (Nord) - 5/5 TripAdvisor
+- جينوفيت (Ginovetti) - European pastries
+- قونيش (Qunish) - Well-established
+- دكتور كافيه (Dr. CAFE) - National chain
+
+Medium Confidence: 22
+
+Specialty Features:
+- Specialty Coffee Cafes: 4
+- Modern/Contemporary: 6
+- Multiple Branches: 3
+- Commercial Complexes: 2
+- National Chains: 1
+- Recently Opened: 1
+- Early Hours: 1 (Sunrise Coffee - 5 AM)
+
+Primary Streets:
+- Al-Bukhari Street (شارع البخاري): 5
+- King Abdul Aziz Street (شارع الملك عبدالعزيز): 1
+- Abu Bakr Al-Siddiq Street (شارع أبو بكر الصديق): 1
+- Othman bin Affan Street (شارع عثمان بن عفان): 1
+
+Social Media Presence:
+- Instagram verified accounts: Several
+- TripAdvisor listings: Multiple (esp. Nord Cafe)
+- Google Maps: Extensive reviews and photos
+
+================================================================================
+END OF NEIGHBORHOOD MAP
+================================================================================
+
+Integration Notes for Database Update:
+1. All 26 establishments are NEW entries (not in existing 282-cafe database)
+2. CSV format file available: DISCOVERED_CAFES_2026.csv
+3. Confidence levels assigned for validation prioritization
+4. Geographic coordinates can be verified via Google Maps
+5. Contact information pending field verification
+6. Operating hours partially confirmed - recommend verification visits
+
+================================================================================

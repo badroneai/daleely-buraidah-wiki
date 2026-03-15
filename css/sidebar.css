@@ -1,0 +1,198 @@
+/* === الشريط الجانبي === */
+.sidebar-toggle,
+.sidebar-overlay,
+.sidebar-mobile-head {
+  display: none;
+}
+.sidebar-toggle {
+  position: fixed;
+  inset-inline-end: 16px;
+  inset-block-start: 16px;
+  z-index: 1200;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(18,26,43,.92);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.sidebar-toggle-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1090;
+  background: rgba(5, 10, 20, 0.62);
+  backdrop-filter: blur(3px);
+}
+.sidebar {
+  background: rgba(9, 15, 28, 0.92);
+  border-inline-start: 1px solid var(--line);
+  padding: 24px 18px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+.sidebar-mobile-head {
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.sidebar-mobile-title {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+.sidebar-close {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.brand-mark {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--gold), #8d7a45);
+  color: #101522;
+  font-weight: 900;
+}
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+}
+.brand p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.sidebar-search input, .field, select {
+  width: 100%;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: 12px;
+  outline: none;
+}
+.search-shell {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+.search-button {
+  min-width: 74px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--panel-2), #162235);
+  color: var(--text);
+  padding: 0 14px;
+  cursor: pointer;
+}
+.sidebar-search { margin-bottom: 18px; }
+.nav-group { margin-bottom: 18px; }
+.nav-title {
+  color: var(--gold);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.nav-group a {
+  display: block;
+  padding: 11px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 12px;
+  margin-bottom: 5px;
+}
+.nav-group a:hover, .nav-group a.active {
+  background: var(--panel-2);
+}
+.nav-group > a {
+  font-weight: 700;
+}
+.nav-subtree {
+  margin: 10px 0 14px;
+  padding: 10px 10px 2px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.02);
+}
+.nav-parent {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.nav-parent-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px 0;
+}
+.nav-parent-toggle::after {
+  content: "‹";
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  transition: transform 200ms ease;
+  transform: rotate(0deg);
+}
+.nav-subtree:not(.collapsed) > .nav-parent-toggle::after {
+  transform: rotate(-90deg);
+}
+/* ── collapsed subtree: hide children ── */
+.nav-subtree.collapsed > .nav-child {
+  display: none !important;
+}
+.nav-child {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-inline-start: 10px;
+  padding-inline-start: 14px !important;
+  border-inline-start: 2px solid var(--line);
+  font-size: 13px;
+}
+.nav-child span {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+/* ── subtree expand/collapse transitions ── */
+.nav-subtree .nav-child {
+  transition: max-height 180ms ease, opacity 150ms ease;
+}
+.nav-subtree.expanded > .nav-child {
+  display: flex !important;
+}
+/* ── active highlight for current sector ── */
+.nav-group a.active {
+  background: var(--panel-2);
+  border-inline-start: 3px solid var(--gold);
+}

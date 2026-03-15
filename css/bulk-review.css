@@ -1,0 +1,109 @@
+/* === المراجعة الجماعية === */
+.bulk-shell {
+  display: grid;
+  gap: 18px;
+}
+.bulk-batch-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.bulk-batch-card {
+  display: block;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.02);
+  color: var(--text);
+  text-decoration: none;
+}
+.bulk-batch-card strong,
+.bulk-batch-card span {
+  display: block;
+}
+.bulk-batch-card strong {
+  margin-bottom: 6px;
+}
+.bulk-batch-card span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.bulk-batch-card.is-active {
+  border-color: #4f7bb8;
+  background: linear-gradient(180deg, rgba(33,53,84,.88), rgba(20,32,51,.9));
+}
+.bulk-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.bulk-execution-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.bulk-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.bulk-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+  gap: 16px;
+}
+.bulk-main,
+.bulk-side {
+  display: grid;
+  gap: 16px;
+}
+.bulk-current-card,
+.bulk-current-grid {
+  display: grid;
+  gap: 14px;
+}
+.bulk-current-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.bulk-actions,
+.bulk-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.bulk-decision-note {
+  display: grid;
+}
+.bulk-list {
+  display: grid;
+  gap: 10px;
+}
+.bulk-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.02);
+  color: var(--text);
+  text-align: right;
+  cursor: pointer;
+}
+.bulk-list-item strong,
+.bulk-list-item span {
+  display: block;
+}
+.bulk-list-item span {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+.bulk-list-item.is-active {
+  border-color: #4f7bb8;
+  background: rgba(59,130,246,.1);
+}

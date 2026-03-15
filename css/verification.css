@@ -1,0 +1,99 @@
+/* === نظام التحقق === */
+.verification-shell {
+  display: grid;
+  gap: 18px;
+}
+.verification-switcher,
+.verification-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.verification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.verification-list {
+  display: grid;
+  gap: 12px;
+}
+.verification-queue-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(240px, .9fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.verification-note-field {
+  margin: 0;
+}
+.verification-action-hint {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.02);
+}
+.verification-action-hint strong,
+.verification-action-hint span {
+  display: block;
+}
+.verification-action-hint span {
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 13px;
+}
+.verification-item {
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.02);
+}
+.verification-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.verification-item-top strong,
+.verification-item-top span {
+  display: block;
+}
+.verification-item-top span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.verification-decision-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.025);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.verification-decision-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.verification-decision-actions .button {
+  min-height: 42px;
+}
+.verification-program-shell {
+  display: grid;
+  gap: 18px;
+}
+.verification-program-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}

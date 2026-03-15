@@ -1,0 +1,245 @@
+/* === الاستجابة للشاشات المختلفة === */
+
+@media (max-width: 1100px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar {
+    position: relative;
+    height: auto;
+    overflow: visible;
+    border-inline-start: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .grid.cards-4, .grid.cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid.cards-2, .filters, .kv, .edit-grid, .import-box, .import-box-wide { grid-template-columns: 1fr; }
+  .topbar { flex-direction: column; }
+  .topbar-actions { width: 100%; }
+  .section-header, .tree-node { align-items: flex-start; }
+  .home-grid { grid-template-columns: 1fr; }
+  .home-spotlight-grid { grid-template-columns: 1fr; }
+  .district-badges-large { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .operator-kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .shortcut-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .operator-columns { grid-template-columns: 1fr; }
+  .ops-hub-kpis,
+  .ops-hub-grid { grid-template-columns: 1fr; }
+  .editorial-kpis,
+  .editorial-grid { grid-template-columns: 1fr; }
+  .verification-switcher,
+  .verification-kpis,
+  .verification-program-kpis,
+  .verification-grid { grid-template-columns: 1fr; }
+  .bulk-batch-grid,
+  .bulk-progress-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bulk-execution-panel,
+  .bulk-summary-grid,
+  .bulk-layout,
+  .bulk-current-grid { grid-template-columns: 1fr; }
+  .edit-workbench-top,
+  .edit-section-grid,
+  .workbench-actions-list { grid-template-columns: 1fr; }
+  .record-context-bar { flex-direction: column; align-items: flex-start; }
+  .entity-triage-layout,
+  .entity-triage-grid { grid-template-columns: 1fr; }
+  .queue-switcher,
+  .queue-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .queue-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .app-shell { display: block; }
+  .sidebar {
+    padding: 18px 16px;
+  }
+  .main-area { padding: 16px; }
+  .topbar {
+    padding: 16px;
+    border-radius: 18px;
+    margin-bottom: 22px;
+  }
+  .topbar h2 { font-size: 26px; }
+  .breadcrumbs { font-size: 12px; }
+  .topbar-note { font-size: 13px; }
+  .hero { padding: 18px; }
+  .hero h3 { font-size: 22px; }
+  .grid.cards-4, .grid.cards-3, .grid.cards-2 { grid-template-columns: 1fr; }
+  .filters, .filters.filters-wide { grid-template-columns: 1fr; }
+  .table { min-width: 680px; }
+  .table th, .table td { padding: 12px 10px; font-size: 13px; }
+  .card { padding: 16px; border-radius: 16px; }
+  .metric { font-size: 26px; }
+  .section-header { flex-direction: column; }
+  .section-header .actions { width: 100%; }
+  .section-header .button,
+  .actions .button,
+  .import-box .button,
+  .hero-actions .button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .kv { grid-template-columns: 1fr; }
+  .district-badges-large { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .results-count { align-self: flex-start; }
+  .active-filters-head { flex-direction: column; align-items: flex-start; }
+  .results-table { display: none; }
+  .search-shell { grid-template-columns: 1fr; }
+  .operator-kpi-grid,
+  .shortcut-grid,
+  .operator-columns { grid-template-columns: 1fr; }
+  .ops-hub-kpis,
+  .ops-hub-grid { grid-template-columns: 1fr; }
+  .ops-session-top { flex-direction: column; align-items: flex-start; }
+  .editorial-kpis,
+  .editorial-grid { grid-template-columns: 1fr; }
+  .editorial-item-top { flex-direction: column; align-items: flex-start; }
+  .verification-switcher,
+  .verification-kpis,
+  .verification-program-kpis,
+  .verification-grid { grid-template-columns: 1fr; }
+  .verification-queue-toolbar { grid-template-columns: 1fr; }
+  .verification-item-top { flex-direction: column; align-items: flex-start; }
+  .verification-decision-actions { flex-direction: column; }
+  .verification-decision-actions .button { width: 100%; text-align: center; }
+  .bulk-batch-grid,
+  .bulk-progress-grid,
+  .bulk-execution-panel,
+  .bulk-summary-grid,
+  .bulk-current-grid { grid-template-columns: 1fr; }
+  .bulk-actions,
+  .bulk-nav,
+  .bulk-list-item { flex-direction: column; align-items: stretch; }
+  .bulk-actions .button,
+  .bulk-nav .button { width: 100%; text-align: center; }
+  .edit-workbench-top,
+  .edit-section-grid,
+  .workbench-actions-list { grid-template-columns: 1fr; }
+  .record-context-actions { width: 100%; }
+  .record-context-actions .button { width: 100%; text-align: center; }
+  .entity-triage-layout,
+  .entity-triage-grid { grid-template-columns: 1fr; }
+  .queue-switcher,
+  .queue-summary-grid { grid-template-columns: 1fr; }
+  .queue-toolbar,
+  .queue-row-top,
+  .queue-row-actions { flex-direction: column; align-items: stretch; }
+  .queue-badges { justify-content: flex-start; }
+  .queue-priority-bar { display: grid; grid-template-columns: 1fr; }
+  .queue-row-actions .button { width: 100%; }
+  .tree-node {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-child {
+    margin-inline-start: 0;
+    padding-inline-start: 10px !important;
+  }
+  .nav-child span {
+    display: block;
+    margin-top: 4px;
+    white-space: normal;
+  }
+  /* responsive new grids at tablet */
+  .sector-group-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .districts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .sidebar-toggle {
+    display: inline-flex;
+  }
+  .sidebar-overlay[hidden] {
+    display: none;
+  }
+  .sidebar-mobile-head {
+    display: flex;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    inset-inline-end: 0;
+    width: min(88vw, 360px);
+    max-width: 360px;
+    height: 100vh;
+    z-index: 1100;
+    padding: 18px 16px 24px;
+    border-inline-start: 1px solid var(--line);
+    border-bottom: 0;
+    transform: translateX(110%);
+    transition: transform 220ms ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  }
+  .sidebar.is-open,
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .main-area {
+    padding-top: 76px;
+  }
+  .nav-group a,
+  .nav-child,
+  .sidebar-close,
+  .sidebar-toggle {
+    touch-action: manipulation;
+  }
+  .nav-group a {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-subtree {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .nav-child {
+    min-height: 52px;
+  }
+  .nav-parent-toggle {
+    min-height: 46px;
+    padding: 0 4px;
+    cursor: pointer;
+  }
+  .nav-parent-toggle::before {
+    opacity: 0.8;
+  }
+  .nav-subtree > .nav-child {
+    overflow: hidden;
+    max-height: 80px;
+    opacity: 1;
+    margin-top: 0;
+    transition: max-height 180ms ease, opacity 180ms ease, margin-top 180ms ease;
+  }
+  .nav-subtree.collapsed > .nav-child,
+  .nav-subtree.is-collapsed > .nav-child {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    border-width: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    pointer-events: none;
+  }
+  .nav-subtree:not(.collapsed):not(.is-collapsed) .nav-parent-toggle::before {
+    transform: rotate(-135deg);
+  }
+
+  /* responsive for new grids */
+  .sectors-grid,
+  .sector-group-items,
+  .districts-grid {
+    grid-template-columns: 1fr;
+  }
+  .entity-sector-nav {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .entity-nav-link {
+    font-size: 12px;
+    max-width: 35%;
+  }
+}

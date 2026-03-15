@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دليل بريدة الشامل — دليل محلي متعدد الأقسام</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-controls="appSidebar" aria-expanded="false">
+    <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+    <span>القائمة</span>
+  </button>
+  <div id="sidebarOverlay" class="sidebar-overlay" hidden></div>
+  <div class="app-shell">
+    <aside id="appSidebar" class="sidebar" aria-label="التنقل الجانبي">
+      <div class="sidebar-mobile-head">
+        <div class="sidebar-mobile-title">التنقل</div>
+        <button id="sidebarClose" class="sidebar-close" type="button" aria-label="إغلاق القائمة">×</button>
+      </div>
+      <div class="brand">
+        <div class="brand-mark">DB</div>
+        <div>
+          <h1>دليل بريدة الشامل</h1>
+          <p>دليل محلي متعدد الأقسام</p>
+        </div>
+      </div>
+
+      <div class="sidebar-search">
+        <div class="search-shell">
+          <input id="globalSearch" type="search" placeholder="ابحث عن كيان أو حي..." />
+          <button id="globalSearchButton" class="search-button" type="button">بحث</button>
+        </div>
+      </div>
+
+      <nav class="nav-groups">
+        <div class="nav-group">
+          <div class="nav-title">الرئيسية</div>
+          <a href="#/dashboard">نظرة عامة</a>
+          <a href="#/sectors">فهرس القطاعات</a>
+          <a href="#/districts">تصفح بالأحياء</a>
+          <a href="#/filters">بحث متقدم</a>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-title">القطاعات</div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">الأغذية والمشروبات</div>
+            <a class="nav-child" href="#/sector/cafes">الكوفيهات</a>
+            <a class="nav-child" href="#/sector/restaurants">المطاعم</a>
+            <a class="nav-child" href="#/sector/bakeries">المخابز والحلويات</a>
+            <a class="nav-child" href="#/sector/juice-icecream">العصائر والآيس كريم</a>
+            <a class="nav-child" href="#/sector/catering">الضيافة والبوفيهات</a>
+            <a class="nav-child" href="#/sector/groceries">البقالات</a>
+            <a class="nav-child" href="#/sector/roasteries">محامص القهوة</a>
+            <a class="nav-child" href="#/sector/chocolates">الشوكولاتة</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">التسوق والتجزئة</div>
+            <a class="nav-child" href="#/sector/fashion">الملابس والأزياء</a>
+            <a class="nav-child" href="#/sector/jewelry">المجوهرات والذهب</a>
+            <a class="nav-child" href="#/sector/perfumes">العطور والبخور</a>
+            <a class="nav-child" href="#/sector/electronics">الإلكترونيات والجوالات</a>
+            <a class="nav-child" href="#/sector/furniture">الأثاث والمفروشات</a>
+            <a class="nav-child" href="#/sector/baby-stores">مستلزمات الأطفال</a>
+            <a class="nav-child" href="#/sector/malls">المولات والمراكز التجارية</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">العقار والسكن</div>
+            <a class="nav-child" href="#/sector/real-estate-offices">المكاتب العقارية</a>
+            <a class="nav-child" href="#/sector/apartments-hotels">الشقق والفنادق</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">الصحة والجمال</div>
+            <a class="nav-child" href="#/sector/clinics">العيادات والمستشفيات</a>
+            <a class="nav-child" href="#/sector/pharmacies">الصيدليات</a>
+            <a class="nav-child" href="#/sector/optical">النظارات والبصريات</a>
+            <a class="nav-child" href="#/sector/salons">الصالونات الرجالية</a>
+            <a class="nav-child" href="#/sector/women-salons">المشاغل النسائية</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">التعليم والتدريب</div>
+            <a class="nav-child" href="#/sector/schools">المدارس</a>
+            <a class="nav-child" href="#/sector/institutes">المعاهد</a>
+            <a class="nav-child" href="#/sector/training-centers">مراكز التدريب</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">المناسبات والأفراح</div>
+            <a class="nav-child" href="#/sector/wedding-halls">قاعات الأفراح</a>
+            <a class="nav-child" href="#/sector/event-planning">تنظيم المناسبات</a>
+            <a class="nav-child" href="#/sector/photography">التصوير</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">الخدمات</div>
+            <a class="nav-child" href="#/sector/car-services">خدمات السيارات</a>
+            <a class="nav-child" href="#/sector/maintenance">الصيانة</a>
+            <a class="nav-child" href="#/sector/transport">النقل والتوصيل</a>
+            <a class="nav-child" href="#/sector/general-services">خدمات متنوعة</a>
+            <a class="nav-child" href="#/sector/travel">وكالات السفر والسياحة</a>
+            <a class="nav-child" href="#/sector/recruitment">مكاتب الاستقدام</a>
+            <a class="nav-child" href="#/sector/media-printing">الإعلام والمطابع</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">السيارات والنقل</div>
+            <a class="nav-child" href="#/sector/car-dealers">معارض السيارات</a>
+            <a class="nav-child" href="#/sector/car-rental">تأجير السيارات</a>
+            <a class="nav-child" href="#/sector/gas-stations">محطات الوقود</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">المالية والحكومية</div>
+            <a class="nav-child" href="#/sector/banks">البنوك</a>
+            <a class="nav-child" href="#/sector/gov-services">الخدمات الحكومية</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">الرياضة والترفيه</div>
+            <a class="nav-child" href="#/sector/gyms">النوادي الرياضية</a>
+            <a class="nav-child" href="#/sector/parks">الحدائق والمتنزهات</a>
+            <a class="nav-child" href="#/sector/entertainment">مراكز الترفيه</a>
+            <a class="nav-child" href="#/sector/kids-activities">أنشطة الأطفال</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">الصناعة ومواد البناء</div>
+            <a class="nav-child" href="#/sector/factories">المصانع والمدينة الصناعية</a>
+            <a class="nav-child" href="#/sector/building-materials">مواد البناء والمقاولات</a>
+          </div>
+
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">الثقافة والتراث</div>
+            <a class="nav-child" href="#/sector/libraries">المكتبات</a>
+            <a class="nav-child" href="#/sector/museums">المتاحف</a>
+            <a class="nav-child" href="#/sector/traditional-markets">الأسواق الشعبية</a>
+            <a class="nav-child" href="#/sector/handicrafts">الحرف اليدوية</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-title">إدارة الدليل</div>
+          <a href="#/exec-queue">قائمة التنفيذ اليومي</a>
+          <a href="#/sector-board">لوحة قرار القطاعات</a>
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">المراجعة والتحرير</div>
+            <a class="nav-child" href="#/ops-hub">مركز المراجعة</a>
+            <a class="nav-child" href="#/editorial-hub">مركز التحرير</a>
+            <a class="nav-child" href="#/review">قائمة المتابعة</a>
+            <a class="nav-child" href="#/sources">حالات السجلات</a>
+          </div>
+          <div class="nav-subtree collapsed">
+            <div class="nav-parent nav-parent-toggle" role="button" tabindex="0" aria-expanded="false">التحقق والجاهزية</div>
+            <a class="nav-child" href="#/verification/source-review">التحقق من المصادر</a>
+            <a class="nav-child" href="#/verification-program">عمليات التحقق</a>
+            <a class="nav-child" href="#/agent-drafts">مسودات الوكلاء</a>
+            <a class="nav-child" href="#/release-readiness">الجاهزية للنشر</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-title">عن الدليل</div>
+          <a href="#/blueprint">طريقة التنظيم</a>
+          <a href="#/pipeline">مصادر المعلومات</a>
+          <a href="#/governance">معايير الجودة</a>
+          <a href="#/discovery">الاكتشاف</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-copy">
+          <div class="topbar-tag">دليل بريدة الشامل</div>
+          <div id="breadcrumbs" class="breadcrumbs">دليل بريدة / نظرة عامة</div>
+          <h2 id="pageTitle">نظرة عامة</h2>
+          <p class="topbar-note">استكشف القطاعات والأحياء والكيانات من مكان واحد.</p>
+        </div>
+        <div class="topbar-actions">
+          <span class="pill muted">بريدة</span>
+          <span class="pill success">دليل محلي</span>
+        </div>
+      </header>
+
+      <section id="app"></section>
+    </main>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

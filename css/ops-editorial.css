@@ -1,0 +1,107 @@
+/* === مركز العمليات والتحرير === */
+.ops-hub {
+  display: grid;
+  gap: 18px;
+}
+.ops-hub-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.ops-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.ops-session-list,
+.ops-export-list {
+  display: grid;
+  gap: 12px;
+}
+.ops-session-item,
+.ops-export-item {
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.02);
+}
+.ops-session-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.ops-session-top strong,
+.ops-export-item strong {
+  display: block;
+  margin-bottom: 5px;
+}
+.ops-session-top span,
+.ops-export-item span,
+.ops-export-item p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+.ops-session-meta,
+.ops-lifecycle-grid,
+.ops-followup-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.ops-session-meta span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(37, 52, 80, .8);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Editorial */
+.editorial-shell {
+  display: grid;
+  gap: 18px;
+}
+.editorial-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.editorial-list {
+  display: grid;
+  gap: 12px;
+}
+.editorial-item {
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.02);
+}
+.editorial-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.editorial-item-top strong {
+  display: block;
+  margin-bottom: 5px;
+}
+.editorial-item-top span,
+.editorial-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}

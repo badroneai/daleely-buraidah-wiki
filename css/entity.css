@@ -1,0 +1,285 @@
+/* === تفاصيل الكيانات والتحرير والفرز === */
+
+/* Entity Hero */
+.entity-hero .chips {
+  margin-bottom: 16px;
+}
+
+/* Sectors Tree */
+.sectors-tree {
+  display: grid;
+  gap: 16px;
+}
+.tree-root {
+  padding: 0;
+  overflow: hidden;
+}
+.tree-node {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+}
+.tree-node-root {
+  background: rgba(255,255,255,.03);
+  border-bottom: 1px solid var(--line);
+}
+.tree-children {
+  display: grid;
+  gap: 0;
+  padding: 10px 14px 14px;
+}
+.tree-node-child {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-top: 10px;
+  background: rgba(255,255,255,.02);
+}
+.tree-title {
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.tree-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+.tree-title a:hover {
+  text-decoration: underline;
+}
+.district-link {
+  font-weight: 700;
+}
+
+/* District Badges */
+.district-badges {
+  display: grid;
+  gap: 10px;
+}
+.district-badges-large {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.district-badge {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.02);
+  color: var(--text);
+  text-decoration: none;
+}
+.district-badge strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.district-badge span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Edit Workbench */
+.edit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.edit-workbench {
+  display: grid;
+  gap: 16px;
+}
+.edit-workbench-top {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.edit-workbench-form {
+  display: grid;
+  gap: 14px;
+}
+.edit-section-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.02);
+  overflow: hidden;
+}
+.edit-section-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.edit-section-card summary::-webkit-details-marker {
+  display: none;
+}
+.edit-section-card summary strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+.edit-section-card summary span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.edit-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 18px 18px;
+}
+.edit-field {
+  display: grid;
+  gap: 8px;
+}
+.edit-field span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.edit-field textarea.field {
+  min-height: 110px;
+  resize: vertical;
+}
+.draft-message {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(59,130,246,.12);
+  border: 1px solid #274f8f;
+  color: #cfe3ff;
+}
+
+/* Agent Run Feedback */
+.agent-run-feedback {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(71, 110, 184, 0.5);
+  background: rgba(26, 48, 88, 0.36);
+  display: grid;
+  gap: 6px;
+}
+.agent-run-feedback strong {
+  font-size: 16px;
+}
+.agent-run-feedback span {
+  color: var(--muted);
+}
+.agent-run-feedback.is-loading {
+  border-color: rgba(214, 179, 84, 0.45);
+  background: rgba(214, 179, 84, 0.12);
+  color: #f6e9ba;
+}
+.agent-run-feedback.is-success {
+  border-color: rgba(53, 131, 88, 0.55);
+  background: rgba(31, 96, 63, 0.18);
+  color: #d4ffe0;
+}
+.agent-run-feedback.is-empty {
+  border-color: rgba(98, 119, 156, 0.45);
+  background: rgba(41, 59, 91, 0.24);
+  color: #dce6ff;
+}
+.agent-run-feedback.is-error {
+  border-color: rgba(184, 72, 72, 0.55);
+  background: rgba(120, 37, 37, 0.2);
+  color: #ffd7d7;
+}
+
+/* Record Context */
+.record-context-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.record-context-copy {
+  display: grid;
+  gap: 6px;
+}
+.record-context-copy strong {
+  font-size: 18px;
+}
+.record-context-copy span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.record-context-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.workbench-actions-card {
+  display: grid;
+  gap: 14px;
+}
+.workbench-actions-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Entity Triage */
+.entity-triage-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+  gap: 16px;
+}
+.entity-triage-main,
+.entity-triage-side {
+  display: grid;
+  gap: 16px;
+}
+.entity-triage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.triage-highlight {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.025);
+}
+.triage-highlight span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+}
+.triage-highlight strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+.triage-highlight p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.entity-triage-checklist {
+  margin-top: 0;
+}
+.triage-check-card {
+  min-height: 120px;
+}
+.triage-list {
+  display: grid;
+  gap: 10px;
+}
+.triage-list-item {
+  padding: 13px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.02);
+}
+.triage-list-item strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.triage-list-item span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}

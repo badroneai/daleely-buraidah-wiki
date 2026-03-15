@@ -1,0 +1,343 @@
+/* === أقسام Hero والصفحة الرئيسية === */
+.hero {
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(184,167,106,.12), rgba(59,130,246,.08));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+.hero h3 { margin: 0 0 10px; font-size: 28px; }
+.hero p { max-width: 900px; color: var(--muted); line-height: 1.8; }
+.hero .chips { margin-top: 14px; }
+.page-hero {
+  position: relative;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: -80px;
+  inset-block-end: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,.18), transparent 68%);
+  pointer-events: none;
+}
+.hero-compact p {
+  max-width: 760px;
+}
+.home-hero {
+  min-height: 210px;
+}
+.operator-hero {
+  min-height: 220px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.hero-actions .button {
+  min-height: 46px;
+}
+.home-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+}
+.home-spotlight-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 16px;
+}
+.emphasis-panel {
+  border-color: #4b658d;
+  background: linear-gradient(180deg, rgba(30,44,70,.96), rgba(16,24,40,.92));
+}
+.section-kicker {
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+}
+.home-card-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.home-links {
+  display: grid;
+  gap: 12px;
+}
+.home-link-card {
+  display: block;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.02);
+  color: var(--text);
+  text-decoration: none;
+}
+.home-link-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+.home-link-card span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.home-link-card:hover {
+  background: rgba(255,255,255,.04);
+  border-color: #32527e;
+}
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset-inline-end: -40px;
+  inset-block-start: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,167,106,.14), transparent 68%);
+}
+.spotlight-card-large {
+  min-height: 210px;
+}
+.mini-panel {
+  display: grid;
+  align-content: start;
+}
+.mini-stats {
+  display: grid;
+  gap: 12px;
+}
+.mini-stat {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.02);
+}
+.mini-stat strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 24px;
+}
+.mini-stat span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.section-lead {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.feature-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.feature-list li {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.02);
+}
+
+/* Operator */
+.operator-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+.operator-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.operator-shortcuts .section-header {
+  margin-bottom: 14px;
+}
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.shortcut-card {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  text-align: right;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+.shortcut-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+.shortcut-card span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.shortcut-card:hover {
+  border-color: #3b5e92;
+  background: rgba(255,255,255,.05);
+}
+
+/* === صفحة القطاع المستقلة === */
+.sector-page {
+  /* isolation context — no other sectors shown */
+}
+.sector-breadcrumb {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.sector-breadcrumb a {
+  color: var(--gold);
+  text-decoration: none;
+}
+.sector-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* === فهرس القطاعات (sectors grid) === */
+.sectors-grid {
+  display: grid;
+  gap: 20px;
+}
+.sector-group-header {
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.sector-group-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.sector-entry {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.02);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.sector-entry:hover {
+  border-color: #3b5e92;
+  background: rgba(255,255,255,.05);
+}
+.sector-active {
+  border-color: rgba(184,167,106,.35);
+}
+.sector-planned {
+  opacity: .7;
+}
+.sector-entry-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.sector-entry-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.sector-entry .pill {
+  font-size: 11px;
+  padding: 4px 10px;
+}
+
+/* === entity back-to-sector breadcrumb === */
+.entity-sector-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.entity-sector-back:hover {
+  color: var(--gold);
+}
+
+/* === فهرس الأحياء (districts grid) === */
+.districts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.district-card {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.02);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.district-card:hover {
+  border-color: #3b5e92;
+  background: rgba(255,255,255,.05);
+}
+.district-card strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.district-card span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* === entity sector prev/next nav === */
+.entity-sector-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.02);
+}
+.entity-nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.entity-nav-link:hover {
+  color: var(--gold);
+}
+.entity-nav-pos {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
