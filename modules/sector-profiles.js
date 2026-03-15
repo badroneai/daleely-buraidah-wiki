@@ -44,7 +44,7 @@ export const DEFAULT_PROFILE = {
   },
 
   // ── Fourth KPI metric ──
-  fourthMetric: { filter: r => r._norm?.parking === 'yes', label: 'يتوفر موقف' },
+  fourthMetric: { filter: r => r._norm?.parking === 'yes', label: 'يتوفر موقف', opsKey: '' },
 
   // ── Contact relevance ──
   contactRelevance: { phone: true, instagram: true },
@@ -76,7 +76,7 @@ const SECTOR_PROFILES = {
   cafes: {
     description: 'أفضل مدخل لاكتشاف الكوفيهات داخل بريدة حسب الحي والحالة وطبيعة التجربة.',
     focusLabel: 'التركيز: المراجع والتحقق',
-    fourthMetric: { filter: r => r._norm?.specialty_coffee === 'yes', label: 'قهوة مختصة' },
+    fourthMetric: { filter: r => r._norm?.specialty_coffee === 'yes', label: 'قهوة مختصة', opsKey: 'specialty' },
     // All 6 filters — cafes is the only sector where instagram matters
     priorityWeights: {
       noContact: 2, singleContact: 1, lowConf: 2, unverified: 2,

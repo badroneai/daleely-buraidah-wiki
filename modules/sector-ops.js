@@ -16,6 +16,8 @@ export const OPS_FILTERS = {
   'needs-review':{ label: 'يحتاج مراجعة',   test: r => ['needs_review', 'stub', 'discovered'].includes(r.status) },
   'low-conf':    { label: 'ثقة منخفضة',     test: r => String(r.confidence || '').toLowerCase() === 'low' },
   'no-district': { label: 'بدون حي',        test: r => { const d = String(r.district || '').trim(); return !d || d === 'غير متحقق'; } },
+  'verified':    { label: 'متحقق منه',      test: r => r.status === 'verified' || r.status === 'active' },
+  'specialty':   { label: 'قهوة مختصة',     test: r => r._norm?.specialty_coffee === 'yes' },
 };
 
 /* ── Apply ops filter to a records array ── */
@@ -169,8 +171,8 @@ export function sectorReadiness(metrics, profile) {
    Returns { count, label }. */
 
 export function sectorFourthMetric(sectorKey, records, profile) {
-  const rule = profile ? profile.fourthMetric : { filter: r => r._norm?.parking === 'yes', label: 'يتوفر موقف' };
-  return { count: records.filter(rule.filter).length, label: rule.label };
+  const rule = profile ? profile.fourthMetric : { filter: r => r._norm?.parking === 'yes', label: 'يتوفر موقف', opsKey: '' };
+  return { count: records.filter(rule.filter).length, label: rule.label, opsKey: rule.opsKey || '' };
 }
 
 /* ── Sector descriptions ──

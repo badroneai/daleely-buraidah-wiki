@@ -351,10 +351,10 @@ export function renderSectorPage(sectorKey = 'cafes') {
       </div>
 
       <div class="grid cards-4 section">
-        <div class="card mini-panel emphasis-panel"><div class="metric">${metrics.total}</div><div class="metric-sub">إجمالي الكيانات</div></div>
-        <div class="card mini-panel"><div class="metric">${metrics.verified}</div><div class="metric-sub">متحقق منه</div></div>
-        <div class="card mini-panel"><div class="metric">${fourth.count}</div><div class="metric-sub">${esc(fourth.label)}</div></div>
-        <div class="card mini-panel"><div class="metric">${metrics.lowConf}</div><div class="metric-sub">ثقة منخفضة</div></div>
+        <button type="button" class="card mini-panel emphasis-panel stat-card-btn${opsFilter ? '' : ' ops-btn-active'}" data-action="ops-filter" data-ops-key="clear"><div class="metric">${metrics.total}</div><div class="metric-sub">إجمالي الكيانات</div></button>
+        <button type="button" class="card mini-panel stat-card-btn${opsFilter === 'verified' ? ' ops-btn-active' : ''}" data-action="ops-filter" data-ops-key="verified"><div class="metric">${metrics.verified}</div><div class="metric-sub">متحقق منه</div></button>
+        <button type="button" class="card mini-panel stat-card-btn${fourth.opsKey && opsFilter === fourth.opsKey ? ' ops-btn-active' : ''}" ${fourth.opsKey ? `data-action="ops-filter" data-ops-key="${fourth.opsKey}"` : ''}><div class="metric">${fourth.count}</div><div class="metric-sub">${esc(fourth.label)}</div></button>
+        <button type="button" class="card mini-panel stat-card-btn${opsFilter === 'low-conf' ? ' ops-btn-active' : ''}" data-action="ops-filter" data-ops-key="low-conf"><div class="metric">${metrics.lowConf}</div><div class="metric-sub">ثقة منخفضة</div></button>
       </div>
 
       <div class="section">
