@@ -38,23 +38,33 @@
   color: var(--muted);
 }
 /* ── Stat card buttons (clickable KPI cards) ── */
-.stat-card-btn {
+button.stat-card-btn {
+  appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
   transition: all 0.2s ease;
   border: 2px solid transparent;
   font-family: inherit;
+  font-size: inherit;
   text-align: center;
   width: 100%;
+  color: inherit;
+  line-height: inherit;
+  display: grid;
+  align-content: start;
 }
-.stat-card-btn:hover {
+button.stat-card-btn:hover {
   border-color: var(--blue);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
 }
-.stat-card-btn.ops-btn-active {
+button.stat-card-btn.ops-btn-active {
   border-color: var(--blue);
   background: rgba(59, 130, 246, 0.08);
   box-shadow: 0 0 0 1px var(--blue);
+}
+button.stat-card-btn > * {
+  pointer-events: none;
 }
 .ops-btn-clear:hover { color: var(--red); border-color: var(--red); }
 .ops-tags { font-size: 0.78rem; color: var(--muted); }

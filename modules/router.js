@@ -94,17 +94,8 @@ export function bindFilters() {
     });
   });
 
-  document.querySelectorAll('[data-action="ops-filter"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.dataset.opsKey;
-      if (key === 'clear') {
-        delete state._opsFilter;
-      } else {
-        state._opsFilter = state._opsFilter === key ? undefined : key;
-      }
-      router();
-    });
-  });
+  // ops-filter buttons are now handled via event delegation on `app` (see below router())
+  // This avoids issues with dynamically rendered buttons not getting event listeners.
 }
 
 
@@ -869,6 +860,21 @@ searchButton?.addEventListener('click', () => {
 
 window.addEventListener('hashchange', () => {
   closeSidebar();
+  router();
+});
+
+/* ── Global event delegation for ops-filter (stat cards + toolbar buttons) ──
+   Uses delegation so dynamically rendered buttons always work. */
+app.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-action="ops-filter"]');
+  if (!btn) return;
+  e.preventDefault();
+  const key = btn.dataset.opsKey;
+  if (key === 'clear') {
+    delete state._opsFilter;
+  } else {
+    state._opsFilter = state._opsFilter === key ? undefined : key;
+  }
   router();
 });
 
