@@ -1613,7 +1613,7 @@
       "confidence": "high",
       "status": "profiled",
       "source_notes": "Expansion Round 1 coverage from Google Maps direct place panel | Cleaning pass: normalized garbled text where confidently recoverable | Enriched via web search 2026-03-15 | Web researcher batch 7",
-      "last_updated_at": "2026-03-15",
+      "last_updated_at": "2026-03-16",
       "work_friendly": "unknown",
       "group_friendly": "yes",
       "late_night": "yes",
@@ -1636,7 +1636,8 @@
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "2026-03-15",
-      "_note": "فرع ثانٍ جديد: 4.6★ (35 مراجعة)"
+      "_note": "فرع ثانٍ جديد: 4.6★ (35 مراجعة)",
+      "wifi": "yes"
     },
     {
       "slug": "tora-cafe",
@@ -1658,7 +1659,7 @@
       "confidence": "high",
       "status": "profiled",
       "source_notes": "Expansion Round 1 coverage from Google Maps direct place panel | Cleaning pass: normalized garbled text where confidently recoverable | Enriched via web search 2026-03-15 | Web researcher batch 6",
-      "last_updated_at": "2026-03-15",
+      "last_updated_at": "2026-03-16",
       "work_friendly": "yes",
       "group_friendly": "yes",
       "late_night": "yes",
@@ -1671,7 +1672,7 @@
       "specialty_coffee": "yes",
       "desserts": "yes",
       "official_instagram": "by.tora",
-      "phone": "",
+      "phone": "0548433555",
       "hours_summary": "مفتوح حتى 3:30 ص",
       "editorial_summary": "Coverage-first record added in Expansion Round 1 under wider intake threshold.",
       "place_personality": "كافيه مميز بقهوة مختصة وماتشا وحلى بيكان مع أجواء شتوية جميلة",
@@ -1943,7 +1944,7 @@
       "specialty_coffee": "yes",
       "desserts": "yes",
       "official_instagram": "bidcafe",
-      "phone": "",
+      "phone": "0570468777",
       "hours_summary": "مفتوح حتى 3 ص",
       "editorial_summary": "Coverage-first record added in Expansion Round 1 under wider intake threshold.",
       "place_personality": "",
@@ -2088,7 +2089,8 @@
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "2026-03-15",
-      "_note": "شارع عبدالعزيز فهد العلي الرشودي، النهضة | خلفه مغسلة سيارات | خدمة السيارة متوفرة"
+      "_note": "شارع عبدالعزيز فهد العلي الرشودي، النهضة | خلفه مغسلة سيارات | خدمة السيارة متوفرة",
+      "wifi": "yes"
     },
     {
       "slug": "qisal-cafe-abdulaziz-bin-musaed-bin-jalawi",
@@ -2133,7 +2135,8 @@
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "2026-03-15",
-      "_note": "فرعين: الرئيسي شارع عبدالعزيز فهد العلي الرشودي (4.7★, 218) + هذا الفرع على الأمير عبدالعزيز بن مساعد (4.6★, 31)"
+      "_note": "فرعين: الرئيسي شارع عبدالعزيز فهد العلي الرشودي (4.7★, 218) + هذا الفرع على الأمير عبدالعزيز بن مساعد (4.6★, 31)",
+      "wifi": "yes"
     },
     {
       "slug": "nahrawan-cafe",
@@ -2223,7 +2226,8 @@
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "2026-03-15",
-      "_note": "شارع المشاغل، الصفراء | 1-20 ر.س. | كافيه صغير ملموم بتفاصيل حلوة"
+      "_note": "شارع المشاغل، الصفراء | 1-20 ر.س. | كافيه صغير ملموم بتفاصيل حلوة",
+      "wifi": "yes"
     },
     {
       "slug": "corner-coffee-safra",
@@ -2358,7 +2362,8 @@
       "duplicate_of": "",
       "archive_reason": "",
       "last_verified_at": "2026-03-15",
-      "_note": "فرع طريق الملك فهد | 5 فروع في بريدة: فهد 4.2★(349)، أبو بكر 4.2★(1060)، علي بن أبي طالب 3.7★(90)، فهد-2 4.2★(954)، آخر 4.2★(132)"
+      "_note": "فرع طريق الملك فهد | 5 فروع في بريدة: فهد 4.2★(349)، أبو بكر 4.2★(1060)، علي بن أبي طالب 3.7★(90)، فهد-2 4.2★(954)، آخر 4.2★(132)",
+      "wifi": "yes"
     },
     {
       "sector": "cafes",
@@ -2384,7 +2389,7 @@
       "archive_reason": "",
       "last_verified_at": "2026-03-15",
       "last_updated_at": "2026-03-16",
-      "confidence": "low",
+      "confidence": "medium",
       "status": "discovered",
       "source_notes": "Expansion Round 3 coverage-first intake from OSM/Google Maps pin references | Cleaning pass: normalized garbled text where confidently recoverable | Enriched via web search 2026-03-15 | Not found on Google Maps 2026-03-15",
       "slug": "khudair-cafe",
@@ -2398,7 +2403,7 @@
       "branch_label": "main",
       "reference_url": "https://www.google.com/maps/search/?api=1&query=26.3753102,43.982523",
       "category": "كافيه / مقهى",
-      "google_rating": "",
+      "google_rating": 4.9,
       "google_reviews_count": "",
       "price_level": "unknown",
       "hours_summary": "",
@@ -2849,7 +2854,7 @@
       "google_rating": 4.3,
       "google_reviews_count": 2967,
       "price_level": "رخيص",
-      "hours_summary": "",
+      "hours_summary": "الاثنين، ٥:٠٠م إلى ٥:٠٠ص",
       "editorial_summary": "فرع هاف مليون مستقل بنيويًا داخل بريدة بعد تثبيت المكرر المطابق له، مع بقاء الثقة متوسطة لا نهائية.",
       "_note": "الفرع الرئيسي (Norah Square, طريق عمر بن الخطاب) تم بحثه في الدفعة 5 | الفرع الثاني: 4.4★(918) في موقع 642H+HQ7 | 1-20 ر.س."
     },
@@ -2896,7 +2901,8 @@
       "price_level": "رخيص",
       "hours_summary": "24 ساعة",
       "editorial_summary": "فرع دانكن مستقل على محور الملك سلمان، ثبت بنيويًا بعد حسم المكررات المرتبطة بنفس النقطة.",
-      "_note": "فرع طريق علي بن أبي طالب | رقم موحد 8001288999 | 7 فروع في بريدة"
+      "_note": "فرع طريق علي بن أبي طالب | رقم موحد 8001288999 | 7 فروع في بريدة",
+      "wifi": "yes"
     },
     {
       "sector": "cafes",
