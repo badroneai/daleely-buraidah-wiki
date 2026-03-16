@@ -1,8 +1,8 @@
 # تعليمات العمل من الجهاز الآخر — دليل بريدة الشامل
 
 > افتح هذا الملف عندما تعمل على المشروع من جهازك الآخر. انسخ محتواه (أو أرفق الملف) للذكاء الاصطناعي هناك ليستمر العمل بناءً على نفس السياق.
-
-**عند فتح المشروع على أي جهاز آخر:** نفّذ أولاً `git pull origin main` (أو `git pull`) لجلب آخر التحديثات من GitHub حتى تظهر الملفات والتعديلات الجديدة.
+>
+> **عند فتح المشروع على أي جهاز آخر:** نفّذ أولاً `git pull origin main` (أو `git pull`) لجلب آخر التحديثات من GitHub.
 
 ---
 
@@ -35,15 +35,17 @@
     `python3 scripts/scrape-gmaps.py --headless --resume`
   - ناقص هاتف فقط:  
     `python3 scripts/scrape-gmaps.py --missing phone --headless`
-  - **إذا كنت على جهاز 2:** استخدم دائماً `--device-id device-2` لإنزال المخرجات في `outputs/device-2/` وتجنب التضارب:
-    `python scripts/scrape-gmaps.py --device-id device-2 --limit 5 --headless`
+  - **مخرجات جهاز معيّن** (لتجنب التضارب عند العمل من أكثر من جهاز):  
+    `python3 scripts/scrape-gmaps.py --device-id device-1 --headless`  
+    `python3 scripts/scrape-gmaps.py --device-id device-2 --headless`
 
 ---
 
 ## 3. المخرجات
 
-- **المجلد:** `outputs/` (أو `outputs/device-2/` عند استخدام `--device-id device-2` على جهاز 2).
-- **الملفات المهمة:**
+- **المجلد الافتراضي:** `outputs/`
+- **مخرجات جهاز معيّن:** `outputs/device-1/` أو `outputs/device-2/` عند استخدام `--device-id device-1` أو `--device-id device-2`.
+- **الملفات المهمة (داخل المجلد المختار):**
   - `scrape-results-YYYY-MM-DD.json` — النتائج الكاملة لكل كافيه.
   - `scrape-merge-ready-YYYY-MM-DD.json` — **جاهز لتسليم المختص للدمج** (fill-only في merge).
   - `scrape-not-found-YYYY-MM-DD.json` — الكافيهات التي لم تُعثر لها على صفحة مكان.
@@ -103,14 +105,14 @@
 
 ---
 
+## 10. إذا كنت على جهاز 1 أو جهاز 2
+
+- **جهاز 1:** المخرجات في `outputs/device-1/`. السجل: `DEVICE1_WORKLOG.md`. **جلسة مستمرة (بدون متابعة):** `.\scripts\run-full-session-device1.ps1` — شغّله واتركه؛ عند انقطاع شغّله مرة أخرى فيستأنف تلقائياً. تشغيل عادي: `.\scripts\run-scrape-device1.ps1` أو `python scripts/scrape-gmaps.py --device-id device-1 --headless`.
+- **جهاز 2:** المخرجات في `outputs/device-2/`. السجل: `DEVICE2_WORKLOG.md`. التشغيل الموصى به:  
+  `python scripts/scrape-gmaps.py --device-id device-2 --headless`  
+  أو (Windows): `.\scripts\run-scrape-device2.ps1`.
+- **الجهاز الرئيسي** يدمج من ملفات `scrape-merge-ready-*.json` داخل كل مجلد جهاز. راجع **docs/DEVICES_SETUP.md** لتفاصيل توزيع الأجهزة والدمج.
+
 ---
 
-## 10. إذا كنت على جهاز 2
-
-- **مجلد مخرجاتك:** `outputs/device-2/` — استخدم دائماً: `--device-id device-2` عند تشغيل `scrape-gmaps.py`.
-- **سجل عملك:** حدّث ملف `DEVICE2_WORKLOG.md` بعد كل جلسة (ما شغّلته، ما عدّلته، ملاحظات للدمج).
-- **للفهم المشترك:** اقرأ `docs/DEVICES_SETUP.md` لمعرفة تنسيق العمل بين الأجهزة.
-
----
-
-*آخر تحديث: إضافة all_links و social_links، خيار --device-id، ومجلد جهاز 2 والتوثيق.*
+*آخر تحديث: إضافة all_links و social_links؛ استبعاد روابط سياسات جوجل؛ تنسيق الأجهزة (device-1، device-2) وملفات السجل والتوثيق؛ تذكير git pull.*
