@@ -41,6 +41,16 @@
   # عند "غير موجود" على الخريطة: بحث ويب (جوجل) عن هاتف وإنستغرام وتيك توك
   python3 scripts/scrape-gmaps.py --sector restaurants --limit 10 --headless --web-fallback
 
+  # سكرابنج قطاع المخابز
+  python3 scripts/scrape-gmaps.py --sector bakeries --headless
+  # سكرابنج المحامص أو الشوكولاتة
+  python3 scripts/scrape-gmaps.py --sector roasteries --headless
+  python3 scripts/scrape-gmaps.py --sector chocolates --headless
+  # تشغيل عدة قطاعات معاً (كل واحد بمجلد مخرجات خاص لتجنب التضارب):
+  python3 scripts/scrape-gmaps.py --sector bakeries --device-id bakeries --headless
+  python3 scripts/scrape-gmaps.py --sector roasteries --device-id roasteries --headless
+  python3 scripts/scrape-gmaps.py --sector chocolates --device-id chocolates --headless
+
 المخرجات:
   بدون --device-id: outputs/
   مع --device-id:    outputs/<device-id>/  (مثلاً outputs/device-1/)
@@ -781,6 +791,76 @@ def search_place_on_maps(page, place_name, alternate_name="", sector="cafes"):
         queries.append(f"{place_name} مطعم {CITY_SUFFIX}")
         if alternate_name:
             queries.append(f"{alternate_name} مطعم {CITY_SUFFIX}")
+    elif sector == "bakeries":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مخبز {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مخبز {CITY_SUFFIX}")
+        queries.append(f"{place_name} bakery {CITY_SUFFIX}")
+    elif sector == "roasteries":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} محمصة {CITY_SUFFIX}")
+        queries.append(f"{place_name} محامص {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} محمصة {CITY_SUFFIX}")
+        queries.append(f"{place_name} roastery {CITY_SUFFIX}")
+    elif sector == "chocolates":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} شوكولاته {CITY_SUFFIX}")
+        queries.append(f"{place_name} شوكولاتة {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} شوكولاته {CITY_SUFFIX}")
+        queries.append(f"{place_name} chocolate {CITY_SUFFIX}")
+    elif sector == "juice-icecream":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} عصير {CITY_SUFFIX}")
+        queries.append(f"{place_name} آيس كريم {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} عصير {CITY_SUFFIX}")
+        queries.append(f"{place_name} juice {CITY_SUFFIX}")
+    elif sector == "catering":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} كاترينج {CITY_SUFFIX}")
+        queries.append(f"{place_name} تقديم طعام {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} كاترينج {CITY_SUFFIX}")
+        queries.append(f"{place_name} catering {CITY_SUFFIX}")
+    elif sector == "apartments-hotels":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} شقق {CITY_SUFFIX}")
+        queries.append(f"{place_name} فندق {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} فندق {CITY_SUFFIX}")
+        queries.append(f"{place_name} hotel {CITY_SUFFIX}")
+        queries.append(f"{place_name} apartments {CITY_SUFFIX}")
+    elif sector == "real-estate-offices":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مكتب عقاري {CITY_SUFFIX}")
+        queries.append(f"{place_name} مكاتب عقارية {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مكتب عقاري {CITY_SUFFIX}")
+        queries.append(f"{place_name} real estate {CITY_SUFFIX}")
     else:
         # cafes أو أي قطاع آخر
         if alternate_name:
@@ -979,15 +1059,15 @@ def main():
     parser.add_argument('--headless', action='store_true', help='تشغيل بدون واجهة (مخفي)')
     parser.add_argument('--delay', type=float, default=0, help='تأخير إضافي بين الطلبات (ثواني)')
     parser.add_argument('--device-id', default='', help='معرّف الجهاز (مثلاً device-1, device-2)؛ المخرجات في outputs/<device-id>/')
-    parser.add_argument('--sector', default=DEFAULT_SECTOR, help='قطاع السجلات من master.json (cafes, restaurants, ...) — افتراضي: %s' % DEFAULT_SECTOR)
+    parser.add_argument('--sector', default=DEFAULT_SECTOR, help='قطاع السجلات من master.json (cafes, restaurants, bakeries, roasteries, chocolates, ...) — افتراضي: %s' % DEFAULT_SECTOR)
     parser.add_argument('--only-with-place-url', action='store_true', help='تشغيل السجلات التي لديها reference_url (رابط خريطة) فقط — أنجح وأسرع')
     parser.add_argument('--web-fallback', action='store_true', help='عند "غير موجود" على الخريطة: بحث ويب (جوجل) لاستخراج هاتف وإنستغرام وتيك توك')
     args = parser.parse_args()
 
     # Load master data
     sector = (args.sector or 'cafes').strip().lower()
-    sector_label = 'مطعم' if sector == 'restaurants' else 'كافيه' if sector == 'cafes' else 'سجل'
-    sector_plural = 'مطاعم' if sector == 'restaurants' else 'كافيهات' if sector == 'cafes' else 'سجلات'
+    _labels = {'restaurants': ('مطعم', 'مطاعم'), 'bakeries': ('مخبز', 'مخابز'), 'roasteries': ('محمصة', 'محامص'), 'chocolates': ('شوكولاته', 'شوكولاتة'), 'juice-icecream': ('عصير/آيس كريم', 'عصائر وآيس كريم'), 'catering': ('كاترينج', 'كاترينج'), 'apartments-hotels': ('شقق/فندق', 'شقق وفنادق'), 'real-estate-offices': ('مكتب عقاري', 'مكاتب عقارية'), 'cafes': ('كافيه', 'كافيهات')}
+    sector_label, sector_plural = _labels.get(sector, ('سجل', 'سجلات'))
     print(f"📂 تحميل master.json...")
     with open(MASTER, 'r', encoding='utf-8') as f:
         master = json.load(f)
@@ -1017,11 +1097,6 @@ def main():
         if not cafes:
             print(f"   ⚠️ لا يوجد {sector_plural} لديها reference_url في master — شغّل بدون --only-with-place-url للاعتماد على البحث بالاسم (أقل نجاحاً).")
             return
-
-    # Filter: فقط من لديهم رابط مكان (أسرع وأنجح)
-    if args.has_place_url:
-        cafes = [c for c in cafes if is_maps_place_url(c.get('reference_url') or '')]
-        print(f"   ⏩ لديهم رابط مكان فقط: {len(cafes)} كافيه")
 
     # Setup output dir (جهاز معيّن → outputs/device-1/ أو outputs/device-2/)
     device_id = (args.device_id or '').strip()
@@ -1201,7 +1276,7 @@ def main():
             if worklog.exists():
                 with open(worklog, 'r', encoding='utf-8') as f:
                     content = f.read()
-                new_line = f"\n| {TODAY} | جلسة اكتملت تلقائياً: {len(results)} كافيه مُجلَب. ملف الدمج: `outputs/device-1/scrape-merge-ready-{TODAY}.json` |\n"
+                new_line = f"\n| {TODAY} | جلسة اكتملت تلقائياً: {len(results)} {sector_label} مُجلَب. ملف الدمج: `outputs/device-1/scrape-merge-ready-{TODAY}.json` |\n"
                 if new_line.strip() not in content:
                     with open(worklog, 'a', encoding='utf-8') as f:
                         f.write(new_line)

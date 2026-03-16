@@ -39,7 +39,21 @@
     `python scripts/scrape-gmaps.py --sector restaurants --headless --web-fallback`
   - تجربة:  
     `python scripts/scrape-gmaps.py --sector restaurants --limit 10 --headless --web-fallback`
-- **أي قطاع آخر:** استبدل `cafes` أو `restaurants` بقيمة حقل `sector` في master.json.
+- **التشغيل — مخابز:**
+  - كل المخابز:  
+    `python scripts/scrape-gmaps.py --sector bakeries --headless`
+  - تجربة + بحث ويب عند غير موجود:  
+    `python scripts/scrape-gmaps.py --sector bakeries --limit 10 --headless --web-fallback`
+- **التشغيل — محامص:**  
+  `python scripts/scrape-gmaps.py --sector roasteries --headless`
+- **التشغيل — شوكولاتة:**  
+  `python scripts/scrape-gmaps.py --sector chocolates --headless`
+- **تشغيل الثلاثة معاً (مخابز + محامص + شوكولاتة)** — يفتح 3 نوافذ، كل واحدة تعمل على قطاعها، مخرجات منفصلة:
+  ```powershell
+  .\scripts\run-scrape-three-sectors.ps1
+  ```
+  المخرجات: `outputs/bakeries/`، `outputs/roasteries/`، `outputs/chocolates/`
+- **أي قطاع آخر:** استبدل `cafes` أو `restaurants` أو `bakeries` أو `roasteries` أو `chocolates` بقيمة حقل `sector` في master.json.
 - **عام:** كافيهات/مطاعم محددة `--slugs slug1,slug2`، استئناف `--resume`، ناقص حقل `--missing phone`. مخرجات جهاز معيّن: `--device-id device-1` أو `--device-id device-2`.
 
 ---

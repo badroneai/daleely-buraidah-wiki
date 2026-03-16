@@ -2,9 +2,10 @@ import { createServer, request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
 import { readFile, writeFile } from 'node:fs/promises';
 import { createReadStream, existsSync } from 'node:fs';
-import { extname, join, normalize } from 'node:path';
+import { extname, join, normalize, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = new URL('.', import.meta.url).pathname.replace(/\/$/, '');
+const ROOT = resolve(fileURLToPath(import.meta.url), '..');
 const PORT = Number(process.env.PORT || 4173);
 const ALLOWED_COMPLETION_FIELDS = new Set(['short_address', 'hours_summary', 'phone', 'official_instagram', 'editorial_summary']);
 const ALLOWED_VERIFICATION_FIELDS = new Set(['verification_rationale', 'source_candidate', 'conflict_hypothesis', 'confidence_recommendation', 'next_action_draft']);
@@ -743,8 +744,8 @@ async function verificationSupportBatchRuntimeResult(input = {}) {
 
 async function serveStatic(req, res) {
   const url = new URL(req.url || '/', `http://${req.headers.host || '127.0.0.1'}`);
-  const cleanPath = url.pathname === '/' ? '/index.html' : url.pathname;
-  const filePath = normalize(join(ROOT, cleanPath));
+  const cleanPath = url.pathname === '/' ? 'index.html' : url.pathname.replace(/^\//, '');
+  const filePath = normalize(resolve(ROOT, cleanPath));
   if (!filePath.startsWith(ROOT) || !existsSync(filePath)) {
     res.writeHead(404);
     res.end('Not found');

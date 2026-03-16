@@ -38,6 +38,19 @@ python scripts/scrape-gmaps.py --sector restaurants --headless --web-fallback
 python scripts/scrape-gmaps.py --sector restaurants --device-id device-2 --headless --web-fallback
 ```
 
+### مخابز
+
+```bash
+# كل المخابز
+python scripts/scrape-gmaps.py --sector bakeries --headless
+
+# تجربة + بحث ويب عند غير موجود
+python scripts/scrape-gmaps.py --sector bakeries --limit 10 --headless --web-fallback
+
+# من جهاز 2
+python scripts/scrape-gmaps.py --sector bakeries --device-id device-2 --headless --web-fallback
+```
+
 ### أي قطاع آخر (من master.json)
 
 استبدل `cafes` أو `restaurants` بقيمة حقل `sector` في master، مثلاً:  

@@ -10,3 +10,6 @@ outputs/
 !outputs/device-1/
 !outputs/device-1/.gitkeep
 !outputs/device-1/README.md
+# نتائج جلب الشقق والفنادق (للدمج على الأجهزة الأخرى)
+!outputs/apartments-hotels/
+!outputs/apartments-hotels/*.json
