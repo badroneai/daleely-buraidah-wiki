@@ -5,3 +5,4 @@ node_modules/
 .DS_Store
 .runtime-audit.json
 .fuse_hidden*
+outputs/
