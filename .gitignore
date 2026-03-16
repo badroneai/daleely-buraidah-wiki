@@ -25,3 +25,18 @@ outputs/
 !outputs/roasteries/*.json
 !outputs/chocolates/
 !outputs/chocolates/*.json
+# نتائج جلب قطاع التسوق والتجزئة (7 فئات)
+!outputs/fashion/
+!outputs/fashion/*.json
+!outputs/jewelry/
+!outputs/jewelry/*.json
+!outputs/perfumes/
+!outputs/perfumes/*.json
+!outputs/electronics/
+!outputs/electronics/*.json
+!outputs/furniture/
+!outputs/furniture/*.json
+!outputs/baby-stores/
+!outputs/baby-stores/*.json
+!outputs/malls/
+!outputs/malls/*.json
