@@ -60,3 +60,5 @@ python scripts/scrape-gmaps.py --device-id device-1 --headless --resume
 *راجع `docs/DEVICES_SETUP.md` لفهم توزيع الأجهزة والدمج.*
 
 | 2026-03-16 | جلسة اكتملت تلقائياً: 2 كافيه مُجلَب. ملف الدمج: `outputs/device-1/scrape-merge-ready-2026-03-16.json` |
+
+| 2026-03-16 | جلسة اكتملت تلقائياً: 42 كافيه مُجلَب. ملف الدمج: `outputs/device-1/scrape-merge-ready-2026-03-16.json` |
