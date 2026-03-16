@@ -28,8 +28,9 @@
   # استئناف من آخر نقطة توقف
   python3 scripts/scrape-gmaps.py --resume
 
-  # مخرجات في مجلد خاص بالجهاز (لتجنب التضارب مع جهاز آخر)
-  python3 scripts/scrape-gmaps.py --device-id device-2 --limit 10
+  # مخرجات جهاز معيّن (لتجنب التضارب عند العمل من أكثر من جهاز)
+  python3 scripts/scrape-gmaps.py --device-id device-1 --headless
+  python3 scripts/scrape-gmaps.py --device-id device-2 --headless
 
   # سكرابنج قطاع المطاعم (نفس منطق الكافيهات)
   python3 scripts/scrape-gmaps.py --sector restaurants --limit 20 --headless
@@ -41,10 +42,9 @@
   python3 scripts/scrape-gmaps.py --sector restaurants --limit 10 --headless --web-fallback
 
 المخرجات:
-  outputs/scrape-results-YYYY-MM-DD.json   — النتائج الكاملة
-  outputs/scrape-merge-ready-YYYY-MM-DD.json — جاهز للدمج مع merge-contacts.py
-  outputs/scrape-not-found-YYYY-MM-DD.json  — الكافيهات التي لم يتم العثور عليها
-  outputs/scrape-log-YYYY-MM-DD.txt         — سجل التفاصيل
+  بدون --device-id: outputs/
+  مع --device-id:    outputs/<device-id>/  (مثلاً outputs/device-1/)
+  الملفات: scrape-results-YYYY-MM-DD.json, scrape-merge-ready-*.json, scrape-not-found-*.json
 """
 
 import json, sys, os, re, time, argparse, random, traceback
@@ -503,10 +503,24 @@ def extract_social_username(url, domain_key):
     return url
 
 
+def _is_google_policy_or_support_url(url):
+    """استبعاد روابط سياسات/دعم جوجل — ليست خاصة بالمكان."""
+    if not url or not isinstance(url, str):
+        return True
+    u = url.lower().strip()
+    skip_hosts = (
+        'support.google.com',
+        'policies.google.com',
+        'www.google.com/intl/',
+    )
+    return any(h in u for h in skip_hosts)
+
+
 def extract_all_links(page, max_links=150):
     """
     استخراج كل الروابط التي نمر عليها في منطقة المحتوى الرئيسي.
     أي شيء يُعرض — مفيد الآن أو قد يُستفاد منه لاحقاً.
+    روابط سياسات/دعم جوجل تُستبعد تلقائياً.
     يُرجع: قائمة { "url": "...", "text": "..." }
     """
     seen = set()
@@ -520,6 +534,8 @@ def extract_all_links(page, max_links=150):
             try:
                 href = (a.get_attribute('href') or '').strip()
                 if not href or href.startswith('#') or href == 'javascript:void(0)':
+                    continue
+                if _is_google_policy_or_support_url(href):
                     continue
                 if href in seen:
                     continue
@@ -578,6 +594,17 @@ def extract_place_url(page):
     except:
         pass
     return ""
+
+
+def clean_hours_summary(raw):
+    """إزالة نصوص زائدة من ساعات العمل (مثل نسخ ساعات العمل)"""
+    if not raw or not isinstance(raw, str):
+        return raw
+    s = raw.strip()
+    for suffix in ('،نسخ ساعات العمل', ',نسخ ساعات العمل', '، نسخ ساعات العمل'):
+        if s.endswith(suffix):
+            s = s[:-len(suffix)].strip().rstrip('،').rstrip(',').strip()
+    return s
 
 
 def infer_district_from_address(address):
@@ -876,7 +903,7 @@ def scrape_single_cafe(page, cafe_record, use_web_fallback=False):
     # Extract all fields
     result['scraped_name'] = extract_name(page)
     result['phone'] = extract_phone(page)
-    result['hours_summary'] = extract_hours(page)
+    result['hours_summary'] = clean_hours_summary(extract_hours(page))
 
     rating, reviews = extract_rating_reviews(page)
     result['google_rating'] = rating
@@ -951,7 +978,7 @@ def main():
     parser.add_argument('--resume', action='store_true', help='استئناف من آخر نقطة توقف')
     parser.add_argument('--headless', action='store_true', help='تشغيل بدون واجهة (مخفي)')
     parser.add_argument('--delay', type=float, default=0, help='تأخير إضافي بين الطلبات (ثواني)')
-    parser.add_argument('--device-id', default='', help='مجلد مخرجات خاص بالجهاز (مثلاً device-2) لتجنب التضارب مع أجهزة أخرى')
+    parser.add_argument('--device-id', default='', help='معرّف الجهاز (مثلاً device-1, device-2)؛ المخرجات في outputs/<device-id>/')
     parser.add_argument('--sector', default=DEFAULT_SECTOR, help='قطاع السجلات من master.json (cafes, restaurants, ...) — افتراضي: %s' % DEFAULT_SECTOR)
     parser.add_argument('--only-with-place-url', action='store_true', help='تشغيل السجلات التي لديها reference_url (رابط خريطة) فقط — أنجح وأسرع')
     parser.add_argument('--web-fallback', action='store_true', help='عند "غير موجود" على الخريطة: بحث ويب (جوجل) لاستخراج هاتف وإنستغرام وتيك توك')
@@ -991,13 +1018,20 @@ def main():
             print(f"   ⚠️ لا يوجد {sector_plural} لديها reference_url في master — شغّل بدون --only-with-place-url للاعتماد على البحث بالاسم (أقل نجاحاً).")
             return
 
-    # Setup output dir (device-specific subfolder when --device-id is set)
+    # Filter: فقط من لديهم رابط مكان (أسرع وأنجح)
+    if args.has_place_url:
+        cafes = [c for c in cafes if is_maps_place_url(c.get('reference_url') or '')]
+        print(f"   ⏩ لديهم رابط مكان فقط: {len(cafes)} كافيه")
+
+    # Setup output dir (جهاز معيّن → outputs/device-1/ أو outputs/device-2/)
     device_id = (args.device_id or '').strip()
     if device_id:
         device_id = re.sub(r'[^\w\-]', '-', device_id).strip('-') or 'device'
     effective_output = (ROOT / "outputs" / device_id) if device_id else OUTPUT_DIR
     effective_output.mkdir(parents=True, exist_ok=True)
     progress_file = effective_output / "scrape-progress.json"
+    if device_id:
+        print(f"   📂 مخرجات الجهاز: {effective_output}")
 
     # Resume logic
     progress = load_progress(progress_file) if args.resume else {'done_slugs': [], 'results': []}
@@ -1160,12 +1194,26 @@ def main():
     if progress_file.exists():
         progress_file.unlink()
 
+    # توثيق اكتمال الجلسة في سجل جهاز 1 (للمراجعة عند العودة)
+    if device_id == 'device-1' and results:
+        try:
+            worklog = ROOT / "DEVICE1_WORKLOG.md"
+            if worklog.exists():
+                with open(worklog, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                new_line = f"\n| {TODAY} | جلسة اكتملت تلقائياً: {len(results)} كافيه مُجلَب. ملف الدمج: `outputs/device-1/scrape-merge-ready-{TODAY}.json` |\n"
+                if new_line.strip() not in content:
+                    with open(worklog, 'a', encoding='utf-8') as f:
+                        f.write(new_line)
+        except Exception:
+            pass
+
     print(f"\n💡 للدمج:")
     try:
         merge_path = merge_file.relative_to(ROOT)
     except ValueError:
         merge_path = merge_file
-    print(f"   python3 scripts/merge-contacts.py {merge_path}")
+    print(f"   python3 scripts/merge-scraped.py {merge_path}")
     print()
 
 

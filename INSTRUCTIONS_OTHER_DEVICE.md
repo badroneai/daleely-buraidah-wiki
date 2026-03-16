@@ -1,8 +1,8 @@
 # تعليمات العمل من الجهاز الآخر — دليل بريدة الشامل
 
 > افتح هذا الملف عندما تعمل على المشروع من جهازك الآخر. انسخ محتواه (أو أرفق الملف) للذكاء الاصطناعي هناك ليستمر العمل بناءً على نفس السياق.
-
-**عند فتح المشروع على أي جهاز آخر:** نفّذ أولاً `git pull origin main` (أو `git pull`) لجلب آخر التحديثات من GitHub حتى تظهر الملفات والتعديلات الجديدة.
+>
+> **عند فتح المشروع على أي جهاز آخر:** نفّذ أولاً `git pull origin main` (أو `git pull`) لجلب آخر التحديثات من GitHub.
 
 ---
 
@@ -39,15 +39,14 @@
     `python scripts/scrape-gmaps.py --sector restaurants --headless --web-fallback`
   - تجربة:  
     `python scripts/scrape-gmaps.py --sector restaurants --limit 10 --headless --web-fallback`
-- **أي قطاع آخر:** استبدل `cafes` أو `restaurants` بقيمة حقل `sector` في master.json (مثلاً `bakeries`, `pharmacies`).
-- **عام:** كافيهات محددة `--slugs slug1,slug2`، استئناف `--resume`، ناقص حقل `--missing phone`. كلها تعمل مع أي `--sector`.
-- **إذا كنت على جهاز 2:** أضف `--device-id device-2` (أو استخدم `.\scripts\run-scrape-device2.ps1 -Sector cafes` أو `-Sector restaurants -WebFallback`).
+- **أي قطاع آخر:** استبدل `cafes` أو `restaurants` بقيمة حقل `sector` في master.json.
+- **عام:** كافيهات/مطاعم محددة `--slugs slug1,slug2`، استئناف `--resume`، ناقص حقل `--missing phone`. مخرجات جهاز معيّن: `--device-id device-1` أو `--device-id device-2`.
 
 ---
 
 ## 3. المخرجات
 
-- **المجلد:** `outputs/` (أو `outputs/device-2/` عند استخدام `--device-id device-2`).
+- **المجلد الافتراضي:** `outputs/`. **مخرجات جهاز معيّن:** `outputs/device-1/` أو `outputs/device-2/` مع `--device-id device-1` أو `--device-id device-2`.
 - **الملفات المهمة (نفسها لأي قطاع):**
   - `scrape-results-YYYY-MM-DD.json` — النتائج الكاملة.
   - `scrape-merge-ready-YYYY-MM-DD.json` — **جاهز لتسليم المختص للدمج** (fill-only في merge).
@@ -57,7 +56,19 @@
 
 ---
 
-## 4. الدمج
+## 4. البحث عن روابط الخرائط (للكافيهات بدون reference_url)
+
+- **السكربت:** `scripts/find-maps-links.py` — يبحث في خرائط جوجل عن الاسم ويحفظ أول رابط مكان في `outputs/maps-links-found-YYYY-MM-DD.json`.
+- **التشغيل:**  
+  `python scripts/find-maps-links.py --headless`  
+  أو مع حد: `python scripts/find-maps-links.py --limit 50 --headless`.
+- **دمج الروابط في master:**  
+  `python scripts/merge-reference-urls.py outputs/maps-links-found-YYYY-MM-DD.json`  
+  (أو `--dry-run` للمعاينة أولاً).
+
+---
+
+## 5. الدمج
 
 - **السكربت:** `scripts/merge-scraped.py` (الدمج عند المختص).
 - **مثال:**  
@@ -66,7 +77,7 @@
 
 ---
 
-## 5. بيانات المشروع
+## 6. بيانات المشروع
 
 - **مصدر الحقيقة:** `master.json` — لا يُعدّل إلا عبر الدمج أو المختص.
 - **قطاع الكافيهات النشط:** 254 سجلاً (بدون archived, duplicate, …).
@@ -74,7 +85,7 @@
 
 ---
 
-## 6. سلوك السكربت (مهم)
+## 7. سلوك السكربت (مهم)
 
 - **الأساس:** السكربت يعتمد على **رابط Google Maps للمكان** (`reference_url` يحتوي `/maps/place/`).
 - إذا وُجد **رابط المكان** في السجل: يفتح الرابط مباشرة ثم يستخرج الحقول → **أنسب وأسرع** (عادة ينجح).
@@ -86,7 +97,7 @@
 
 ---
 
-## 7. ما يمكن طلبه من الذكاء الاصطناعي على الجهاز الآخر
+## 8. ما يمكن طلبه من الذكاء الاصطناعي على الجهاز الآخر
 
 - تشغيل السكربت بتوليفة معينة (مثلاً `--limit 5 --headless`).
 - إضافة خيار لتشغيل **الـ 42 فقط** (الذين لديهم رابط مكان) لتوفير وقت.
@@ -96,7 +107,7 @@
 
 ---
 
-## 8. سكربت احترافي (عاملين / استئناف)
+## 9. سكربت احترافي (عاملين / استئناف)
 
 - **الملف:** `scripts/scrape-gmaps-pro.py`
 - يدعم `--worker-id`, `--shard-count`, `--shard-index` للتشغيل على جهازين بدون تعارض.
@@ -104,7 +115,7 @@
 
 ---
 
-## 9. نسخ هذا الملف للذكاء الاصطناعي
+## 10. نسخ هذا الملف للذكاء الاصطناعي
 
 عند فتح المشروع على الجهاز الآخر، إما:
 - تفتح `INSTRUCTIONS_OTHER_DEVICE.md` وتلصق محتواه في المحادثة، أو
@@ -112,16 +123,14 @@
 
 ---
 
----
+## 11. إذا كنت على جهاز 1 أو جهاز 2
 
-## 10. إذا كنت على جهاز 2
-
-- **مجلد مخرجاتك:** `outputs/device-2/` — استخدم دائماً `--device-id device-2` أو سكربت PowerShell.
-- **سكربت جهاز 2 (قالب عام):**  
-  `.\scripts\run-scrape-device2.ps1 -Sector cafes` أو `-Sector restaurants -WebFallback` أو `-Sector restaurants -Limit 10 -WebFallback`.
-- **سجل عملك:** حدّث ملف `DEVICE2_WORKLOG.md` بعد كل جلسة.
-- **للفهم المشترك:** اقرأ `docs/DEVICES_SETUP.md` و `docs/SCRAPER_GENERAL_TEMPLATE.md`.
+- **جهاز 1:** المخرجات في `outputs/device-1/`. السجل: `DEVICE1_WORKLOG.md`. جلسة مستمرة: `.\scripts\run-full-session-device1.ps1`. تشغيل عادي: `.\scripts\run-scrape-device1.ps1` أو `python scripts/scrape-gmaps.py --device-id device-1 --sector cafes --headless`.
+- **جهاز 2:** المخرجات في `outputs/device-2/`. السجل: `DEVICE2_WORKLOG.md`. التشغيل الموصى به (قالب عام):  
+  `.\scripts\run-scrape-device2.ps1 -Sector cafes` أو `-Sector restaurants -WebFallback`  
+  أو: `python scripts/scrape-gmaps.py --device-id device-2 --sector cafes --headless`.
+- **الجهاز الرئيسي** يدمج من ملفات `scrape-merge-ready-*.json` داخل كل مجلد جهاز. راجع **docs/DEVICES_SETUP.md** و **docs/SCRAPER_GENERAL_TEMPLATE.md**.
 
 ---
 
-*آخر تحديث: سكربت واحد لجميع القطاعات (قالب عام)، توثيق docs/SCRAPER_GENERAL_TEMPLATE.md، run-scrape-device2.ps1 يدعم -Sector و -WebFallback.*
+*آخر تحديث: سكربت واحد لجميع القطاعات (قالب عام)، كافيهات ومطاعم، docs/SCRAPER_GENERAL_TEMPLATE.md، run-scrape-device2 -Sector و -WebFallback؛ دمج تحديثات جهاز 1 (device-1، run-scrape-device1، RECENT_UPDATES).*

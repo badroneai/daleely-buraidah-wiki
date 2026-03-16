@@ -6,3 +6,7 @@ node_modules/
 .runtime-audit.json
 .fuse_hidden*
 outputs/
+# تتبع هيكل مجلد جهاز 1 فقط (المخرجات الفعلية تبقى متجاهلة)
+!outputs/device-1/
+!outputs/device-1/.gitkeep
+!outputs/device-1/README.md
