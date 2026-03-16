@@ -2,6 +2,8 @@
 
 > دليل لتجنب التضارب بين الجهاز الأساسي والجهاز 1 والجهاز 2 عند العمل على نفس المستودع.
 
+**سكربت الجلب:** واحد لجميع القطاعات (كافيهات، مطاعم، أي قطاع). راجع **`docs/SCRAPER_GENERAL_TEMPLATE.md`** للأوامر الموحدة وأين تعدّل عند استجلاب شيء معين.
+
 ---
 
 ## 1. الأدوار
@@ -39,7 +41,7 @@
   حدّث `DEVICE2_WORKLOG.md` بعد كل جلسة (ما تم تشغيله، ما تم تعديله، ملاحظات للدمج).
 
 - **الجميع:**  
-  راجع `docs/DEVICES_SETUP.md` (هذا الملف) لفهم توزيع المخرجات والقواعد.
+  راجع `docs/DEVICES_SETUP.md` (هذا الملف) و `docs/SCRAPER_GENERAL_TEMPLATE.md` (قالب السكربت العام) لفهم توزيع المخرجات وكيفية التشغيل على أي جهاز.
 
 ---
 
@@ -64,5 +66,13 @@ python scripts/merge-scraped.py outputs/device-2/scrape-merge-ready-YYYY-MM-DD.j
 - لا يُعدّل `master.json` إلا على الجهاز الرئيسي/المختص، وعبر سكربت الدمج أو يدوياً بوعي.
 
 ---
+
+---
+
+## 6. سكربت الجلب (قالب عام)
+
+- **الملف:** `scripts/scrape-gmaps.py` — يعمل لجميع القطاعات عبر `--sector` (cafes, restaurants, أو أي قيمة في master.json).
+- **جهاز 2:** يمكن استخدام `scripts/run-scrape-device2.ps1 -Sector cafes` أو `-Sector restaurants -WebFallback`.
+- **التفاصيل:** `docs/SCRAPER_GENERAL_TEMPLATE.md`.
 
 *آخر تحديث: 2026-03-16*

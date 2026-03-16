@@ -15,36 +15,41 @@
 
 ---
 
-## 2. السكربت الرئيسي للجلب
+## 2. السكربت الرئيسي للجلب (قالب عام — كل القطاعات)
 
 - **الملف:** `scripts/scrape-gmaps.py`
-- **الوظيفة:** جلب بيانات الكافيهات من Google Maps (بدون API): هاتف، ساعات، تقييم، عنوان، حي، رابط المكان، إنستغرام، خصائص، تعليقان، صورتان، **كل الروابط التي يمر عليها** (`all_links`)، **حسابات التواصل الاجتماعي** (`social_links`)، وصف الازدحام إن وُجد (`crowd_summary`).
+- **الوظيفة:** سكربت **واحد لجميع القطاعات** (كافيهات، مطاعم، أو أي قطاع في master.json). جلب بيانات من Google Maps: هاتف، ساعات، تقييم، عنوان، حي، رابط المكان، إنستغرام، خصائص، تعليقات، صور، **all_links**, **social_links**, crowd_summary. القطاع يُحدد بـ `--sector`.
+- **التفاصيل والأوامر لجميع الأجهزة:** اقرأ **`docs/SCRAPER_GENERAL_TEMPLATE.md`**.
 - **المتطلبات:**
   ```bash
   pip3 install playwright beautifulsoup4
   python3 -m playwright install chromium
   ```
-- **التشغيل:**
-  - كل الكافيهات النشطة (254):  
-    `python3 scripts/scrape-gmaps.py --headless`
-  - تجربة على عدد محدود:  
-    `python3 scripts/scrape-gmaps.py --limit 10 --headless`
-  - كافيهات محددة:  
-    `python3 scripts/scrape-gmaps.py --slugs slug1,slug2 --headless`
-  - استئناف بعد انقطاع:  
-    `python3 scripts/scrape-gmaps.py --headless --resume`
-  - ناقص هاتف فقط:  
-    `python3 scripts/scrape-gmaps.py --missing phone --headless`
-  - **إذا كنت على جهاز 2:** استخدم دائماً `--device-id device-2` لإنزال المخرجات في `outputs/device-2/` وتجنب التضارب:
-    `python scripts/scrape-gmaps.py --device-id device-2 --limit 5 --headless`
+- **التشغيل — كافيهات (مثل المطاعم، نفس الخيارات):**
+  - كل الكافيهات:  
+    `python scripts/scrape-gmaps.py --sector cafes --headless`
+  - كل الكافيهات + بحث ويب عند "غير موجود":  
+    `python scripts/scrape-gmaps.py --sector cafes --headless --web-fallback`
+  - تجربة:  
+    `python scripts/scrape-gmaps.py --sector cafes --limit 10 --headless`
+  - فقط من لديهم رابط خريطة:  
+    `python scripts/scrape-gmaps.py --sector cafes --only-with-place-url --headless`
+- **التشغيل — مطاعم:**
+  - كل المطاعم + بحث ويب عند غير موجود:  
+    `python scripts/scrape-gmaps.py --sector restaurants --headless --web-fallback`
+  - تجربة:  
+    `python scripts/scrape-gmaps.py --sector restaurants --limit 10 --headless --web-fallback`
+- **أي قطاع آخر:** استبدل `cafes` أو `restaurants` بقيمة حقل `sector` في master.json (مثلاً `bakeries`, `pharmacies`).
+- **عام:** كافيهات محددة `--slugs slug1,slug2`، استئناف `--resume`، ناقص حقل `--missing phone`. كلها تعمل مع أي `--sector`.
+- **إذا كنت على جهاز 2:** أضف `--device-id device-2` (أو استخدم `.\scripts\run-scrape-device2.ps1 -Sector cafes` أو `-Sector restaurants -WebFallback`).
 
 ---
 
 ## 3. المخرجات
 
-- **المجلد:** `outputs/` (أو `outputs/device-2/` عند استخدام `--device-id device-2` على جهاز 2).
-- **الملفات المهمة:**
-  - `scrape-results-YYYY-MM-DD.json` — النتائج الكاملة لكل كافيه.
+- **المجلد:** `outputs/` (أو `outputs/device-2/` عند استخدام `--device-id device-2`).
+- **الملفات المهمة (نفسها لأي قطاع):**
+  - `scrape-results-YYYY-MM-DD.json` — النتائج الكاملة.
   - `scrape-merge-ready-YYYY-MM-DD.json` — **جاهز لتسليم المختص للدمج** (fill-only في merge).
   - `scrape-not-found-YYYY-MM-DD.json` — الكافيهات التي لم تُعثر لها على صفحة مكان.
   - `scrape-progress.json` — التقدم (يُحذف بعد انتهاء التشغيل).
@@ -71,8 +76,12 @@
 
 ## 6. سلوك السكربت (مهم)
 
-- إذا وُجد **رابط مكان** (`reference_url` يحتوي `/maps/place/`): يفتح الرابط مباشرة ثم يستخرج الحقول.
-- إذا لم يُوجد: يبحث بالاسم + "بريدة" وينقر أول نتيجة (أقل نجاحاً).
+- **الأساس:** السكربت يعتمد على **رابط Google Maps للمكان** (`reference_url` يحتوي `/maps/place/`).
+- إذا وُجد **رابط المكان** في السجل: يفتح الرابط مباشرة ثم يستخرج الحقول → **أنسب وأسرع** (عادة ينجح).
+- إذا **لم يُوجد** الرابط: يبحث بالاسم + "بريدة" وينقر أول نتيجة → **أقل نجاحاً** (كثير يظهر "غير موجود" أو نتيجة خاطئة).
+- **عند "غير موجود":** استخدم **`--web-fallback`** فيبحث السكربت في **الويب (جوجل)** ويستخرج من النتائج **هاتف، إنستغرام، تيك توك** ويدرجها في المخرجات للدمج.
+- للعمل على السجلات الموثوقة فقط: استخدم **`--only-with-place-url`** (يعمل فقط على من لديهم رابط خريطة).
+- التفاصيل الكاملة: اقرأ **`docs/SCRAPER_LOGIC_AND_USAGE.md`** — ما يعمل وماذا تفعل حسب توفر الرابط.
 - يحفظ التقدم في `outputs/scrape-progress.json`؛ عند الانقطاع شغّل مع `--resume`.
 
 ---
@@ -107,10 +116,12 @@
 
 ## 10. إذا كنت على جهاز 2
 
-- **مجلد مخرجاتك:** `outputs/device-2/` — استخدم دائماً: `--device-id device-2` عند تشغيل `scrape-gmaps.py`.
-- **سجل عملك:** حدّث ملف `DEVICE2_WORKLOG.md` بعد كل جلسة (ما شغّلته، ما عدّلته، ملاحظات للدمج).
-- **للفهم المشترك:** اقرأ `docs/DEVICES_SETUP.md` لمعرفة تنسيق العمل بين الأجهزة.
+- **مجلد مخرجاتك:** `outputs/device-2/` — استخدم دائماً `--device-id device-2` أو سكربت PowerShell.
+- **سكربت جهاز 2 (قالب عام):**  
+  `.\scripts\run-scrape-device2.ps1 -Sector cafes` أو `-Sector restaurants -WebFallback` أو `-Sector restaurants -Limit 10 -WebFallback`.
+- **سجل عملك:** حدّث ملف `DEVICE2_WORKLOG.md` بعد كل جلسة.
+- **للفهم المشترك:** اقرأ `docs/DEVICES_SETUP.md` و `docs/SCRAPER_GENERAL_TEMPLATE.md`.
 
 ---
 
-*آخر تحديث: إضافة all_links و social_links، خيار --device-id، ومجلد جهاز 2 والتوثيق.*
+*آخر تحديث: سكربت واحد لجميع القطاعات (قالب عام)، توثيق docs/SCRAPER_GENERAL_TEMPLATE.md، run-scrape-device2.ps1 يدعم -Sector و -WebFallback.*

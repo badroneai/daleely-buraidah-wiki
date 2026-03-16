@@ -41,20 +41,27 @@
 
 ## أوامر التشغيل الموصى بها (الجهاز 2)
 
+**سكربت واحد لجميع القطاعات** — راجع `docs/SCRAPER_GENERAL_TEMPLATE.md`.
+
 **طريقة سريعة (PowerShell):** من جذر المشروع:
 ```powershell
-.\scripts\run-scrape-device2.ps1              # تشغيل كامل headless
-.\scripts\run-scrape-device2.ps1 -Limit 5      # تجربة 5 كافيهات
-.\scripts\run-scrape-device2.ps1 -Resume       # استئناف
+# كافيهات (افتراضي)
+.\scripts\run-scrape-device2.ps1
+.\scripts\run-scrape-device2.ps1 -Sector cafes -Limit 5
+.\scripts\run-scrape-device2.ps1 -Sector cafes -Resume
+
+# مطاعم + بحث ويب عند غير موجود
+.\scripts\run-scrape-device2.ps1 -Sector restaurants -WebFallback
+.\scripts\run-scrape-device2.ps1 -Sector restaurants -WebFallback -Resume
 ```
 
 **أوامر يدوية:**
 ```powershell
 $env:PYTHONIOENCODING = "utf-8"
 
-python scripts/scrape-gmaps.py --device-id device-2 --limit 5 --headless
-python scripts/scrape-gmaps.py --device-id device-2 --headless
-python scripts/scrape-gmaps.py --device-id device-2 --headless --resume
+python scripts/scrape-gmaps.py --device-id device-2 --sector cafes --limit 5 --headless
+python scripts/scrape-gmaps.py --device-id device-2 --sector restaurants --headless --web-fallback
+python scripts/scrape-gmaps.py --device-id device-2 --sector cafes --headless --resume
 ```
 
 ---

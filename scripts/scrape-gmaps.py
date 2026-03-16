@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
-سكربت سكرابنج شامل لبيانات الكوفيهات من Google Maps (بدون API)
+سكربت سكرابنج عام من Google Maps (بدون API) — قالب لجميع القطاعات
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-يستخرج جميع الحقول المطلوبة لدليل بريدة من صفحات Google Maps مباشرة.
+• قالب عام: لا يقتصر على كافيهات أو مطاعم. القطاع يُحدد بـ --sector (قيمة حقل
+  sector في master.json: cafes, restaurants, أو أي قطاع آخر).
+• لاستجلاب قطاع معين: شغّل مع --sector <القطاع>. لتعديل سلوك البحث أو المدينة
+  أو الحقول، راجع القسم "إعدادات قابلة للتعديل" أدناه وملف docs/SCRAPER_GENERAL_TEMPLATE.md.
 
 المتطلبات:
   pip install playwright beautifulsoup4
@@ -28,6 +31,15 @@
   # مخرجات في مجلد خاص بالجهاز (لتجنب التضارب مع جهاز آخر)
   python3 scripts/scrape-gmaps.py --device-id device-2 --limit 10
 
+  # سكرابنج قطاع المطاعم (نفس منطق الكافيهات)
+  python3 scripts/scrape-gmaps.py --sector restaurants --limit 20 --headless
+
+  # فقط السجلات التي لديها رابط خريطة (أنسب — يعتمد على reference_url)
+  python3 scripts/scrape-gmaps.py --only-with-place-url --headless
+
+  # عند "غير موجود" على الخريطة: بحث ويب (جوجل) عن هاتف وإنستغرام وتيك توك
+  python3 scripts/scrape-gmaps.py --sector restaurants --limit 10 --headless --web-fallback
+
 المخرجات:
   outputs/scrape-results-YYYY-MM-DD.json   — النتائج الكاملة
   outputs/scrape-merge-ready-YYYY-MM-DD.json — جاهز للدمج مع merge-contacts.py
@@ -38,6 +50,7 @@
 import json, sys, os, re, time, argparse, random, traceback
 from datetime import date, datetime
 from pathlib import Path
+from urllib.parse import quote_plus
 
 try:
     from playwright.sync_api import sync_playwright, TimeoutError as PwTimeout
@@ -61,10 +74,14 @@ MASTER = ROOT / "master.json"
 OUTPUT_DIR = ROOT / "outputs"
 TODAY = str(date.today())
 
-# ─── Config ───
+# ═══ قالب عام — إعدادات قابلة للتعديل (لأي قطاع/مدينة) ═══
+# عند استجلاب قطاع أو مدينة أخرى: عدّل هنا ثم شغّل مع --sector <القطاع>
 SEARCH_BASE = "https://www.google.com/maps/search/"
 PLACE_BASE = "https://www.google.com/maps/place/"
-CITY_SUFFIX = "بريدة"  # يُضاف لكل بحث لتحديد المدينة
+CITY_SUFFIX = "بريدة"   # يُضاف لاستعلام البحث لتحديد المدينة (عدّله لمدينة أخرى)
+DEFAULT_SECTOR = "cafes"  # القطاع الافتراضي إن لم يُمرّر --sector (يجب أن يكون موجوداً في master.json)
+
+# ─── Config (تأخير، مهلات) ───
 DELAY_MIN = 3  # ثواني تأخير بين الطلبات (أقل حد)
 DELAY_MAX = 7  # ثواني تأخير بين الطلبات (أعلى حد)
 MAX_RETRIES = 2
@@ -582,6 +599,100 @@ def infer_district_from_address(address):
     return ""
 
 
+# ─── بحث ويب (عند عدم العثور على الخريطة) ───
+
+GOOGLE_SEARCH_BASE = "https://www.google.com/search?q="
+PHONE_PATTERNS = [
+    re.compile(r'05\d{8}'),           # جوال سعودي
+    re.compile(r'011\d{7}'),           # بريدة ثابت
+    re.compile(r'\+966\s*5\d{8}'),
+    re.compile(r'\+966\s*11\d{7}'),
+    re.compile(r'966\s*5\d{8}'),
+]
+
+
+def search_web_for_place(page, place_name, alternate_name=""):
+    """
+    عند عدم العثور على المكان في الخريطة: بحث ويب (جوجل) لاستخراج هاتف، إنستغرام، تيك توك.
+    يُرجع dict: phone, official_instagram, social_links (instagram, tiktok, ...), website.
+    """
+    out = {'phone': '', 'official_instagram': '', 'website': '', 'social_links': {}}
+    queries = [f"{place_name} {CITY_SUFFIX}"]
+    if alternate_name:
+        queries.append(f"{alternate_name} Buraidah")
+    all_links = []
+    all_text = ""
+
+    for query in queries[:2]:
+        try:
+            url = GOOGLE_SEARCH_BASE + quote_plus(query.strip())
+            page.goto(url, wait_until='domcontentloaded', timeout=TIMEOUT * 2)
+            time.sleep(2.5)
+            # جمع الروابط من النتائج
+            for a in page.query_selector_all('a[href]'):
+                try:
+                    href = (a.get_attribute('href') or '').strip()
+                    if not href or href.startswith('/search') or 'google.com' in href and 'search' in href:
+                        continue
+                    if 'instagram.com' in href or 'tiktok.com' in href or 'wa.me' in href or 'tel:' in href:
+                        all_links.append(href)
+                    if 'instagram.com' in href:
+                        m = re.search(r'instagram\.com/([A-Za-z0-9_.]+)', href, re.I)
+                        if m and not out['official_instagram']:
+                            out['official_instagram'] = m.group(1).strip()
+                except Exception:
+                    continue
+            # نص الصفحة للبحث عن أرقام
+            try:
+                body = page.query_selector('body')
+                if body:
+                    all_text += (body.inner_text() or '') + ' '
+            except Exception:
+                pass
+        except Exception:
+            continue
+
+    # استخراج هاتف من النص والروابط
+    for href in all_links:
+        if 'tel:' in href:
+            num = re.sub(r'[^\d+]', '', href.replace('tel:', ''))
+            if len(num) >= 9 and ('966' in num or num.startswith('05') or num.startswith('011')):
+                out['phone'] = num[-9:] if num.startswith('966') else num
+                break
+    if not out['phone']:
+        for pat in PHONE_PATTERNS:
+            m = pat.search(all_text)
+            if m:
+                out['phone'] = m.group(0).replace(' ', '').strip()
+                break
+
+    # إنستغرام من الروابط إن لم يُستخرج بعد
+    if not out['official_instagram']:
+        for href in all_links:
+            if 'instagram.com' in href:
+                m = re.search(r'instagram\.com/([A-Za-z0-9_.]+)', href, re.I)
+                if m:
+                    out['official_instagram'] = m.group(1).strip()
+                    break
+
+    # تيك توك وحسابات أخرى
+    for href in all_links:
+        if 'tiktok.com' in href:
+            m = re.search(r'tiktok\.com/@([A-Za-z0-9_.]+)', href, re.I)
+            if m:
+                out['social_links']['tiktok'] = '@' + m.group(1).strip()
+                break
+    for item in [{'url': u} for u in all_links]:
+        extracted = social_from_links([item])
+        for k, v in extracted.items():
+            if v and k not in out['social_links']:
+                out['social_links'][k] = v
+    if out['official_instagram'] and 'instagram' not in out['social_links']:
+        out['social_links']['instagram'] = out['official_instagram']
+
+    return out
+
+
 # ─── Main scraper logic ───
 
 def is_maps_place_url(url):
@@ -628,41 +739,68 @@ def wait_for_place_ready(page, timeout_ms=20000):
     return False
 
 
-def search_cafe_on_maps(page, cafe_name, alternate_name=""):
+def search_place_on_maps(page, place_name, alternate_name="", sector="cafes"):
     """
-    البحث عن كافيه على Google Maps والانتقال لصفحته.
+    البحث عن مكان (مطعم/كافيه) على Google Maps والانتقال لصفحته.
     يُرجع True إذا تم العثور على صفحة المكان.
     """
+    # بناء استعلامات البحث حسب القطاع — الأكثر تحديداً أولاً
     queries = []
-
-    # Build search queries — most specific first
-    if alternate_name:
-        queries.append(f"{alternate_name} {CITY_SUFFIX}")
-        queries.append(f"{cafe_name} {alternate_name} {CITY_SUFFIX}")
-    queries.append(f"{cafe_name} {CITY_SUFFIX}")
-    queries.append(f"{cafe_name} كوفي {CITY_SUFFIX}")
+    if sector == "restaurants":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مطعم {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مطعم {CITY_SUFFIX}")
+    else:
+        # cafes أو أي قطاع آخر
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} كوفي {CITY_SUFFIX}")
 
     for query in queries:
         try:
-            encoded = query.replace(' ', '+')
+            encoded = quote_plus(query.strip())
             url = f"{SEARCH_BASE}{encoded}"
             page.goto(url, wait_until='domcontentloaded', timeout=TIMEOUT * 2)
-            time.sleep(3)  # Wait for dynamic content
+            time.sleep(4)  # انتظار تحميل نتائج البحث (زيادة للمطاعم/البحث العربي)
 
-            # Check if we landed on a place page directly
             if '/maps/place/' in page.url:
                 wait_for_place_ready(page)
                 return True
 
-            # Otherwise we got search results — click first result
-            results = page.query_selector_all('a[href*="/maps/place/"]')
-            if results:
-                results[0].click()
-                page.wait_for_load_state('domcontentloaded', timeout=TIMEOUT)
-                time.sleep(2.5)
+            # انتظار ظهور قائمة النتائج ثم النقر على أول نتيجة مكان
+            try:
+                page.wait_for_selector('a[href*="/maps/place/"]', timeout=12000)
+            except Exception:
+                pass
+            time.sleep(1.5)
+
+            # تفضيل الروابط داخل قائمة النتائج (role=feed) إن وُجدت
+            results = page.query_selector_all('div[role="feed"] a[href*="/maps/place/"]')
+            if not results:
+                results = page.query_selector_all('a[href*="/maps/place/"]')
+            if not results:
+                continue
+
+            first = results[0]
+            href = first.get_attribute('href') or ''
+            if '/maps/place/' not in href:
+                continue
+            first.click()
+            for _ in range(10):
+                page.wait_for_load_state('domcontentloaded', timeout=3000)
+                time.sleep(1)
                 if '/maps/place/' in page.url:
                     wait_for_place_ready(page)
                     return True
+            if '/maps/place/' in page.url:
+                wait_for_place_ready(page)
+                return True
         except PwTimeout:
             continue
         except Exception:
@@ -671,8 +809,8 @@ def search_cafe_on_maps(page, cafe_name, alternate_name=""):
     return False
 
 
-def scrape_single_cafe(page, cafe_record):
-    """استخراج بيانات كافيه واحد — يُرجع dict بالبيانات المستخرجة"""
+def scrape_single_cafe(page, cafe_record, use_web_fallback=False):
+    """استخراج بيانات كافيه/مطعم واحد — يُرجع dict بالبيانات المستخرجة. use_web_fallback: عند عدم العثور على الخريطة يبحث بالويب (جوجل) عن هاتف وإنستغرام وتيك توك."""
     slug = cafe_record['slug']
     name = cafe_record['name']
     alt_name = cafe_record.get('alternate_name', '') or cafe_record.get('canonical_name_en', '')
@@ -704,6 +842,7 @@ def scrape_single_cafe(page, cafe_record):
         'social_links': {},
         '_found': False,
         '_scraped_at': datetime.now().isoformat(),
+        '_web_fallback_used': False,
     }
 
     # 1) إن وُجد رابط المكان في السجل، الذهاب مباشرة (أدق وأسرع)
@@ -712,10 +851,23 @@ def scrape_single_cafe(page, cafe_record):
         if goto_place_by_url(page, ref_url):
             wait_for_place_ready(page)
             result['_found'] = True
-    # 2) إن لم يُفتح بالرابط، البحث بالاسم
+    # 2) إن لم يُفتح بالرابط، البحث بالاسم (منطق البحث يعتمد على القطاع)
     if not result['_found']:
-        found = search_cafe_on_maps(page, name, alt_name)
+        sector = cafe_record.get('sector', 'cafes')
+        found = search_place_on_maps(page, name, alt_name, sector=sector)
         if not found:
+            # خيار البحث بالويب (جوجل + إنستغرام/تيك توك من النتائج) عند "غير موجود"
+            if use_web_fallback:
+                web_data = search_web_for_place(page, name, alt_name)
+                if web_data.get('phone'):
+                    result['phone'] = web_data['phone']
+                if web_data.get('official_instagram'):
+                    result['official_instagram'] = web_data['official_instagram']
+                if web_data.get('social_links'):
+                    result['social_links'] = web_data['social_links']
+                if web_data.get('website'):
+                    result['website'] = web_data['website']
+                result['_web_fallback_used'] = True
             return result
         result['_found'] = True
 
@@ -800,30 +952,44 @@ def main():
     parser.add_argument('--headless', action='store_true', help='تشغيل بدون واجهة (مخفي)')
     parser.add_argument('--delay', type=float, default=0, help='تأخير إضافي بين الطلبات (ثواني)')
     parser.add_argument('--device-id', default='', help='مجلد مخرجات خاص بالجهاز (مثلاً device-2) لتجنب التضارب مع أجهزة أخرى')
+    parser.add_argument('--sector', default=DEFAULT_SECTOR, help='قطاع السجلات من master.json (cafes, restaurants, ...) — افتراضي: %s' % DEFAULT_SECTOR)
+    parser.add_argument('--only-with-place-url', action='store_true', help='تشغيل السجلات التي لديها reference_url (رابط خريطة) فقط — أنجح وأسرع')
+    parser.add_argument('--web-fallback', action='store_true', help='عند "غير موجود" على الخريطة: بحث ويب (جوجل) لاستخراج هاتف وإنستغرام وتيك توك')
     args = parser.parse_args()
 
     # Load master data
+    sector = (args.sector or 'cafes').strip().lower()
+    sector_label = 'مطعم' if sector == 'restaurants' else 'كافيه' if sector == 'cafes' else 'سجل'
+    sector_plural = 'مطاعم' if sector == 'restaurants' else 'كافيهات' if sector == 'cafes' else 'سجلات'
     print(f"📂 تحميل master.json...")
     with open(MASTER, 'r', encoding='utf-8') as f:
         master = json.load(f)
 
     EXCLUDED = {'permanently_closed', 'duplicate', 'archived', 'branch_conflict'}
     cafes = [r for r in master['records']
-             if r.get('sector') == 'cafes' and r.get('status', '') not in EXCLUDED]
-    print(f"   {len(cafes)} كافيه نشط")
+             if r.get('sector') == sector and r.get('status', '') not in EXCLUDED]
+    print(f"   {len(cafes)} {sector_label} نشط (قطاع: {sector})")
 
     # Filter by slugs
     if args.slugs:
         slug_set = set(s.strip() for s in args.slugs.split(','))
         cafes = [c for c in cafes if c['slug'] in slug_set]
-        print(f"   ⏩ تصفية: {len(cafes)} كافيه محدد")
+        print(f"   ⏩ تصفية: {len(cafes)} {sector_label} محدد")
 
     # Filter by missing field
     if args.missing:
         field = args.missing.strip()
         cafes = [c for c in cafes
                  if not c.get(field) or c.get(field) == 'unknown' or c.get(field) == 0]
-        print(f"   ⏩ ناقص {field}: {len(cafes)} كافيه")
+        print(f"   ⏩ ناقص {field}: {len(cafes)} {sector_label}")
+
+    # Filter: فقط من لديهم رابط مكان (الاعتماد عليه أنجح)
+    if args.only_with_place_url:
+        cafes = [c for c in cafes if is_maps_place_url((c.get('reference_url') or '').strip())]
+        print(f"   ⏩ فقط من لديهم رابط خريطة: {len(cafes)} {sector_label}")
+        if not cafes:
+            print(f"   ⚠️ لا يوجد {sector_plural} لديها reference_url في master — شغّل بدون --only-with-place-url للاعتماد على البحث بالاسم (أقل نجاحاً).")
+            return
 
     # Setup output dir (device-specific subfolder when --device-id is set)
     device_id = (args.device_id or '').strip()
@@ -843,13 +1009,13 @@ def main():
     # Apply limit
     if args.limit:
         cafes = cafes[:args.limit]
-        print(f"   ⏩ حد أقصى: {args.limit} كافيه")
+        print(f"   ⏩ حد أقصى: {args.limit} {sector_label}")
 
     if not cafes:
-        print("✅ لا يوجد كافيهات للسكرابنج!")
+        print(f"✅ لا يوجد {sector_plural} للسكرابنج!")
         return
 
-    print(f"\n🚀 بدء السكرابنج: {len(cafes)} كافيه...")
+    print(f"\n🚀 بدء السكرابنج: {len(cafes)} {sector_label}...")
     print(f"   ⏱️ الوقت المقدر: {len(cafes) * (DELAY_MIN + DELAY_MAX) // 2 // 60} - {len(cafes) * DELAY_MAX // 60} دقيقة")
     print(f"   {'👻 وضع مخفي' if args.headless else '🖥️ وضع مرئي'}")
     print()
@@ -893,17 +1059,20 @@ def main():
             print(f"  [{i+1}/{len(cafes)}] {name} ({slug})", end=' ... ', flush=True)
 
             try:
-                result = scrape_single_cafe(page, cafe)
+                result = scrape_single_cafe(page, cafe, use_web_fallback=args.web_fallback)
 
                 if result['_found']:
-                    # Count extracted fields
                     filled = sum(1 for k, v in result.items()
                                  if k not in ('slug', 'scraped_name', '_found', '_scraped_at', 'website')
                                  and v and v != 'unknown' and v != 0)
                     print(f"✅ ({filled} حقل)")
                     results.append(result)
                 else:
-                    print("❌ غير موجود")
+                    if result.get('_web_fallback_used') and (result.get('phone') or result.get('official_instagram') or result.get('social_links')):
+                        print("🌐 من الويب (هاتف/إنستغرام/تيك توك)")
+                        results.append(result)
+                    else:
+                        print("❌ غير موجود")
                     not_found.append({'slug': slug, 'name': name, 'alternate_name': alt})
 
                 # Update progress
@@ -937,8 +1106,12 @@ def main():
     merge_ready = []
     extra_fields = ['crowd_summary', 'review_snippets', 'photo_urls', 'all_links', 'social_links']
     for r in results:
+        # تضمين: وُجد على الخريطة، أو لدينا بيانات من البحث بالويب (--web-fallback)
         if not r['_found']:
-            continue
+            if not r.get('_web_fallback_used'):
+                continue
+            if not (r.get('phone') or r.get('official_instagram') or (r.get('social_links') and len(r.get('social_links', {})) > 0)):
+                continue
         entry = {'slug': r['slug']}
         # Only include non-empty fields
         for field in ['phone', 'official_instagram', 'hours_summary', 'google_rating',
