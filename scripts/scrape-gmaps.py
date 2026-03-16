@@ -38,7 +38,7 @@
   # فقط السجلات التي لديها رابط خريطة (أنسب — يعتمد على reference_url)
   python3 scripts/scrape-gmaps.py --only-with-place-url --headless
 
-  # عند "غير موجود" على الخريطة: بحث ويب (جوجل) عن هاتف وإنستغرام وتيك توك
+  # بحث ويب عند "غير موجود"؛ وإذا وُجد المكان لكن ناقص هاتف/إنستغرام يكمّل من الويب
   python3 scripts/scrape-gmaps.py --sector restaurants --limit 10 --headless --web-fallback
 
   # سكرابنج قطاع المخابز
@@ -917,7 +917,9 @@ def search_place_on_maps(page, place_name, alternate_name="", sector="cafes"):
 
 
 def scrape_single_cafe(page, cafe_record, use_web_fallback=False):
-    """استخراج بيانات كافيه/مطعم واحد — يُرجع dict بالبيانات المستخرجة. use_web_fallback: عند عدم العثور على الخريطة يبحث بالويب (جوجل) عن هاتف وإنستغرام وتيك توك."""
+    """استخراج بيانات كافيه/مطعم واحد — يُرجع dict بالبيانات المستخرجة.
+    use_web_fallback: (1) عند عدم العثور على الخريطة يبحث بالويب عن هاتف وإنستغرام وتيك توك.
+    (2) عند العثور على الخريطة لكن غياب هاتف أو إنستغرام من الصفحة يكمّل من بحث الويب."""
     slug = cafe_record['slug']
     name = cafe_record['name']
     alt_name = cafe_record.get('alternate_name', '') or cafe_record.get('canonical_name_en', '')
@@ -1033,6 +1035,25 @@ def scrape_single_cafe(page, cafe_record, use_web_fallback=False):
     except:
         pass
 
+    # إذا كان البحث بالويب مفعّلاً ولم نجد هاتفاً أو إنستغرام من الخريطة، نكمّل من الويب
+    missing_phone = not (result.get('phone') or '').strip()
+    missing_instagram = not (result.get('official_instagram') or '').strip()
+    if use_web_fallback and (missing_phone or missing_instagram):
+        web_data = search_web_for_place(page, name, alt_name)
+        if missing_phone and web_data.get('phone'):
+            result['phone'] = web_data['phone']
+        if missing_instagram and web_data.get('official_instagram'):
+            result['official_instagram'] = web_data['official_instagram']
+        if web_data.get('social_links'):
+            for k, v in web_data['social_links'].items():
+                if v and (not result.get('social_links') or not result['social_links'].get(k)):
+                    if not result.get('social_links'):
+                        result['social_links'] = {}
+                    result['social_links'][k] = v
+        if not (result.get('website') or '').strip() and web_data.get('website'):
+            result['website'] = web_data['website']
+        result['_web_fallback_used'] = True
+
     return result
 
 
@@ -1061,7 +1082,7 @@ def main():
     parser.add_argument('--device-id', default='', help='معرّف الجهاز (مثلاً device-1, device-2)؛ المخرجات في outputs/<device-id>/')
     parser.add_argument('--sector', default=DEFAULT_SECTOR, help='قطاع السجلات من master.json (cafes, restaurants, bakeries, roasteries, chocolates, ...) — افتراضي: %s' % DEFAULT_SECTOR)
     parser.add_argument('--only-with-place-url', action='store_true', help='تشغيل السجلات التي لديها reference_url (رابط خريطة) فقط — أنجح وأسرع')
-    parser.add_argument('--web-fallback', action='store_true', help='عند "غير موجود" على الخريطة: بحث ويب (جوجل) لاستخراج هاتف وإنستغرام وتيك توك')
+    parser.add_argument('--web-fallback', action='store_true', help='بحث ويب عند "غير موجود" على الخريطة؛ وإذا وُجد المكان لكن ناقص هاتف/إنستغرام يكمّل من الويب')
     args = parser.parse_args()
 
     # Load master data
