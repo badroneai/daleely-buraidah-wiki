@@ -13,3 +13,6 @@ outputs/
 # نتائج جلب الشقق والفنادق (للدمج على الأجهزة الأخرى)
 !outputs/apartments-hotels/
 !outputs/apartments-hotels/*.json
+# نتائج جلب المكاتب العقارية
+!outputs/real-estate-offices/
+!outputs/real-estate-offices/*.json
