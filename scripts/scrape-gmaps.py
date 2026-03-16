@@ -25,6 +25,9 @@
   # استئناف من آخر نقطة توقف
   python3 scripts/scrape-gmaps.py --resume
 
+  # مخرجات في مجلد خاص بالجهاز (لتجنب التضارب مع جهاز آخر)
+  python3 scripts/scrape-gmaps.py --device-id device-2 --limit 10
+
 المخرجات:
   outputs/scrape-results-YYYY-MM-DD.json   — النتائج الكاملة
   outputs/scrape-merge-ready-YYYY-MM-DD.json — جاهز للدمج مع merge-contacts.py
@@ -796,6 +799,7 @@ def main():
     parser.add_argument('--resume', action='store_true', help='استئناف من آخر نقطة توقف')
     parser.add_argument('--headless', action='store_true', help='تشغيل بدون واجهة (مخفي)')
     parser.add_argument('--delay', type=float, default=0, help='تأخير إضافي بين الطلبات (ثواني)')
+    parser.add_argument('--device-id', default='', help='مجلد مخرجات خاص بالجهاز (مثلاً device-2) لتجنب التضارب مع أجهزة أخرى')
     args = parser.parse_args()
 
     # Load master data
@@ -821,9 +825,13 @@ def main():
                  if not c.get(field) or c.get(field) == 'unknown' or c.get(field) == 0]
         print(f"   ⏩ ناقص {field}: {len(cafes)} كافيه")
 
-    # Setup output dir
-    OUTPUT_DIR.mkdir(exist_ok=True)
-    progress_file = OUTPUT_DIR / "scrape-progress.json"
+    # Setup output dir (device-specific subfolder when --device-id is set)
+    device_id = (args.device_id or '').strip()
+    if device_id:
+        device_id = re.sub(r'[^\w\-]', '-', device_id).strip('-') or 'device'
+    effective_output = (ROOT / "outputs" / device_id) if device_id else OUTPUT_DIR
+    effective_output.mkdir(parents=True, exist_ok=True)
+    progress_file = effective_output / "scrape-progress.json"
 
     # Resume logic
     progress = load_progress(progress_file) if args.resume else {'done_slugs': [], 'results': []}
@@ -920,7 +928,7 @@ def main():
     print(f"   ❌ غير موجود: {len(not_found)}")
 
     # Full results
-    results_file = OUTPUT_DIR / f"scrape-results-{TODAY}.json"
+    results_file = effective_output / f"scrape-results-{TODAY}.json"
     with open(results_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"   📁 النتائج الكاملة: {results_file}")
@@ -951,14 +959,14 @@ def main():
         if len(entry) > 1:  # Has data beyond slug
             merge_ready.append(entry)
 
-    merge_file = OUTPUT_DIR / f"scrape-merge-ready-{TODAY}.json"
+    merge_file = effective_output / f"scrape-merge-ready-{TODAY}.json"
     with open(merge_file, 'w', encoding='utf-8') as f:
         json.dump(merge_ready, f, ensure_ascii=False, indent=2)
     print(f"   📁 جاهز للدمج: {merge_file}")
 
     # Not found
     if not_found:
-        nf_file = OUTPUT_DIR / f"scrape-not-found-{TODAY}.json"
+        nf_file = effective_output / f"scrape-not-found-{TODAY}.json"
         with open(nf_file, 'w', encoding='utf-8') as f:
             json.dump(not_found, f, ensure_ascii=False, indent=2)
         print(f"   📁 غير موجود: {nf_file}")
@@ -980,7 +988,11 @@ def main():
         progress_file.unlink()
 
     print(f"\n💡 للدمج:")
-    print(f"   python3 scripts/merge-contacts.py outputs/scrape-merge-ready-{TODAY}.json")
+    try:
+        merge_path = merge_file.relative_to(ROOT)
+    except ValueError:
+        merge_path = merge_file
+    print(f"   python3 scripts/merge-contacts.py {merge_path}")
     print()
 
 

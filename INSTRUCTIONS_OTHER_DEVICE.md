@@ -33,12 +33,14 @@
     `python3 scripts/scrape-gmaps.py --headless --resume`
   - ناقص هاتف فقط:  
     `python3 scripts/scrape-gmaps.py --missing phone --headless`
+  - **إذا كنت على جهاز 2:** استخدم دائماً `--device-id device-2` لإنزال المخرجات في `outputs/device-2/` وتجنب التضارب:
+    `python scripts/scrape-gmaps.py --device-id device-2 --limit 5 --headless`
 
 ---
 
 ## 3. المخرجات
 
-- **المجلد:** `outputs/`
+- **المجلد:** `outputs/` (أو `outputs/device-2/` عند استخدام `--device-id device-2` على جهاز 2).
 - **الملفات المهمة:**
   - `scrape-results-YYYY-MM-DD.json` — النتائج الكاملة لكل كافيه.
   - `scrape-merge-ready-YYYY-MM-DD.json` — **جاهز لتسليم المختص للدمج** (fill-only في merge).
@@ -99,4 +101,14 @@
 
 ---
 
-*آخر تحديث: إضافة all_links و social_links وتوضيح تعليمات الجهاز الآخر.*
+---
+
+## 10. إذا كنت على جهاز 2
+
+- **مجلد مخرجاتك:** `outputs/device-2/` — استخدم دائماً: `--device-id device-2` عند تشغيل `scrape-gmaps.py`.
+- **سجل عملك:** حدّث ملف `DEVICE2_WORKLOG.md` بعد كل جلسة (ما شغّلته، ما عدّلته، ملاحظات للدمج).
+- **للفهم المشترك:** اقرأ `docs/DEVICES_SETUP.md` لمعرفة تنسيق العمل بين الأجهزة.
+
+---
+
+*آخر تحديث: إضافة all_links و social_links، خيار --device-id، ومجلد جهاز 2 والتوثيق.*
