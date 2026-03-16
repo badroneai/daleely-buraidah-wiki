@@ -16,3 +16,12 @@ outputs/
 # نتائج جلب المكاتب العقارية
 !outputs/real-estate-offices/
 !outputs/real-estate-offices/*.json
+# نتائج جلب (عصائر/آيس كريم، ضيافة، محامص، شوكولاتة)
+!outputs/juice-icecream/
+!outputs/juice-icecream/*.json
+!outputs/catering/
+!outputs/catering/*.json
+!outputs/roasteries/
+!outputs/roasteries/*.json
+!outputs/chocolates/
+!outputs/chocolates/*.json
