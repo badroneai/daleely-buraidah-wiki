@@ -980,6 +980,194 @@ def search_place_on_maps(page, place_name, alternate_name="", sector="cafes"):
         if alternate_name:
             queries.append(f"{alternate_name} صالون نسائي {CITY_SUFFIX}")
         queries.append(f"{place_name} women salon {CITY_SUFFIX}")
+    elif sector == "car-services":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} خدمات سيارات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} خدمات سيارات {CITY_SUFFIX}")
+        queries.append(f"{place_name} car service {CITY_SUFFIX}")
+    elif sector == "maintenance":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} صيانة {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} صيانة {CITY_SUFFIX}")
+        queries.append(f"{place_name} maintenance {CITY_SUFFIX}")
+    elif sector == "transport":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} نقل {CITY_SUFFIX}")
+        queries.append(f"{place_name} توصيل {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} نقل {CITY_SUFFIX}")
+        queries.append(f"{place_name} transport {CITY_SUFFIX}")
+    elif sector == "general-services":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} خدمات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} خدمات {CITY_SUFFIX}")
+        queries.append(f"{place_name} services {CITY_SUFFIX}")
+    elif sector == "travel":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} سفر {CITY_SUFFIX}")
+        queries.append(f"{place_name} سياحة {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} سفر {CITY_SUFFIX}")
+        queries.append(f"{place_name} travel agency {CITY_SUFFIX}")
+    elif sector == "recruitment":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} استقدام {CITY_SUFFIX}")
+        queries.append(f"{place_name} مكتب استقدام {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} استقدام {CITY_SUFFIX}")
+        queries.append(f"{place_name} recruitment {CITY_SUFFIX}")
+    elif sector == "media-printing":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مطبعة {CITY_SUFFIX}")
+        queries.append(f"{place_name} إعلام {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مطبعة {CITY_SUFFIX}")
+        queries.append(f"{place_name} printing {CITY_SUFFIX}")
+    elif sector == "car-dealers":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} معرض سيارات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} معرض سيارات {CITY_SUFFIX}")
+        queries.append(f"{place_name} car dealer {CITY_SUFFIX}")
+    elif sector == "car-rental":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} تأجير سيارات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} تأجير سيارات {CITY_SUFFIX}")
+        queries.append(f"{place_name} car rental {CITY_SUFFIX}")
+    elif sector == "gas-stations":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} محطة وقود {CITY_SUFFIX}")
+        queries.append(f"{place_name} بنزين {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} محطة وقود {CITY_SUFFIX}")
+        queries.append(f"{place_name} gas station {CITY_SUFFIX}")
+    elif sector == "gyms":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} نادي رياضي {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} نادي رياضي {CITY_SUFFIX}")
+        queries.append(f"{place_name} gym {CITY_SUFFIX}")
+    elif sector == "parks":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} حديقة {CITY_SUFFIX}")
+        queries.append(f"{place_name} متنزه {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} حديقة {CITY_SUFFIX}")
+        queries.append(f"{place_name} park {CITY_SUFFIX}")
+    elif sector == "entertainment":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} ترفيه {CITY_SUFFIX}")
+        queries.append(f"{place_name} مركز ترفيه {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} ترفيه {CITY_SUFFIX}")
+        queries.append(f"{place_name} entertainment {CITY_SUFFIX}")
+    elif sector == "kids-activities":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} أنشطة أطفال {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} أنشطة أطفال {CITY_SUFFIX}")
+        queries.append(f"{place_name} kids activities {CITY_SUFFIX}")
+    elif sector == "factories":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مصنع {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مصنع {CITY_SUFFIX}")
+        queries.append(f"{place_name} factory {CITY_SUFFIX}")
+    elif sector == "building-materials":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مواد بناء {CITY_SUFFIX}")
+        queries.append(f"{place_name} مقاولات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مواد بناء {CITY_SUFFIX}")
+        queries.append(f"{place_name} building materials {CITY_SUFFIX}")
+    elif sector == "libraries":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مكتبة {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مكتبة {CITY_SUFFIX}")
+        queries.append(f"{place_name} library {CITY_SUFFIX}")
+    elif sector == "museums":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} متحف {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} متحف {CITY_SUFFIX}")
+        queries.append(f"{place_name} museum {CITY_SUFFIX}")
+    elif sector == "traditional-markets":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} سوق شعبي {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} سوق {CITY_SUFFIX}")
+        queries.append(f"{place_name} market {CITY_SUFFIX}")
+    elif sector == "handicrafts":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} حرف يدوية {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} حرف يدوية {CITY_SUFFIX}")
+        queries.append(f"{place_name} handicrafts {CITY_SUFFIX}")
     else:
         # cafes أو أي قطاع آخر
         if alternate_name:
@@ -1206,7 +1394,7 @@ def main():
 
     # Load master data
     sector = (args.sector or 'cafes').strip().lower()
-    _labels = {'restaurants': ('مطعم', 'مطاعم'), 'bakeries': ('مخبز', 'مخابز'), 'roasteries': ('محمصة', 'محامص'), 'chocolates': ('شوكولاته', 'شوكولاتة'), 'juice-icecream': ('عصير/آيس كريم', 'عصائر وآيس كريم'), 'catering': ('كاترينج', 'كاترينج'), 'apartments-hotels': ('شقق/فندق', 'شقق وفنادق'), 'real-estate-offices': ('مكتب عقاري', 'مكاتب عقارية'), 'fashion': ('ملابس/أزياء', 'ملابس وأزياء'), 'jewelry': ('مجوهرات', 'مجوهرات وذهب'), 'perfumes': ('عطور', 'عطور وبخور'), 'electronics': ('إلكترونيات', 'إلكترونيات وجوالات'), 'furniture': ('أثاث', 'أثاث ومفروشات'), 'baby-stores': ('مستلزمات أطفال', 'مستلزمات أطفال'), 'malls': ('مول', 'مولات ومراكز تجارية'), 'clinics': ('عيادة/مستشفى', 'عيادات ومستشفيات'), 'pharmacies': ('صيدلية', 'صيدليات'), 'optical': ('نظارات/بصريات', 'نظارات وبصريات'), 'salons': ('صالون رجالي', 'صالونات رجالية'), 'women-salons': ('صالون نسائي', 'صالونات نسائية'), 'cafes': ('كافيه', 'كافيهات')}
+    _labels = {'restaurants': ('مطعم', 'مطاعم'), 'bakeries': ('مخبز', 'مخابز'), 'roasteries': ('محمصة', 'محامص'), 'chocolates': ('شوكولاته', 'شوكولاتة'), 'juice-icecream': ('عصير/آيس كريم', 'عصائر وآيس كريم'), 'catering': ('كاترينج', 'كاترينج'), 'apartments-hotels': ('شقق/فندق', 'شقق وفنادق'), 'real-estate-offices': ('مكتب عقاري', 'مكاتب عقارية'), 'fashion': ('ملابس/أزياء', 'ملابس وأزياء'), 'jewelry': ('مجوهرات', 'مجوهرات وذهب'), 'perfumes': ('عطور', 'عطور وبخور'), 'electronics': ('إلكترونيات', 'إلكترونيات وجوالات'), 'furniture': ('أثاث', 'أثاث ومفروشات'), 'baby-stores': ('مستلزمات أطفال', 'مستلزمات أطفال'), 'malls': ('مول', 'مولات ومراكز تجارية'), 'clinics': ('عيادة/مستشفى', 'عيادات ومستشفيات'), 'pharmacies': ('صيدلية', 'صيدليات'), 'optical': ('نظارات/بصريات', 'نظارات وبصريات'), 'salons': ('صالون رجالي', 'صالونات رجالية'), 'women-salons': ('صالون نسائي', 'صالونات نسائية'), 'car-services': ('خدمات سيارات', 'خدمات سيارات'), 'maintenance': ('صيانة', 'صيانة'), 'transport': ('نقل/توصيل', 'نقل وتوصيل'), 'general-services': ('خدمات', 'خدمات متنوعة'), 'travel': ('سفر/سياحة', 'وكالات سفر وسياحة'), 'recruitment': ('استقدام', 'مكاتب استقدام'), 'media-printing': ('إعلام/مطبعة', 'إعلام ومطابع'), 'car-dealers': ('معرض سيارات', 'معارض سيارات'), 'car-rental': ('تأجير سيارات', 'تأجير سيارات'), 'gas-stations': ('محطة وقود', 'محطات وقود'), 'gyms': ('نادي رياضي', 'نوادي رياضية'), 'parks': ('حديقة/متنزه', 'حدائق ومتنزهات'), 'entertainment': ('ترفيه', 'مراكز ترفيه'), 'kids-activities': ('أنشطة أطفال', 'أنشطة أطفال'), 'factories': ('مصنع', 'مصانع'), 'building-materials': ('مواد بناء', 'مواد بناء ومقاولات'), 'libraries': ('مكتبة', 'مكتبات'), 'museums': ('متحف', 'متاحف'), 'traditional-markets': ('سوق شعبي', 'أسواق شعبية'), 'handicrafts': ('حرف يدوية', 'حرف يدوية'), 'cafes': ('كافيه', 'كافيهات')}
     sector_label, sector_plural = _labels.get(sector, ('سجل', 'سجلات'))
     print(f"📂 تحميل master.json...")
     with open(MASTER, 'r', encoding='utf-8') as f:

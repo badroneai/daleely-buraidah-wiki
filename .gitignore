@@ -51,3 +51,18 @@ outputs/
 !outputs/salons/*.json
 !outputs/women-salons/
 !outputs/women-salons/*.json
+# نتائج جلب (خدمات سيارات، صيانة، نقل، خدمات متنوعة، سفر، استقدام، إعلام ومطابع)
+!outputs/car-services/
+!outputs/car-services/*.json
+!outputs/maintenance/
+!outputs/maintenance/*.json
+!outputs/transport/
+!outputs/transport/*.json
+!outputs/general-services/
+!outputs/general-services/*.json
+!outputs/travel/
+!outputs/travel/*.json
+!outputs/recruitment/
+!outputs/recruitment/*.json
+!outputs/media-printing/
+!outputs/media-printing/*.json
