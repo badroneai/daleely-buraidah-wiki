@@ -40,3 +40,14 @@ outputs/
 !outputs/baby-stores/*.json
 !outputs/malls/
 !outputs/malls/*.json
+# نتائج جلب (عيادات، صيدليات، نظارات، صالونات رجالية، صالونات نسائية)
+!outputs/clinics/
+!outputs/clinics/*.json
+!outputs/pharmacies/
+!outputs/pharmacies/*.json
+!outputs/optical/
+!outputs/optical/*.json
+!outputs/salons/
+!outputs/salons/*.json
+!outputs/women-salons/
+!outputs/women-salons/*.json

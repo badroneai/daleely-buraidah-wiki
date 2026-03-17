@@ -861,6 +861,125 @@ def search_place_on_maps(page, place_name, alternate_name="", sector="cafes"):
         if alternate_name:
             queries.append(f"{alternate_name} مكتب عقاري {CITY_SUFFIX}")
         queries.append(f"{place_name} real estate {CITY_SUFFIX}")
+    elif sector == "fashion":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} ملابس {CITY_SUFFIX}")
+        queries.append(f"{place_name} أزياء {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} ملابس {CITY_SUFFIX}")
+        queries.append(f"{place_name} fashion {CITY_SUFFIX}")
+    elif sector == "jewelry":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مجوهرات {CITY_SUFFIX}")
+        queries.append(f"{place_name} ذهب {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مجوهرات {CITY_SUFFIX}")
+        queries.append(f"{place_name} jewelry {CITY_SUFFIX}")
+    elif sector == "perfumes":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} عطور {CITY_SUFFIX}")
+        queries.append(f"{place_name} بخور {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} عطور {CITY_SUFFIX}")
+        queries.append(f"{place_name} perfume {CITY_SUFFIX}")
+    elif sector == "electronics":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} إلكترونيات {CITY_SUFFIX}")
+        queries.append(f"{place_name} جوالات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} إلكترونيات {CITY_SUFFIX}")
+        queries.append(f"{place_name} electronics {CITY_SUFFIX}")
+    elif sector == "furniture":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} أثاث {CITY_SUFFIX}")
+        queries.append(f"{place_name} مفروشات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} أثاث {CITY_SUFFIX}")
+        queries.append(f"{place_name} furniture {CITY_SUFFIX}")
+    elif sector == "baby-stores":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مستلزمات أطفال {CITY_SUFFIX}")
+        queries.append(f"{place_name} أطفال {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مستلزمات أطفال {CITY_SUFFIX}")
+        queries.append(f"{place_name} baby store {CITY_SUFFIX}")
+    elif sector == "malls":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} مول {CITY_SUFFIX}")
+        queries.append(f"{place_name} مركز تجاري {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} مول {CITY_SUFFIX}")
+        queries.append(f"{place_name} mall {CITY_SUFFIX}")
+    elif sector == "clinics":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} عيادة {CITY_SUFFIX}")
+        queries.append(f"{place_name} مستشفى {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} عيادة {CITY_SUFFIX}")
+        queries.append(f"{place_name} clinic {CITY_SUFFIX}")
+    elif sector == "pharmacies":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} صيدلية {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} صيدلية {CITY_SUFFIX}")
+        queries.append(f"{place_name} pharmacy {CITY_SUFFIX}")
+    elif sector == "optical":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} نظارات {CITY_SUFFIX}")
+        queries.append(f"{place_name} بصريات {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} نظارات {CITY_SUFFIX}")
+        queries.append(f"{place_name} optical {CITY_SUFFIX}")
+    elif sector == "salons":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} صالون رجالي {CITY_SUFFIX}")
+        queries.append(f"{place_name} حلاقة رجال {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} صالون {CITY_SUFFIX}")
+        queries.append(f"{place_name} salon {CITY_SUFFIX}")
+    elif sector == "women-salons":
+        if alternate_name:
+            queries.append(f"{alternate_name} {CITY_SUFFIX}")
+            queries.append(f"{place_name} {alternate_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} {CITY_SUFFIX}")
+        queries.append(f"{place_name} صالون نسائي {CITY_SUFFIX}")
+        queries.append(f"{place_name} مشغل نسائي {CITY_SUFFIX}")
+        if alternate_name:
+            queries.append(f"{alternate_name} صالون نسائي {CITY_SUFFIX}")
+        queries.append(f"{place_name} women salon {CITY_SUFFIX}")
     else:
         # cafes أو أي قطاع آخر
         if alternate_name:
@@ -1087,7 +1206,7 @@ def main():
 
     # Load master data
     sector = (args.sector or 'cafes').strip().lower()
-    _labels = {'restaurants': ('مطعم', 'مطاعم'), 'bakeries': ('مخبز', 'مخابز'), 'roasteries': ('محمصة', 'محامص'), 'chocolates': ('شوكولاته', 'شوكولاتة'), 'juice-icecream': ('عصير/آيس كريم', 'عصائر وآيس كريم'), 'catering': ('كاترينج', 'كاترينج'), 'apartments-hotels': ('شقق/فندق', 'شقق وفنادق'), 'real-estate-offices': ('مكتب عقاري', 'مكاتب عقارية'), 'cafes': ('كافيه', 'كافيهات')}
+    _labels = {'restaurants': ('مطعم', 'مطاعم'), 'bakeries': ('مخبز', 'مخابز'), 'roasteries': ('محمصة', 'محامص'), 'chocolates': ('شوكولاته', 'شوكولاتة'), 'juice-icecream': ('عصير/آيس كريم', 'عصائر وآيس كريم'), 'catering': ('كاترينج', 'كاترينج'), 'apartments-hotels': ('شقق/فندق', 'شقق وفنادق'), 'real-estate-offices': ('مكتب عقاري', 'مكاتب عقارية'), 'fashion': ('ملابس/أزياء', 'ملابس وأزياء'), 'jewelry': ('مجوهرات', 'مجوهرات وذهب'), 'perfumes': ('عطور', 'عطور وبخور'), 'electronics': ('إلكترونيات', 'إلكترونيات وجوالات'), 'furniture': ('أثاث', 'أثاث ومفروشات'), 'baby-stores': ('مستلزمات أطفال', 'مستلزمات أطفال'), 'malls': ('مول', 'مولات ومراكز تجارية'), 'clinics': ('عيادة/مستشفى', 'عيادات ومستشفيات'), 'pharmacies': ('صيدلية', 'صيدليات'), 'optical': ('نظارات/بصريات', 'نظارات وبصريات'), 'salons': ('صالون رجالي', 'صالونات رجالية'), 'women-salons': ('صالون نسائي', 'صالونات نسائية'), 'cafes': ('كافيه', 'كافيهات')}
     sector_label, sector_plural = _labels.get(sector, ('سجل', 'سجلات'))
     print(f"📂 تحميل master.json...")
     with open(MASTER, 'r', encoding='utf-8') as f:

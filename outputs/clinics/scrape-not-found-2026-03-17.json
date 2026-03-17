@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "qassim-national-hospital",
+    "name": "مستشفى القصيم الوطني",
+    "alternate_name": "Qassim National Hospital"
+  },
+  {
+    "slug": "sulaiman-habib-qassim",
+    "name": "مستشفى الدكتور سليمان الحبيب القصيم",
+    "alternate_name": "Dr. Sulaiman Al Habib Hospital Qassim"
+  },
+  {
+    "slug": "essence-clinics-buraydah",
+    "name": "عيادات إسنس",
+    "alternate_name": "Essence Clinics"
+  },
+  {
+    "slug": "buraydah-central-hospital",
+    "name": "مستشفى البريدة المركزي",
+    "alternate_name": "Buraydah Central Hospital"
+  },
+  {
+    "slug": "essence-clinics-buraydah-2",
+    "name": "عيادات إسنس",
+    "alternate_name": "Essence Clinics"
+  },
+  {
+    "slug": "مختبر-البرج-الصفراء",
+    "name": "مختبر البرج",
+    "alternate_name": ""
+  },
+  {
+    "slug": "المركز-الصحي-بالمنتزه-المنتزه",
+    "name": "المركز الصحي بالمنتزه",
+    "alternate_name": ""
+  },
+  {
+    "slug": "مستشفى-بريدة-المركزي-الصفراء",
+    "name": "مستشفى بريدة المركزي",
+    "alternate_name": ""
+  },
+  {
+    "slug": "مجمع-عيادات-المستقبل-الريان",
+    "name": "مجمع عيادات المستقبل",
+    "alternate_name": ""
+  }
+]
